@@ -10,7 +10,7 @@ import MenuCircleVerticalIcon from "./icons/MenuCircleVerticalIcon";
 
 function Sidbar() {
   return (
-    <div className="sidbar grid grid-cols-7 gap-2 col-span-3">
+    <div className="sidbar grid grid-cols-8 gap-2 col-span-3">
       <div className="subSidbar flex flex-col justify-between col-span-1">
         <div className="partView flex flex-col">
           <button className="p-3 hover:text-opacity-90 hover:text-gray-50 border-l-2">
@@ -60,7 +60,7 @@ function Sidbar() {
           </button>
         </div>
       </div>
-      <div className="detailSubSidbar col-span-6 border-r border-r-black">
+      <div className="detailSubSidbar col-span-7 border-r border-r-borderDarck">
         <div className="flex justify-between py-3 pl-5 pr-3 ">
           <span className="text-xs">EXPLORER</span>
           <button>

@@ -11,6 +11,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        darckBg: "rgb(30,35,54)",
+        tGrayAll: "rgb(169,177,214)",//#aab2d7
+        borderDarck: "rgb(27,30,46)",
       },
     },
   },
