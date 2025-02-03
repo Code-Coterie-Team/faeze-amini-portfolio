@@ -33,12 +33,12 @@ export default function RootLayout({
       >
         <Header />
         <div className="main grid grid-cols-12 h-screen">
-          <Sidbar/>
-          <Main />
-          {/* <div>{children}</div> */}
+          <Sidbar />
+          {/* <Main /> */}
+          <div className="col-span-9">{children}</div>
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
