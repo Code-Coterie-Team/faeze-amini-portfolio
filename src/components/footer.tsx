@@ -24,7 +24,7 @@ function Footer() {
               height="18"
             />
           </div>
-          <span>main &#42;</span>
+          <span>main&#42;</span>
         </div>
         <div className="p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
           <IcloadIcon
@@ -48,7 +48,7 @@ function Footer() {
           <span>0 </span>
         </div>
       </div>
-      <div className="flex items-center cursor-pointer gap-1">
+      <div className="flex items-center cursor-pointer pr-2 gap-1">
         <span className="p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
           Spaces: 2
         </span>
