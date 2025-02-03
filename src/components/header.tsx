@@ -6,39 +6,51 @@ import MinusIcon from "./icons/MinusIcon";
 import Layout9Icon from "./icons/Layout9Icon";
 import Layout10Icon from "./icons/Layout10Icon";
 import Layout11Icon from "./icons/Layout11Icon";
+import MenuLineHorizontalIcon from "./icons/MenuLineHorizontalIcon";
 
 function Header() {
   return (
     <div className="header flex flex-row justify-between items-center border-b-borderDarck border-b-2">
-      <div className="menuBar flex flex-row gap-1 p-1">
-        <VsCodeIcon
-          width="30"
-          height="30"
-        />
-        <button className=" hover:bg-gray-500 hover:bg-opacity-30 px-2 rounded-lg cursor-default ">
-          File
-        </button>
-        <button className="hover:bg-gray-500 px-2 rounded-lg cursor-default hover:bg-opacity-30">
-          Edit
-        </button>
-        <button className="hover:bg-gray-500 px-2 rounded-lg cursor-default hover:bg-opacity-30">
-          Selection
-        </button>
-        <button className="hover:bg-gray-500 px-2 rounded-lg cursor-default hover:bg-opacity-30">
-          View
-        </button>
-        <button className="hover:bg-gray-500 px-2 rounded-lg cursor-default hover:bg-opacity-30">
-          Go
-        </button>
-        <button className="hover:bg-gray-500 px-2 rounded-lg cursor-default hover:bg-opacity-30">
-          Run
-        </button>
-        <button className="hover:bg-gray-500 px-2 rounded-lg cursor-default hover:bg-opacity-30">
-          Terminal
-        </button>
-        <button className="hover:bg-gray-500 px-2 rounded-lg cursor-default hover:bg-opacity-30">
-          Help
-        </button>
+      <div className="menuBar flex flex-row gap-1 p-1 items-center">
+        <div className="flex gap-4">
+          <div>
+            <VsCodeIcon
+              width="30"
+              height="30"
+            />
+          </div>
+
+          <div className="block md:hidden">
+            <MenuLineHorizontalIcon />
+          </div>
+        </div>
+
+        <div className="md:block hidden pl-2 p-1">
+          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
+            File
+          </button>
+          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
+            Edit
+          </button>
+          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
+            Selection
+          </button>
+          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
+            View
+          </button>
+          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
+            Go
+          </button>
+          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
+            Run
+          </button>
+          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
+            Terminal
+          </button>
+          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
+            Help
+          </button>
+        </div>
       </div>
 
       <h1 className="pt-3 pb-3">Faeze Amini - Portfolio</h1>
@@ -64,7 +76,7 @@ function Header() {
             />
           </button>
         </div>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row">
           <div className="hover:bg-gray-500 hover:text-gray-50 p-3 hover:bg-opacity-30">
             <MinusIcon
               width="16"
