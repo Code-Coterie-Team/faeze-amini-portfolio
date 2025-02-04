@@ -14,7 +14,7 @@ function DetailSubSidbar() {
   const [hoverPortfolio, setHoverPortfolio] = useState(false);
 
   return (
-    <div className="detailSubSidbar">
+    <div className="detailSubSidbar ">
       <div className="flex justify-between py-3 pl-5 pr-3 ">
         <span className="text-xs">EXPLORER</span>
         <button>
@@ -24,7 +24,7 @@ function DetailSubSidbar() {
           />
         </button>
       </div>
-      <div className="menuSidbar ">
+      <div className="menuSidbar overflow-y-auto">
         <div
           className="item border-b-2 border-b-borderDarck py-1"
           onMouseEnter={() => setHoverOpenEditors(true)}
@@ -76,7 +76,7 @@ function DetailSubSidbar() {
         </div>
 
         <div
-          className={`item border-b-2 border-b-borderDarck py-1 transition-all ${isPortfolio ? "pb-[4.75rem]": ""}`}
+          className={`item border-b-2 border-b-borderDarck py-1 transition-all ${isPortfolio ? "": ""}`}
           onMouseEnter={() => setHoverPortfolio(true)}
           onMouseLeave={() => {
             setHoverPortfolio(false);

@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import VsCodeIcon from "./icons/VsCodeIcon";
 import RemoveIcon from "./icons/RemoveIcon";
 import CopyIcon from "./icons/CopyIcon";
@@ -7,8 +8,11 @@ import Layout9Icon from "./icons/Layout9Icon";
 import Layout10Icon from "./icons/Layout10Icon";
 import Layout11Icon from "./icons/Layout11Icon";
 import MenuLineHorizontalIcon from "./icons/MenuLineHorizontalIcon";
+import { useStore } from "@/store";
 
 function Header() {
+  const {toggleSideBarShow,sideBarShow} = useStore();
+
   return (
     <div className="header flex flex-row justify-between items-center border-b-borderDarck border-b-2">
       <div className="menuBar flex flex-row gap-1 p-1 items-center">
@@ -57,7 +61,12 @@ function Header() {
 
       <div className="flex flex-row">
         <div className="flex py-2">
-          <button className="hover:bg-gray-500 hover:bg-opacity-30 p-1 rounded-md">
+          <button
+            onClick={() => {
+              toggleSideBarShow();
+            }}
+            className="hover:bg-gray-500 hover:bg-opacity-30 p-1 rounded-md"
+          >
             <Layout11Icon
               width="20"
               height="20"

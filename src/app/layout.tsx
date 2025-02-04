@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Sidbar from "../components/sidbar";
-import Main from "../components/main";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,16 +28,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-darckBg text-tGrayAll flex flex-col h-screen `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <div className="main grid grid-cols-12 h-screen">
-          <Sidbar />
-          {/* <Main /> */}
-          <div className="col-span-9">{children}</div>
+        <div className="relative overflow-hidden bg-darckBg text-tGrayAll flex flex-col h-screen">
+          <div className="sticky">
+            <Header />
+          </div>
+          <div className="grid grid-cols-12">
+            <Sidbar />
+            <div className="col-span-9 overflow-y-auto h-screen">
+              {children}
+            </div>
+          </div>
+          <div className="fixed bottom-0 w-full">
+            <Footer />
+          </div>
         </div>
-
-        {/* <Footer /> */}
       </body>
     </html>
   );

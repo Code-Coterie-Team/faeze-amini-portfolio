@@ -9,7 +9,7 @@ import Notification01Icon from "./icons/Notification01Icon";
 
 function Footer() {
   return (
-    <div className="flex flex-row bottom-0 border-t border-borderDarck justify-between">
+    <div className="flex flex-row bottom-0 border-t border-borderDarck justify-between bg-darckBg">
       <div className="flex items-center cursor-pointer gap-1">
         <div className="p-1 px-2 bg-blue-400 bg-opacity-50 hover:bg-gray-500 hover:bg-opacity-30">
           <OpenARemoteWindowIcon
