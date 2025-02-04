@@ -8,6 +8,7 @@ import ExtentionitemIcon from "./icons/ExtentionitemIcon";
 import UserCircleIcon from "./icons/UserCircleIcon";
 import SettingIcon from "./icons/SettingIcon";
 import DetailSubSidbar from "./detailSubSidbar";
+import { useStore } from "@/store";
 
 function Sidbar() {
   const [isFile, setIsFile] = useState(true);
@@ -16,9 +17,11 @@ function Sidbar() {
   const [isRunitem, setRunitem] = useState(false);
   const [isExtentionitem, setIsExtentionitem] = useState(false);
 
+  const {sideBarShow} = useStore();
+
   return (
-    <div className="sidbar grid grid-cols-8 col-span-3 ">
-      <div className="subSidbar flex flex-col justify-between col-span-1">
+    <div className={`sidbar grid grid-cols-8 ${sideBarShow ? "col-span-1" : "col-span-3 "}`}>
+      <div className={`subSidbar flex flex-col justify-between ${sideBarShow ? "" : "col-span-1"}`}>
         <div className="partView flex flex-col">
           <button
             onClick={() => {
@@ -123,7 +126,8 @@ function Sidbar() {
           </button>
         </div>
       </div>
-      <div className="col-span-7 ml-4 border-r border-r-borderDarck">
+      
+      <div className={`${sideBarShow ? "hidden" : "col-span-7"} ml-4 border-r border-r-borderDarck`}>
         {isFile && <DetailSubSidbar />}
       </div>
     </div>
