@@ -19,7 +19,10 @@ function Skills() {
   }, []);
 
   return (
-    <div className="skills">
+    <div
+      id="skills"
+      className="skills"
+    >
       <div className="sectionSeparator flex gap-2">
         <div className="w-6 border-t-2 border-gray-50 "></div>
         <div className="w-full border-t-2 border-tGrayAll/30 "></div>
@@ -39,9 +42,6 @@ function Skills() {
           software developer with experience in{" "}
         </span>
         <span className="text-textPurpLeLight">Front-End</span>
-        <span className="text-gray-50">and</span>
-        <span className="text-textPurpLeLight">Back-End</span>
-        <span className="text-gray-50">technologies</span>
       </div>
       <div className="programmingSkills flex mt-20 gap-8">
         <div className="rounded-full w-[335px] h-[335px] border-4 border-black shadow-styleShadowCircle place-self-center relative">

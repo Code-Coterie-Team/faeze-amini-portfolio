@@ -2,6 +2,8 @@ import LinkedinIcon from "./icons/LinkedinIcon";
 import GithubIcon from "./icons/GithubIcon";
 import ArrowRightIcon from "./icons/ArrowRightIcon";
 import UserCircleIcon from "./icons/UserCircleIcon";
+import Link from "next/link";
+import Image from "next/image";
 
 function PersonalInformation() {
   return (
@@ -10,11 +12,9 @@ function PersonalInformation() {
         id="aboutme"
         className=" myIntroduction pt-[10rem]"
       >
-        <div className="flex items-center">
-          <h1 className="text-5xl text-nowrap font-medium text-gray-50">
-            Faeze Amini
-          </h1>
-          <span className="text-5xl animate-rotate">&#128075;</span>
+        <div className="flex items-center text-5xl">
+          <h1 className=" text-nowrap font-medium text-gray-50">Faeze Amini</h1>
+          <span className="nimate-rotate">&#128075;</span>
         </div>
         <div className="flex pt-3 pb-1 gap-1 items-center text-base">
           <p className="text-gray-50">Looking for a job</p>
@@ -22,21 +22,35 @@ function PersonalInformation() {
           <p className="text-textActive">/ Web Front-End</p>
         </div>
         <p className="max-w-3xl text-base text-gray-50">
-          26 yo software engineer with a B.S. in Computer Science and Technology
-          with experience in Front-End and Back-End technologies.
+          I am a frontend developer with a passion for creating dynamic and
+          user-friendly interfaces. Recently, I have been working on a variety
+          of projects, constantly enhancing my skills and delivering diverse
+          solutions. My focus is on responsive design, performance optimization,
+          and utilizing the latest technologies to ensure seamless user
+          experiences.
         </p>
         <div className="pt-5 flex items-center gap-4">
-          <a
+          <Link
             className="text-gray-50 hover:opacity-80"
+            href={"https://www.linkedin.com/"}
             target="_blank"
-            href="https://tailwindcss.com/docs/font-size"
           >
             <LinkedinIcon
               width="24"
               height="24"
             />
-          </a>
-          <a
+          </Link>
+          <Link
+            className="text-gray-50 hover:opacity-80"
+            href={"https://github.com/faeze-amn"}
+            target="_blank"
+          >
+            <GithubIcon
+              width="24"
+              height="24"
+            />
+          </Link>
+          {/* <a
             className="text-gray-50 hover:opacity-80"
             target="_blank"
             href=""
@@ -45,9 +59,9 @@ function PersonalInformation() {
               width="24"
               height="24"
             />
-          </a>
+          </a> */}
           <div className="bg-gray-50 text-gray-950 px-3 py-1 rounded-full hover:opacity-80 flex gap-2">
-            <a href="">Contact Me</a>
+            <Link href={"/#contactMe"}>Contact Me</Link>
             <ArrowRightIcon
               width="24"
               height="24"
@@ -81,18 +95,17 @@ function PersonalInformation() {
             <h3 className="text-gray-50 text-lg font-semibold">Faeze Amini</h3>
             <p className="text-base text-textGreen">Front-End Web Developer </p>
             <p className="text-lg pt-4">
-              I'm an experienced software engineer who constantly seeks out
-              innovative solutions to everyday problems.
-            </p>
-            <p className="text-lg pt-4">
-              After 4 years in this industry I have worked with multiple
-              front-end and back-end technologies.
+              I am a passionate frontend developer focused on continuous
+              learning and delivering high-quality, user-centered solutions.
             </p>
           </div>
-          <div className="bg-blue-500 w-[208px] h-[208px] rounded-full">
-            <img
-              src="/public/image/imgFaeze.JPG"
+          <div className="bg-blue-500 rounded-full w-[208px] h-[208px]">
+            <Image
+              className="rounded-full w-[208px] h-[208px]"
+              src="/Image/faezeImage.jpg"
               alt=""
+              width={208}
+              height={208}
             />
           </div>
         </div>
@@ -128,7 +141,7 @@ function PersonalInformation() {
                 />
               </a>
               <div className="bg-gray-50 text-gray-950 px-3 py-1 rounded-full hover:opacity-80 flex gap-2">
-                <a href="">Contact Me</a>
+                <Link href={"/#contactMe"}>Contact Me</Link>
                 <ArrowRightIcon
                   width="24"
                   height="24"
@@ -137,10 +150,13 @@ function PersonalInformation() {
             </div>
           </div>
           <div className="lg:p-12 p-6 flex border gap-8 border-tGrayAll/30 rounded-2xl">
-            <div className="w-[144px] h-[144px] rounded-2xl bg-purple-600">
-              <img
-                src="/"
+            <div className="w-[144px] h-[144px] rounded-2xl bg-gray-50">
+              <Image
+                className="rounded-2xl w-[144px] h-[144px]"
+                src="/Image/IAUN_logo.png"
                 alt=""
+                width={144}
+                height={144}
               />
             </div>
             <div className="max-w-xl">
@@ -148,7 +164,7 @@ function PersonalInformation() {
                 B.S. in Computer Science and Technology
               </h3>
               <p className="text-base text-textGreen">
-                Instituto Tecnologico de Monterrey
+              Islamic Azad University Najafabad
               </p>
             </div>
           </div>
