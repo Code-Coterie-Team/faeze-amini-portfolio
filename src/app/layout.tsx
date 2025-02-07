@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased h-screen w-screen`}
       >
         <div className="relative overflow-hidden bg-darckBg text-tGrayAll flex flex-col h-screen">
           <div className="sticky">
@@ -36,7 +36,7 @@ export default function RootLayout({
           </div>
           <div className="grid grid-cols-12">
             <Sidbar />
-            <div className="col-span-9 overflow-y-auto h-screen">
+            <div className="col-span-9 h-screen">
               {children}
             </div>
           </div>

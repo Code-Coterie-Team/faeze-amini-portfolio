@@ -5,11 +5,12 @@ import MyWork from "./myWork";
 import ContactMe from "./contactMe";
 import PersonalInformation from "./personalInformation";
 
+
 function AboutMe() {
   return (
-    <div className="pageAboutMe">
+    <div className="overflow-hidden">
       <HeaderMain />
-      <div className="px-12 flex flex-col gap-80">
+      <div className="px-12 flex flex-col gap-80 overflow-y-auto h-screen">
         <PersonalInformation />
         <WorkExperience />
         <Skills />

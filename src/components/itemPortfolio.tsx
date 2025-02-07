@@ -27,7 +27,7 @@ function ItemPortfolio() {
   const [isPublic, setIsPublic] = useState(false);
 
   return (
-    <div className="itemPortfolio overflow-y-auto">
+    <div className="itemPortfolio overflow-y-auto h-full">
       <div className="next pl-4 pr-1 hover:bg-borderDarck">
         <button className="flex gap-1 py-[2px] items-center">
           <DirectionRight01Icon
@@ -88,7 +88,7 @@ function ItemPortfolio() {
             <p className="text-base">about_me.ts</p>
           </div>
         </Link>
-        <Link href="#aboutme">
+        <Link href="/#aboutme">
           <div className="aboutme hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
             <UserCheckIcon
               width="18"
@@ -97,7 +97,7 @@ function ItemPortfolio() {
             <p className="text-base">About Me</p>
           </div>
         </Link>
-        <Link href="#workExperience">
+        <Link href={"/#workExperience"}>
           <div className="workExperience hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
             <LaptopIcon
               width="18"
@@ -106,7 +106,7 @@ function ItemPortfolio() {
             <p className="text-base">Work Experience</p>
           </div>
         </Link>
-        <Link href="#skills">
+        <Link href="/#skills">
           <div className="skills hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
             <SkillsIcon
               width="18"
@@ -115,7 +115,7 @@ function ItemPortfolio() {
             <p className="text-base">Skills</p>
           </div>
         </Link>
-        <Link href="#myWork">
+        <Link href="/#myWork">
           <div className="myWork hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
             <IdeaIcon
               width="18"
@@ -124,7 +124,7 @@ function ItemPortfolio() {
             <p className="text-base">My Work</p>
           </div>
         </Link>
-        <Link href="#contactMe">
+        <Link href="/#contactMe">
           <div className="contactMe hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
             <MailIcon
               className="text-blue-600"

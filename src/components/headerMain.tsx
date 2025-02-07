@@ -7,7 +7,7 @@ import StarIcon from "./icons/StarIcon";
 
 function HeaderMain() {
   return (
-    <div className="headerMain fixed flex items-center border-borderDarck border-b-2 bg-darckBg">
+    <div className="headerMain flex items-center justify-between w-full border-borderDarck border-b-2 bg-darckBg">
       <div className="flex">
         <div className="title flex items-center gap-2 text-textActive border-r-borderDarck border-b-blue-600 border-r-2 border-b-2 p-2">
           <StarIcon
@@ -39,7 +39,7 @@ function HeaderMain() {
         </div>
       </div>
 
-      <div className="flex-1"></div>
+    
       <div className="flex px-4">
         <button className="p-1 hover:bg-gray-500/30 rounded-md">
           <OpenChangeIcon

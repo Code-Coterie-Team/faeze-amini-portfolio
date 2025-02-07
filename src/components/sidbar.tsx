@@ -21,7 +21,7 @@ function Sidbar() {
 
   return (
     <div className={`sidbar grid grid-cols-8 ${sideBarShow ? "col-span-1" : "col-span-3 "}`}>
-      <div className={`subSidbar flex flex-col justify-between ${sideBarShow ? "" : "col-span-1"}`}>
+      <div className={`subSidbar flex flex-col  pb-10 justify-between`}>
         <div className="partView flex flex-col">
           <button
             onClick={() => {
