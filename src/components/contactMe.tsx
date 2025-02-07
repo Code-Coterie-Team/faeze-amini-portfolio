@@ -45,7 +45,7 @@ function ContactMe() {
   }
 
   return (
-    <div className="contactMe">
+    <div id="contactMe" className="contactMe">
       <div className="sectionSeparator flex gap-2">
         <div className="w-6 border-t-2 border-gray-50 "></div>
         <div className="w-full border-t-2 border-tGrayAll/30 "></div>
