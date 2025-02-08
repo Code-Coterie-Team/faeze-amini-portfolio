@@ -24,40 +24,41 @@ export default {
         textPurpLeLight: "rgb(147,154,255)",
         textYelowLight: "rgb(255,220,139)",
         colorInputB: "rgb(96,165,250)",
-        animation: {
-          rotate: "rotateAnimation 2s ease infinite",
-        },
-        keyframes: {
-          rotateAnimation: {
-            "0%": {
-              transform: "rotate(0deg)",
-            },
+      },
 
-            "10%": {
-              transform: "rotate(14deg)",
-            },
+      keyframes: {
+        rotateHi: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
 
-            "20%": {
-              transform: "rotate(-8deg)",
-            },
+          "10%": {
+            transform: "rotate(14deg)",
+          },
 
-            "30%": {
-              transform: "rotate(14deg)",
-            },
+          "20%": {
+            transform: "rotate(-8deg)",
+          },
 
-            " 40%": {
-              transform: " rotate(-4deg)",
-            },
+          "30%": {
+            transform: "rotate(14deg)",
+          },
 
-            "50%": {
-              transform: "rotate(10deg)",
-            },
+          " 40%": {
+            transform: " rotate(-4deg)",
+          },
 
-            "60%": {
-              transform: " rotate(0deg)",
-            },
+          "50%": {
+            transform: "rotate(10deg)",
+          },
+
+          "60%": {
+            transform: " rotate(0deg)",
           },
         },
+      },
+      animation: {
+        rotateAnimation: "rotateHi 2s ease infinite",
       },
     },
   },
