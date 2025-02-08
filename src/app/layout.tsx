@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -30,13 +31,13 @@ export default function RootLayout({
       <body
         className={`antialiased h-screen w-screen`}
       >
-        <div className="relative overflow-hidden bg-darckBg text-tGrayAll flex flex-col h-screen">
+        <div className="relative overflow-hidden bg-darckBg text-tGrayAll flex flex-col h-full">
           <div className="sticky">
             <Header />
           </div>
-          <div className="grid grid-cols-12">
+          <div className="grid grid-cols-12 overflow-hidden">
             <Sidbar />
-            <div className="col-span-9 h-screen">
+            <div className="col-span-9 h-full overflow-hidden pb-5">
               {children}
             </div>
           </div>

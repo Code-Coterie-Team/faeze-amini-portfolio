@@ -8,9 +8,9 @@ import PersonalInformation from "./personalInformation";
 
 function AboutMe() {
   return (
-    <div className="overflow-hidden">
+    <div className="h-full overflow-hidden">
       <HeaderMain />
-      <div className="px-12 flex flex-col gap-80 overflow-y-auto h-screen">
+      <div className="px-12 flex flex-col gap-80 h-full overflow-y-auto">
         <PersonalInformation />
         <WorkExperience />
         <Skills />

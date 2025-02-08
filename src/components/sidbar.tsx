@@ -127,7 +127,7 @@ function Sidbar() {
         </div>
       </div>
       
-      <div className={`${sideBarShow ? "hidden" : "col-span-7"} ml-4 border-r border-r-borderDarck`}>
+      <div className={`${sideBarShow ? "hidden" : "col-span-7"} ml-4 border-r border-r-borderDarck overflow-hidden`}>
         {isFile && <DetailSubSidbar />}
       </div>
     </div>
