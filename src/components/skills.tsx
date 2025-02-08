@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import OpenBookIcon from "./icons/OpenBookIcon";
+import Image from "next/image";
 
 function Skills() {
   const [colorChange, setColorChange] = useState("rgb(255,255,255)");
+  const [changeSkills, setChangeSkills] = useState("Languages");
 
   const randomColor = () => {
     const r = Math.floor(Math.random() * 256);
@@ -17,7 +19,38 @@ function Skills() {
     }, 2000);
     return () => clearInterval(interval);
   }, []);
-
+  useEffect(() => {
+  
+  
+  },[]);
+ 
+  const skillsCollection: Record<string, { image: string; name: string }[]> = {
+    Languages: [
+      { image: "/Image/js-logo.webp", name: "JavaScript" },
+      { image: "/Image/ts-logo.webp", name: "TypeScript" },
+      { image: "/Image/csharp-logo.webp", name: "c#" },
+    ],
+    Tools: [
+      { image: "/Image/git-logo.webp", name: "Git" },
+      { image: "/Image/github-logo.webp", name: "GitHub" },
+      { image: "/Image/figma-logo.webp", name: "Figma" },
+      { image: "/Image/redux-logo.webp", name: "Redux" },
+      { image: "/Image/zustand.png", name: "Zustand" },
+    ],
+    Front: [
+      { image: "/Image/html5-logo.webp", name: "HTML" },
+      { image: "/Image/css-logo.webp", name: "CSS" },
+      { image: "/Image/react-logo.webp", name: "React" },
+      { image: "/Image/nextjs-logo.webp", name: "Next.js" },
+      { image: "/Image/tailwindcss-logo.webp", name: "Tailwind CSS" },
+      { image: "/Image/bootstrap-logo.svg", name: "Bootstrap" },
+      { image: "/Image/bootstrap-logo.svg", name: "Bootstrap" },
+    ],
+    Back: [
+      { image: "/Image/csharp-logo.webp", name: "c#" },
+      { image: "/Image/sql-logo.png", name: "SQL" },
+    ],
+  };
   return (
     <div
       id="skills"
@@ -50,22 +83,42 @@ function Skills() {
             style={{ background: colorChange }}
           >
             <div className="grid grid-cols-2 gap-2 absolute top-[2.4rem] left-[2.3rem] rotate-45">
-              <button className="w-[122px] h-[122px] bg-black rounded-tl-full rounded-[500px] flex items-center justify-center">
+              <button
+                onClick={() => {
+                  setChangeSkills("Languages");
+                }}
+                className="w-[122px] h-[122px] bg-black rounded-tl-full rounded-[500px] flex items-center justify-center"
+              >
                 <p className="-rotate-45 text-3xl text-gray-50 font-semibold border-b-2 border-blue-500">
                   Languages
                 </p>
               </button>
-              <button className="w-[122px] h-[122px] bg-black rounded-tr-full rounded-[500px] flex items-center justify-center">
+              <button
+                onClick={() => {
+                  setChangeSkills("Front");
+                }}
+                className="w-[122px] h-[122px] bg-black rounded-tr-full rounded-[500px] flex items-center justify-center"
+              >
                 <p className="-rotate-45 text-3xl text-gray-50 font-semibold border-b-2 border-blue-500">
                   Front
                 </p>
               </button>
-              <button className="w-[122px] h-[122px] bg-black rounded-bl-full rounded-[500px] flex items-center justify-center">
+              <button
+                onClick={() => {
+                  setChangeSkills("Tools");
+                }}
+                className="w-[122px] h-[122px] bg-black rounded-bl-full rounded-[500px] flex items-center justify-center"
+              >
                 <p className="-rotate-45 text-3xl text-gray-50 font-semibold border-b-2 border-blue-500">
                   Tools
                 </p>
               </button>
-              <button className="w-[122px] h-[122px] bg-black  rounded-br-full rounded-[500px] flex items-center justify-center">
+              <button
+                onClick={() => {
+                  setChangeSkills("Back");
+                }}
+                className="w-[122px] h-[122px] bg-black  rounded-br-full rounded-[500px] flex items-center justify-center"
+              >
                 <p className="-rotate-45 text-3xl text-gray-50 font-semibold border-b-2 border-blue-500">
                   Back
                 </p>
@@ -74,32 +127,34 @@ function Skills() {
           </div>
         </div>
 
-        <div className="flex flex-col">
-          <h2 className="text-3xl font-semibold text-gray-50">
-            Programming Languages
-          </h2>
-          <div className="flex gap-8 pt-8">
-            <div className="h-[115px] flex flex-col items-center">
-              <img
-                className="w-[64px] h-[64px] bg-black"
-                src="/"
-                alt=""
-              />
-              <h3 className="bg-gray-50 text-blue-500 mt-2 rounded-full px-2">
-                Node.js
-              </h3>
-            </div>
-            <div className="h-[115px] flex flex-col items-center">
-              <img
-                className="w-[64px] h-[64px] bg-black"
-                src="/"
-                alt=""
-              />
-              <h3 className="bg-gray-50 text-blue-500 mt-2 rounded-full px-2">
-                javaScript
-              </h3>
-            </div>
-          </div>
+        <div>
+          {Object.entries(skillsCollection).map(
+            ([category, skills]) =>
+              changeSkills === category && (
+                <div className="flex flex-col">
+                  <h2 className="text-3xl font-semibold text-gray-50">
+                    {category}
+                  </h2>
+
+                  <div className="flex gap-8 pt-8">
+                    {skills.map((skill) => (
+                      <div className="h-[115px] flex flex-col items-center">
+                        <Image
+                          className="w-[64px] h-[64px] "
+                          src={skill.image}
+                          alt=""
+                          width={144}
+                          height={144}
+                        />
+                        <h3 className="bg-gray-50 text-blue-500 mt-2 rounded-full px-2">
+                          {skill.name}
+                        </h3>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+          )}
         </div>
       </div>
     </div>
