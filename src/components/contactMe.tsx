@@ -68,7 +68,7 @@ function ContactMe() {
         <div className="flex flex-col relative">
           <label
             className={`absolute text-base  pl-6 ${
-              isFocusedName ? "top-3 text-colorInputB" : "top-1/3 text-gray-50 "
+              isFocusedName  ? "top-3 text-colorInputB" : "top-1/3 text-gray-50 "
             }`}
             htmlFor="name"
           >
@@ -84,7 +84,7 @@ function ContactMe() {
             }}
             onFocus={() => setIsFocusedName(true)}
             onBlur={() => {
-              if (isInputChangeEmail) {
+              if (isInputChangeName) {
                 setIsFocusedName(true);
               } else {
                 setIsFocusedName(false);
@@ -113,7 +113,7 @@ function ContactMe() {
             }}
             onFocus={() => setIsFocusedEmail(true)}
             onBlur={() => {
-              if (isInputChangeName) {
+              if (isInputChangeEmail) {
                 setIsFocusedEmail(true);
               } else {
                 setIsFocusedEmail(false);
@@ -142,7 +142,7 @@ function ContactMe() {
             }}
             onFocus={() => setIsFocusedCompany(true)}
             onBlur={() => {
-              if (isInputChangeName) {
+              if (isInputChangeCompany) {
                 setIsFocusedCompany(true);
               } else {
                 setIsFocusedCompany(false);
@@ -171,7 +171,7 @@ function ContactMe() {
             }}
             onFocus={() => setIsFocusedMessage(true)}
             onBlur={() => {
-              if (isInputChangeName) {
+              if (isInputChangeMessage ) {
                 setIsFocusedMessage(true);
               } else {
                 setIsFocusedMessage(false);
