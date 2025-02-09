@@ -5,6 +5,10 @@ import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import DirectionDown01Icon from "./icons/DirectionDown01Icon";
 import CopyIcon from "./icons/CopyIcon";
 import ItemPortfolio from "./itemPortfolio";
+import NewFileIcon from "./icons/NewFileIcon";
+import NewFolderIcon from "./icons/NewFolderIcon";
+import RefreshIcon from "./icons/RefreshIcon";
+import CollapseFolderIcon from "./icons/CollapseFolderIcon";
 
 function DetailSubSidbar() {
   const [isOpenEditors, setIsOpenEditors] = useState(false);
@@ -76,7 +80,7 @@ function DetailSubSidbar() {
         </div>
 
         <div
-          className={`item border-b-2 border-b-borderDarck py-1 transition-all h-full overflow-y-auto ${isPortfolio ? "": ""}`}
+          className="item border-b-2 border-b-borderDarck py-1 transition-all h-full overflow-y-auto"
           onMouseEnter={() => setHoverPortfolio(true)}
           onMouseLeave={() => {
             setHoverPortfolio(false);
@@ -103,27 +107,39 @@ function DetailSubSidbar() {
               <span className="font-extrabold text-xs pl-1">PORTFOLIO</span>
             </div>
             {isPortfolio && hoverPortfolio && (
-              <div className="flex pr-1">
-                <CopyIcon
-                  className="hover:bg-gray-500/30 rounded-md"
-                  width="18"
-                  height="18"
-                />
-                <CopyIcon
-                  className="hover:bg-gray-500/30 rounded-md"
-                  width="18"
-                  height="18"
-                />
-                <CopyIcon
-                  className="hover:bg-gray-500/30 rounded-md"
-                  width="18"
-                  height="18"
-                />
+              <div className="flex pr-1 gap-1">
+                <div className=" hover:bg-gray-500/30 rounded-md">
+                  <NewFileIcon
+                    className=" "
+                    width="18"
+                    height="18"
+                  />
+                </div>
+                <div className=" hover:bg-gray-500/30 rounded-md">
+                  <NewFolderIcon
+                    className=""
+                    width="18"
+                    height="18"
+                  />
+                </div>
+                <div className=" hover:bg-gray-500/30 rounded-md">
+                  <RefreshIcon
+                    className=""
+                    width="18"
+                    height="18"
+                  />
+                </div>
+                <div className=" hover:bg-gray-500/30 rounded-md">
+                  <CollapseFolderIcon
+                    className=""
+                    width="18"
+                    height="18"
+                  />
+                </div>
               </div>
             )}
           </button>
-          {isPortfolio &&  <ItemPortfolio />}
-         
+          {isPortfolio && <ItemPortfolio />}
         </div>
         <div className="item border-b-2 border-b-borderDarck py-1">
           <button className="flex">
