@@ -11,6 +11,7 @@ export default {
       boxShadow: {
         styleShadowCircle:
           "-5px -5px 5px hsla(0, 0%, 100%, .1), 10px 10px 10px rgba(0, 0, 0, .4), inset -5px -5px 5px hsla(0, 0%, 100%, .2), inset 10px 10px 10px rgba(0, 0, 0, .4)",
+        styleShadowMyWorkBox: "-4px -4px 25px 4px #000",
       },
       colors: {
         background: "var(--background)",
