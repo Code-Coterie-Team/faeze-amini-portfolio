@@ -1,10 +1,97 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import ArrowRightIcon from "./icons/ArrowRightIcon";
 import PackageBox from "./icons/PackageBox";
+import Image from "next/image";
+import DirectionRight01Icon from "./icons/DirectionRight01Icon";
+import Link from "next/link";
 
 function MyWork() {
+  interface workProject {
+    name: string;
+    description: string;
+    image: string;
+    linkGit: string;
+    linkDemo: string;
+    href: string;
+  }
+  const [isHoverShowProject, setIsHoverShowProject] = useState(false);
+
+  const workProjects: workProject[] = [
+    {
+      name: "Admin Dashboard",
+      description:
+        "The management panel enables you to efficiently manage the products section with ease.",
+      image: "/Image/react-admin-project01.png",
+      linkGit: "",
+      linkDemo: "",
+      href : "/",
+    },
+    {
+      name: "Sneakers Company",
+      description: "This platform is designed to make your shopping experience easier and more enjoyable.",
+      image: "/Image/sneakers-company-project01.png",
+      linkGit: "",
+      linkDemo: "",
+      href : "/#skills",
+    },
+    {
+      name: "Challenges Rock Paper Scissors Game",
+      description: "",
+      image: "/Image/challenges-rock-paper-scissors-game01.png",
+      linkGit: "",
+      linkDemo: "",
+      href : "/",
+    },
+    {
+      name: "Drink Water",
+      description: "",
+      image: "/Image/Drink-Water02.png",
+      linkGit: "",
+      linkDemo: "",
+      href : "/",
+    },
+    {
+      name: "Routing Navigation",
+      description: "",
+      image: "/Image/Routing-Navigation01.png",
+      linkGit: "",
+      linkDemo: "",
+      href : "/",
+    },
+    {
+      name: "Form Input Wave",
+      description: "",
+      image: "/Image/Form-Input-Wave01.png",
+      linkGit: "",
+      linkDemo: "",
+      href : "/",
+    },
+    {
+      name: "Dad Jokes App",
+      description: "",
+      image: "/Image/dad-jokes-app.png",
+      linkGit: "",
+      linkDemo: "",
+      href : "/",
+    },
+    {
+      name: "Auto Text Effect",
+      description: "",
+      image: "/Image/Auto-Text-Effect.png",
+      linkGit: "",
+      linkDemo: "",
+      href : "/",
+    },
+ 
+
+  ];
+
   return (
-    <div id="myWork" className="myWork">
+    <div
+      id="myWork"
+      className="myWork"
+    >
       <div className="sectionSeparator flex gap-2">
         <div className="w-6 border-t-2 border-gray-50 "></div>
         <div className="w-full border-t-2 border-tGrayAll/30 "></div>
@@ -21,65 +108,58 @@ function MyWork() {
       <div className="max-w-3xl text-5xl pt-9 mb-24">
         <span className="text-gray-50">Some of </span>
         <span className="text-textYelowLight">my work </span>
-        <span className="text-gray-50">as a full stack </span>
-        <span className="text-textYelowLight">web </span>
+        <span className="text-gray-50">as a </span>
+        <span className="text-textYelowLight"> Fron-tend </span>
         <span className="text-gray-50">developer</span>
       </div>
       <div className="workChildren flex flex-col gap-6">
-        <div className="item flex gap-8 items-center border border-tGrayAll/30 rounded-2xl shadow">
-          <div className="w-1/2 p-12 pb-5">
-            <h3 className="text-3xl text-gray-50">
-              saas platform that enables realtors to deploy a professional
-              website in minutes.
-            </h3>
+        {workProjects.map((project, index) => (
+          <div className="item flex items-center border border-tGrayAll/30 rounded-2xl shadow">
+            <div className="w-1/2 p-12 pb-5 flex flex-col gap-10">
+              <h3 className="font-semibold">
+               <p className="text-4xl text-textYelowLight whitespace-nowrap"> {project.name}</p>
+                <p className="text-2xl text-gray-50">
+                  {project.description}
+                </p>
+              </h3>
 
-            <a
-              className="flex items-center mt-7"
-              href="#"
-            >
-              <span className="text-3xl text-gray-50">Learn More</span>
-              <ArrowRightIcon
-                width="24"
-                height="24"
+              <Link
+                href={project.href}
+                className="flex items-center"
+                onMouseEnter={() => setIsHoverShowProject(true)}
+                onMouseLeave={() => setIsHoverShowProject(false)}
+              >
+                <span className="text-2xl text-gray-50 font-semibold border-b-2 border-b-darckBg hover:border-b-2 hover:border-b-textYelowLight">
+                  Learn More
+                </span>
+
+                {isHoverShowProject ? (
+                  <ArrowRightIcon
+                    className="mt-2 text-gray-50 "
+                    width="24"
+                    height="24"
+                  />
+                ) : (
+                  <DirectionRight01Icon
+                    className="mt-2 text-gray-50 "
+                    width="18"
+                    height="18"
+                  />
+                )}
+              </Link>
+            </div>
+            <div className="h-[300px] w-1/2 flex justify-end flex-col rounded-2xl ">
+              <Image
+                className="h-[95%] w-full rounded-2xl shadow-styleShadowMyWorkBox"
+                src={project.image}
+                alt=""
+                width={1228}
+                height={1208}
               />
-            </a>
+            </div>
           </div>
-          <div className="h-full w-1/2 bg-black rounded-2xl ">
-            <img
-              className=""
-              src="/"
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="item flex gap-10 items-center border border-tGrayAll/30 rounded-2xl shadow">
-          <div className="w-1/2 p-12 pb-5">
-            <h3 className="text-3xl text-gray-50">
-              saas platform that enables realtors to deploy a professional
-              website in minutes.
-            </h3>
+        ))}
 
-            <a
-              className="flex items-center mt-7"
-              href="#"
-            >
-              <span className="text-3xl text-gray-50">Learn More</span>
-              <div className="w-[24px] h-[24px]">
-                <ArrowRightIcon
-                  width="24"
-                  height="24"
-                />
-              </div>
-            </a>
-          </div>
-          <div className="h-full w-1/2 bg-purple-700 rounded-2xl ">
-            <img
-              className="bg-purple-700 h-full w-full"
-              src="/"
-              alt=""
-            />
-          </div>
-        </div>
       </div>
     </div>
   );
