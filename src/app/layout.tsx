@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Sidbar from "../components/sidbar";
+import HeaderMain from "@/components/headerMain";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,16 +22,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased h-screen w-screen`}
-      >
+      <body className="antialiased h-screen w-screen">
         <div className="relative overflow-hidden bg-darckBg text-tGrayAll flex flex-col h-full">
           <div className="sticky">
             <Header />
@@ -38,7 +36,10 @@ export default function RootLayout({
           <div className="grid grid-cols-12 overflow-hidden">
             <Sidbar />
             <div className="col-span-9 h-full overflow-hidden pb-5">
-              {children}
+              <div className="h-full overflow-hidden">
+                <HeaderMain />
+                {children}
+              </div>
             </div>
           </div>
           <div className="fixed bottom-0 w-full">
