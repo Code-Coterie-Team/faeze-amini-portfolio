@@ -19,10 +19,6 @@ function Skills() {
     }, 2000);
     return () => clearInterval(interval);
   }, []);
-  useEffect(() => {
-  
-  
-  },[]);
  
   const skillsCollection: Record<string, { image: string; name: string }[]> = {
     Languages: [
@@ -129,16 +125,16 @@ function Skills() {
 
         <div>
           {Object.entries(skillsCollection).map(
-            ([category, skills]) =>
+            ([category, skills],index) =>
               changeSkills === category && (
-                <div className="flex flex-col">
+                <div  key={index} className="flex flex-col">
                   <h2 className="text-3xl font-semibold text-gray-50">
                     {category}
                   </h2>
 
                   <div className="flex gap-8 pt-8">
-                    {skills.map((skill) => (
-                      <div className="h-[115px] flex flex-col items-center">
+                    {skills.map((skill,index) => (
+                      <div key={index} className="h-[115px] flex flex-col items-center">
                         <Image
                           className="w-[64px] h-[64px] "
                           src={skill.image}
