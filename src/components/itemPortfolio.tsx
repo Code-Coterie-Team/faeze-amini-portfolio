@@ -111,7 +111,7 @@ function ItemPortfolio() {
       <SrcFolder />
 
       {listPakageFile.map((pakageFile, index) => (
-        <PakageFile
+        <PakageFile key={index}
           IconName={pakageFile.IconName}
           nameFile={pakageFile.nameFile}
         />

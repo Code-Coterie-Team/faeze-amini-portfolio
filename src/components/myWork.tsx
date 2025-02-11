@@ -7,87 +7,87 @@ import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import Link from "next/link";
 import SectionSeparator from "./sectionSeparator";
 
+interface workProject {
+  name: string;
+  description: string;
+  image: string;
+  linkGit: string;
+  linkDemo: string;
+  href: string;
+}
+const workProjects: workProject[] = [
+  {
+    name: "Admin Dashboard",
+    description:
+      "The management panel enables you to efficiently manage the products section with ease.",
+    image: "/Image/react-admin-project01.png",
+    linkGit: "",
+    linkDemo: "",
+    href : "/",
+  },
+  {
+    name: "Sneakers Company",
+    description: "This platform is designed to make your shopping experience easier and more enjoyable.",
+    image: "/Image/sneakers-company-project01.png",
+    linkGit: "",
+    linkDemo: "",
+    href : "/#skills",
+  },
+  {
+    name: "Challenges Rock Paper Scissors Game",
+    description: "",
+    image: "/Image/challenges-rock-paper-scissors-game01.png",
+    linkGit: "",
+    linkDemo: "",
+    href : "/",
+  },
+  {
+    name: "Drink Water",
+    description: "",
+    image: "/Image/Drink-Water02.png",
+    linkGit: "",
+    linkDemo: "",
+    href : "/",
+  },
+  {
+    name: "Routing Navigation",
+    description: "",
+    image: "/Image/Routing-Navigation01.png",
+    linkGit: "",
+    linkDemo: "",
+    href : "/",
+  },
+  {
+    name: "Form Input Wave",
+    description: "",
+    image: "/Image/Form-Input-Wave01.png",
+    linkGit: "",
+    linkDemo: "",
+    href : "/",
+  },
+  {
+    name: "Dad Jokes App",
+    description: "",
+    image: "/Image/dad-jokes-app.png",
+    linkGit: "",
+    linkDemo: "",
+    href : "/",
+  },
+  {
+    name: "Auto Text Effect",
+    description: "",
+    image: "/Image/Auto-Text-Effect.png",
+    linkGit: "",
+    linkDemo: "",
+    href : "/",
+  },
+
+
+];
 
 function MyWork() {
-  interface workProject {
-    name: string;
-    description: string;
-    image: string;
-    linkGit: string;
-    linkDemo: string;
-    href: string;
-  }
+
   const [isHoverShowProject, setIsHoverShowProject] = useState(false);
-
-  const workProjects: workProject[] = [
-    {
-      name: "Admin Dashboard",
-      description:
-        "The management panel enables you to efficiently manage the products section with ease.",
-      image: "/Image/react-admin-project01.png",
-      linkGit: "",
-      linkDemo: "",
-      href : "/",
-    },
-    {
-      name: "Sneakers Company",
-      description: "This platform is designed to make your shopping experience easier and more enjoyable.",
-      image: "/Image/sneakers-company-project01.png",
-      linkGit: "",
-      linkDemo: "",
-      href : "/#skills",
-    },
-    {
-      name: "Challenges Rock Paper Scissors Game",
-      description: "",
-      image: "/Image/challenges-rock-paper-scissors-game01.png",
-      linkGit: "",
-      linkDemo: "",
-      href : "/",
-    },
-    {
-      name: "Drink Water",
-      description: "",
-      image: "/Image/Drink-Water02.png",
-      linkGit: "",
-      linkDemo: "",
-      href : "/",
-    },
-    {
-      name: "Routing Navigation",
-      description: "",
-      image: "/Image/Routing-Navigation01.png",
-      linkGit: "",
-      linkDemo: "",
-      href : "/",
-    },
-    {
-      name: "Form Input Wave",
-      description: "",
-      image: "/Image/Form-Input-Wave01.png",
-      linkGit: "",
-      linkDemo: "",
-      href : "/",
-    },
-    {
-      name: "Dad Jokes App",
-      description: "",
-      image: "/Image/dad-jokes-app.png",
-      linkGit: "",
-      linkDemo: "",
-      href : "/",
-    },
-    {
-      name: "Auto Text Effect",
-      description: "",
-      image: "/Image/Auto-Text-Effect.png",
-      linkGit: "",
-      linkDemo: "",
-      href : "/",
-    },
- 
-
-  ];
 
   return (
     <div
@@ -113,7 +113,7 @@ function MyWork() {
       </div>
       <div className="workChildren flex flex-col gap-6">
         {workProjects.map((project, index) => (
-          <div className="item flex items-center border border-tGrayAll/30 rounded-2xl shadow">
+          <div key={index} className="item flex items-center border border-tGrayAll/30 rounded-2xl shadow">
             <div className="w-1/2 p-12 pb-5 flex flex-col gap-10">
               <h3 className="font-semibold">
                <p className="text-4xl text-textYelowLight whitespace-nowrap"> {project.name}</p>
