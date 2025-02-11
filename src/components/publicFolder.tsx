@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import MailIcon from "./icons/MailIcon";
@@ -10,13 +10,67 @@ import StarIcon from "./icons/StarIcon";
 import DirectionDown01Icon from "./icons/DirectionDown01Icon";
 import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import FilePublicIcon from "./icons/FilePublicIcon";
+import CreateFileMenu from "./createFileMenu";
+
+const listPublicFile = [
+  {
+    href: "/#aboutme",
+    IconName: (
+      <UserCheckIcon
+        width="18"
+        height="18"
+      />
+    ),
+    nameFile: "About Me",
+  },
+  {
+    href: "/#workExperience",
+    IconName: (
+      <LaptopIcon
+        width="18"
+        height="18"
+      />
+    ),
+    nameFile: "Work Experience",
+  },
+  {
+    href: "/#skills",
+    IconName: (
+      <SkillsIcon
+        width="18"
+        height="18"
+      />
+    ),
+    nameFile: "Skills",
+  },
+  {
+    href: "/#myWork",
+    IconName: (
+      <IdeaIcon
+        width="18"
+        height="18"
+      />
+    ),
+    nameFile: "My Work",
+  },
+  {
+    href: "/#contactMe",
+    IconName: (
+      <MailIcon
+        className="text-blue-600"
+        width="18"
+        height="18"
+      />
+    ),
+    nameFile: "Contact Me",
+  },
+];
 
 function PublicFolder() {
+  const [isPublic, setIsPublic] = useState(false);
 
-    const [isPublic, setIsPublic] = useState(false);
-    
   return (
-    <div className="public pl-4 pr-1">
+    <div className="public">
       <button
         onClick={() => {
           setIsPublic(!isPublic);
@@ -25,11 +79,13 @@ function PublicFolder() {
       >
         {isPublic ? (
           <DirectionDown01Icon
+            className="ml-4"
             width="18"
             height="18"
           />
         ) : (
           <DirectionRight01Icon
+            className="ml-4"
             width="18"
             height="18"
           />
@@ -44,7 +100,7 @@ function PublicFolder() {
       {isPublic ? (
         <div className="menuPublic">
           <Link href="/">
-            <div className="aboutmePart hover:bg-borderDarck flex items-center gap-2 pl-10 py-[2px]">
+            <div className="aboutmePart  flex items-center gap-2 pl-10 py-[2px] bg-gray-500/20  hover:bg-borderDarck">
               <StarIcon
                 width="18"
                 height="18"
@@ -52,44 +108,53 @@ function PublicFolder() {
               <p className="text-base">about_me.ts</p>
             </div>
           </Link>
-          <Link href="/#aboutme">
-            <div className="aboutme hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
+          {listPublicFile.map((item, index) => (
+            <CreateFileMenu
+              key={index}
+              nameFile={item.nameFile}
+              href={item.href}
+              IconName={item.IconName}
+            />
+          ))}
+          {/* <Link href="/#aboutme">
+            <div className="aboutme flex items-center gap-2  py-[2px]">
               <UserCheckIcon
+                className="ml-14"
                 width="18"
                 height="18"
               />
               <p className="text-base">About Me</p>
             </div>
-          </Link>
-          <Link href={"/#workExperience"}>
-            <div className="workExperience hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
+          </Link> */}
+          {/* <Link href={"/#workExperience"}>
+            <div className="workExperience flex items-center gap-2 pl-14 py-[2px]">
               <LaptopIcon
                 width="18"
                 height="18"
               />
               <p className="text-base">Work Experience</p>
             </div>
-          </Link>
-          <Link href="/#skills">
-            <div className="skills hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
+          </Link> */}
+          {/* <Link href="/#skills">
+            <div className="skills flex items-center gap-2 pl-14 py-[2px]">
               <SkillsIcon
                 width="18"
                 height="18"
               />
               <p className="text-base">Skills</p>
             </div>
-          </Link>
-          <Link href="/#myWork">
-            <div className="myWork hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
+          </Link> */}
+          {/* <Link href="/#myWork">
+            <div className="myWork flex items-center gap-2 pl-14 py-[2px]">
               <IdeaIcon
                 width="18"
                 height="18"
               />
               <p className="text-base">My Work</p>
             </div>
-          </Link>
-          <Link href="/#contactMe">
-            <div className="contactMe hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
+          </Link> */}
+          {/* <Link href="/#contactMe">
+            <div className="contactMe flex items-center gap-2 pl-14 py-[2px]">
               <MailIcon
                 className="text-blue-600"
                 width="18"
@@ -97,7 +162,7 @@ function PublicFolder() {
               />
               <p className="text-base">Contact Me</p>
             </div>
-          </Link>
+          </Link> */}
         </div>
       ) : (
         ""
