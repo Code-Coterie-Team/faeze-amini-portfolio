@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import MenuCircleVerticalIcon from "./icons/MenuCircleVerticalIcon";
 import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import DirectionDown01Icon from "./icons/DirectionDown01Icon";
-import CopyIcon from "./icons/CopyIcon";
 import ItemPortfolio from "./itemPortfolio";
 import NewFileIcon from "./icons/NewFileIcon";
 import NewFolderIcon from "./icons/NewFolderIcon";
