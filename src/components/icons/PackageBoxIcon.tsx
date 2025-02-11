@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const PackageBox: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+const PackageBoxIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,4 +22,4 @@ const PackageBox: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   );
 };
 
-export default PackageBox;
+export default PackageBoxIcon;
