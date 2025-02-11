@@ -23,7 +23,7 @@ const workProjects: workProject[] = [
     image: "/Image/react-admin-project01.png",
     linkGit: "",
     linkDemo: "",
-    href : "/",
+    href : "/apps/adminDashboard",
   },
   {
     name: "Sneakers Company",
@@ -31,7 +31,7 @@ const workProjects: workProject[] = [
     image: "/Image/sneakers-company-project01.png",
     linkGit: "",
     linkDemo: "",
-    href : "/#skills",
+    href : "/apps/sneakersCompany",
   },
   {
     name: "Challenges Rock Paper Scissors Game",
