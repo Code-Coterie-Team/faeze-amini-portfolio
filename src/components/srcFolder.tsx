@@ -10,13 +10,12 @@ import ChallengeIcon from "./icons/ChallengeIcon";
 import SolutionIcon from "./icons/SolutionIcon";
 import TechnologiesIcon from "./icons/TechnologiesIcon";
 import ReactJsIcon from "./icons/ReactJsIcon";
-import MenuLinkProject from "./menuLinkProject";
-import FileProject from "./fileProject";
 import { useStore } from "@/store";
+import CreateFileMenu from "./createFileMenu";
 
 const listMenuLinkProjecs: Record<
   string,
-  { href: string; IconName: ReactNode; nameLink: string }[]
+  { href: string; IconName: ReactNode; nameFile: string }[]
 > = {
   adminDashboard: [
     {
@@ -27,7 +26,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "About",
+      nameFile: "About",
     },
     {
       href: "/apps/adminDashboard/#challenge",
@@ -37,7 +36,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "Challenge",
+      nameFile: "Challenge",
     },
     {
       href: "/apps/adminDashboard/#solution",
@@ -47,7 +46,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "SolutionIcon",
+      nameFile: "SolutionIcon",
     },
     {
       href: "/apps/adminDashboard/#technologies",
@@ -57,7 +56,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "Technologies",
+      nameFile: "Technologies",
     },
   ],
   sneakersCompany: [
@@ -69,7 +68,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "About",
+      nameFile: "About",
     },
     {
       href: "/apps/sneakersCompany/#challenge",
@@ -79,7 +78,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "Challenge",
+      nameFile: "Challenge",
     },
     {
       href: "/apps/sneakersCompany/#solution",
@@ -89,7 +88,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "SolutionIcon",
+      nameFile: "SolutionIcon",
     },
     {
       href: "/apps/sneakersCompany/#technologies",
@@ -99,7 +98,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "Technologies",
+      nameFile: "Technologies",
     },
   ],
   rockPaperScissorsGame: [
@@ -111,7 +110,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "About",
+      nameFile: "About",
     },
     {
       href: "/apps/rockPaperScissorsGame/#challenge",
@@ -121,7 +120,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "Challenge",
+      nameFile: "Challenge",
     },
     {
       href: "/apps/rockPaperScissorsGame/#solution",
@@ -131,7 +130,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "SolutionIcon",
+      nameFile: "SolutionIcon",
     },
     {
       href: "/apps/rockPaperScissorsGame/#technologies",
@@ -141,7 +140,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameLink: "Technologies",
+      nameFile: "Technologies",
     },
   ],
 };
@@ -154,7 +153,7 @@ function SrcFolder() {
 
   return (
     <div className="src ">
-      <div className="pl-4 pr-1">
+    
         <button
           onClick={() => {
             setIsSrc(!isSrc);
@@ -164,11 +163,13 @@ function SrcFolder() {
         >
           {isSrc ? (
             <DirectionDown01Icon
+            className="ml-4"
               width="18"
               height="18"
             />
           ) : (
             <DirectionRight01Icon
+            className="ml-4"
               width="18"
               height="18"
             />
@@ -179,10 +180,10 @@ function SrcFolder() {
           />
           <p className="text-base pl-1">src</p>
         </button>
-      </div>
+    
       {isSrc ? (
         <>
-          <div className="myWorkFolder pl-8">
+          <div className="myWorkFolder">
             <button
               onClick={() => {
                 setIsFolderMyWork(!isFolderMyWork);
@@ -192,11 +193,13 @@ function SrcFolder() {
             >
               {isFolderMyWork ? (
                 <DirectionDown01Icon
+                className="ml-8"
                   width="18"
                   height="18"
                 />
               ) : (
                 <DirectionRight01Icon
+                className="ml-8"
                   width="18"
                   height="18"
                 />
@@ -246,21 +249,21 @@ function SrcFolder() {
                       {activeLinkproject === project && (
                         <>
                           {listProject.map((item, index) => (
-                            <MenuLinkProject
+                            <CreateFileMenu
                               key={index}
                               href={item.href}
                               IconName={item.IconName}
-                              nameLink={item.nameLink}
+                              nameFile={item.nameFile}
                             />
                           ))}
                           {/* {Object.entries(listMenuLinkProjecs).map(
                             ([nameProject, listMenus], index) =>
                               nameProject === "adminDashboard" &&
                               listMenus.map((list, index) => (
-                                <MenuLinkProject
+                                <CreateFileMenu
                                   href={list.href}
                                   IconName={list.IconName}
-                                  nameLink={list.nameLink}
+                                  nameFile={list.nameFile}
                                 />
                               ))
                           )} */}
