@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import React, { ChangeEvent, useState } from "react";
-import MailIcon from "./icons/MailIcom";
+import MailIcon from "./icons/MailIcon";
+import SectionSeparator from "./sectionSeparator";
 
 function ContactMe() {
   const [isFocusedName, setIsFocusedName] = useState(false);
@@ -45,11 +46,11 @@ function ContactMe() {
   }
 
   return (
-    <div id="contactMe" className="contactMe">
-      <div className="sectionSeparator flex gap-2">
-        <div className="w-6 border-t-2 border-gray-50 "></div>
-        <div className="w-full border-t-2 border-tGrayAll/30 "></div>
-      </div>
+    <div
+      id="contactMe"
+      className="contactMe"
+    >
+      <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
           <MailIcon
@@ -68,7 +69,7 @@ function ContactMe() {
         <div className="flex flex-col relative">
           <label
             className={`absolute text-base  pl-6 ${
-              isFocusedName  ? "top-3 text-colorInputB" : "top-1/3 text-gray-50 "
+              isFocusedName ? "top-3 text-colorInputB" : "top-1/3 text-gray-50 "
             }`}
             htmlFor="name"
           >
@@ -171,7 +172,7 @@ function ContactMe() {
             }}
             onFocus={() => setIsFocusedMessage(true)}
             onBlur={() => {
-              if (isInputChangeMessage ) {
+              if (isInputChangeMessage) {
                 setIsFocusedMessage(true);
               } else {
                 setIsFocusedMessage(false);
