@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import OpenBookIcon from "./icons/OpenBookIcon";
 import Image from "next/image";
+import SectionSeparator from "./sectionSeparator";
 
 function Skills() {
   const [colorChange, setColorChange] = useState("rgb(255,255,255)");
@@ -40,7 +41,8 @@ function Skills() {
       { image: "/Image/nextjs-logo.webp", name: "Next.js" },
       { image: "/Image/tailwindcss-logo.webp", name: "Tailwind CSS" },
       { image: "/Image/bootstrap-logo.svg", name: "Bootstrap" },
-      { image: "/Image/bootstrap-logo.svg", name: "Bootstrap" },
+      { image: "/Image/sass-logo.webp", name: "sass" },
+     
     ],
     Back: [
       { image: "/Image/csharp-logo.webp", name: "c#" },
@@ -52,10 +54,7 @@ function Skills() {
       id="skills"
       className="skills"
     >
-      <div className="sectionSeparator flex gap-2">
-        <div className="w-6 border-t-2 border-gray-50 "></div>
-        <div className="w-full border-t-2 border-tGrayAll/30 "></div>
-      </div>
+         <SectionSeparator/>
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
           <OpenBookIcon
@@ -132,7 +131,7 @@ function Skills() {
                     {category}
                   </h2>
 
-                  <div className="flex gap-8 pt-8">
+                  <div className="flex gap-8 pt-8 flex-wrap">
                     {skills.map((skill,index) => (
                       <div key={index} className="h-[115px] flex flex-col items-center">
                         <Image

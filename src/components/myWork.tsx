@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import ArrowRightIcon from "./icons/ArrowRightIcon";
-import PackageBox from "./icons/PackageBox";
+import PackageBoxIcon from "./icons/PackageBoxIcon";
 import Image from "next/image";
 import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import Link from "next/link";
+import SectionSeparator from "./sectionSeparator";
+
 
 function MyWork() {
   interface workProject {
@@ -92,13 +94,10 @@ function MyWork() {
       id="myWork"
       className="myWork"
     >
-      <div className="sectionSeparator flex gap-2">
-        <div className="w-6 border-t-2 border-gray-50 "></div>
-        <div className="w-full border-t-2 border-tGrayAll/30 "></div>
-      </div>
+        <SectionSeparator/>
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
-          <PackageBox
+          <PackageBoxIcon
             width="28"
             height="28"
           />

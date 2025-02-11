@@ -1,6 +1,7 @@
 import React from "react";
 import BriefcaseIcon from "./icons/BriefcaseIcon";
 import Image from "next/image";
+import SectionSeparator from "./sectionSeparator";
 
 function WorkExperience() {
   return (
@@ -8,10 +9,7 @@ function WorkExperience() {
       id="workExperience"
       className="workExperience"
     >
-      <div className="sectionSeparator flex gap-2">
-        <div className="w-6 border-t-2 border-gray-50 "></div>
-        <div className="w-full border-t-2 border-tGrayAll/30 "></div>
-      </div>
+        <SectionSeparator/>
       <div className="flex pt-12 items-center">
         <div className="text-gray-50 w-[28px] h-[28px]">
           <BriefcaseIcon className="" />
@@ -60,10 +58,7 @@ function WorkExperience() {
                 a way that is consistent with existing codebase conventions.
               </li>
             </ul>
-            <div className="sectionSeparator flex gap-2">
-              <div className="w-6 border-t-2 border-gray-50 "></div>
-              <div className="w-full border-t-2 border-tGrayAll/30 "></div>
-            </div>
+            <SectionSeparator/>
           </div>
         </div>
       </div>

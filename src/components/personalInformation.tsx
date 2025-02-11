@@ -4,6 +4,7 @@ import ArrowRightIcon from "./icons/ArrowRightIcon";
 import UserCircleIcon from "./icons/UserCircleIcon";
 import Link from "next/link";
 import Image from "next/image";
+import SectionSeparator from "./sectionSeparator";
 
 function PersonalInformation() {
   return (
@@ -71,10 +72,7 @@ function PersonalInformation() {
       </div>
 
       <div className="aboutMe">
-        <div className="sectionSeparator flex gap-2">
-          <div className="w-6 border-t-2 border-gray-50 "></div>
-          <div className="w-full border-t-2 border-tGrayAll/30 "></div>
-        </div>
+       <SectionSeparator/>
         <div className="flex pt-12 items-center">
           <div className="text-gray-50">
             <UserCircleIcon
