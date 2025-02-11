@@ -9,6 +9,7 @@ import NewFileIcon from "./icons/NewFileIcon";
 import NewFolderIcon from "./icons/NewFolderIcon";
 import RefreshIcon from "./icons/RefreshIcon";
 import CollapseFolderIcon from "./icons/CollapseFolderIcon";
+import SidebarMenu from "./sidebarMenu";
 
 function DetailSubSidebar() {
   const [isOpenEditors, setIsOpenEditors] = useState(false);
@@ -17,6 +18,35 @@ function DetailSubSidebar() {
   const [isPortfolio, setIsPortfolio] = useState(false);
   const [hoverPortfolio, setHoverPortfolio] = useState(false);
 
+  const listSidebarMenu = [
+    {
+      iconMenu: (
+        <DirectionRight01Icon
+          width="18"
+          height="18"
+        />
+      ),
+      menuName: "OUTLINE",
+    },
+    {
+      iconMenu: (
+        <DirectionRight01Icon
+          width="18"
+          height="18"
+        />
+      ),
+      menuName: "TIMELINE",
+    },
+    {
+      iconMenu: (
+        <DirectionRight01Icon
+          width="18"
+          height="18"
+        />
+      ),
+      menuName: "SCRIPTS",
+    },
+  ];
   return (
     <div className="detailSubSidebar overflow-hidden">
       <div className="flex justify-between py-3 pl-5 pr-3 overflow-hidden">
@@ -59,17 +89,12 @@ function DetailSubSidebar() {
             </div>
             {isOpenEditors && hoverOpenEditors && (
               <div className="flex pr-1">
-                <CopyIcon
-                  className="hover:bg-gray-500/30 rounded-md"
+                <NewFileIcon
+                  className="hover:bg-gray-500/30 rounded-md "
                   width="18"
                   height="18"
                 />
-                <CopyIcon
-                  className="hover:bg-gray-500/30 rounded-md"
-                  width="18"
-                  height="18"
-                />
-                <CopyIcon
+                <CollapseFolderIcon
                   className="hover:bg-gray-500/30 rounded-md"
                   width="18"
                   height="18"
@@ -141,33 +166,14 @@ function DetailSubSidebar() {
           </button>
           {isPortfolio && <ItemPortfolio />}
         </div>
-        <div className="item border-b-2 border-b-borderDarck py-1">
-          <button className="flex">
-            <DirectionRight01Icon
-              width="18"
-              height="18"
-            />
-            <span className="font-extrabold text-xs pl-1">OUTLINE</span>
-          </button>
-        </div>
-        <div className="item border-b-2 border-b-borderDarck py-1">
-          <button className="flex">
-            <DirectionRight01Icon
-              width="18"
-              height="18"
-            />
-            <span className="font-extrabold text-xs pl-1">TIMELINE</span>
-          </button>
-        </div>
-        <div className="item py-1">
-          <button className="flex">
-            <DirectionRight01Icon
-              width="18"
-              height="18"
-            />
-            <span className="font-extrabold text-xs pl-1 ">SCRIPTS</span>
-          </button>
-        </div>
+        {listSidebarMenu.map((itemMenu, index) => (
+          <SidebarMenu
+            key={index}
+            iconMenu={itemMenu.iconMenu}
+            menuName={itemMenu.menuName}
+          />
+        ))}
+     
       </div>
     </div>
   );
