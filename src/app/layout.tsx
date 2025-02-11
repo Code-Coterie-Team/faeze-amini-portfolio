@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import Sidbar from "../components/sidbar";
+import Sidebar from "../components/sidebar";
 import HeaderMain from "@/components/headerMain";
 
 const geistSans = Geist({
@@ -34,7 +34,7 @@ export default function RootLayout({
             <Header />
           </div>
           <div className="grid grid-cols-12 overflow-hidden">
-            <Sidbar />
+            <Sidebar />
             <div className="col-span-9 h-full overflow-hidden pb-5">
               <div className="h-full">
                 <HeaderMain />
