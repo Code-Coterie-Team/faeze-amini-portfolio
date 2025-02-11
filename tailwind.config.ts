@@ -25,8 +25,12 @@ export default {
         textPurpLeLight: "rgb(147,154,255)",
         textYelowLight: "rgb(255,220,139)",
         colorInputB: "rgb(96,165,250)",
+        colotBgProject: "rgb(54,73,170)",
       },
-
+      backgroundImage: {
+        backgroundImgProject:
+          "linear-gradient(315deg, #3649aa, #2bd2ff 52%, #2b60ff 90%)",
+      },
       keyframes: {
         rotateHi: {
           "0%": {
