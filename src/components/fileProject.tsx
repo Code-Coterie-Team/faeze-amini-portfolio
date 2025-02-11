@@ -5,7 +5,7 @@ import AboutIcon from "./icons/AboutIcon";
 import ChallengeIcon from "./icons/ChallengeIcon";
 import SolutionIcon from "./icons/SolutionIcon";
 import TechnologiesIcon from "./icons/TechnologiesIcon";
-import MenuLinkProject from "./menuLinkProject";
+import CreateFileMenu from "./createFileMenu";
 
 interface FileProjects {
 
@@ -20,7 +20,7 @@ function FileProject(props : FileProjects) {
 
     const listMenuLinkProjecs: Record<
     string,
-    { href: string; IconName: ReactNode; nameLink: string }[]
+    { href: string; IconName: ReactNode; nameFile: string }[]
   > = {
     adminDashboard: [
       {
@@ -31,7 +31,7 @@ function FileProject(props : FileProjects) {
             height="18"
           />
         ),
-        nameLink: "About",
+        nameFile: "About",
       },
       {
         href: "/apps/adminDashboard/#challenge",
@@ -41,7 +41,7 @@ function FileProject(props : FileProjects) {
             height="18"
           />
         ),
-        nameLink: "Challenge",
+        nameFile: "Challenge",
       },
       {
         href: "/apps/adminDashboard/#solution",
@@ -51,7 +51,7 @@ function FileProject(props : FileProjects) {
             height="18"
           />
         ),
-        nameLink: "SolutionIcon",
+        nameFile: "SolutionIcon",
       },
       {
         href: "/apps/adminDashboard/#technologies",
@@ -61,7 +61,7 @@ function FileProject(props : FileProjects) {
             height="18"
           />
         ),
-        nameLink: "Technologies",
+        nameFile: "Technologies",
       },
     ],
     sneakersCompany: [
@@ -73,7 +73,7 @@ function FileProject(props : FileProjects) {
             height="18"
           />
         ),
-        nameLink: "About",
+        nameFile: "About",
       },
       {
         href: "/apps/sneakersCompany/#challenge",
@@ -83,7 +83,7 @@ function FileProject(props : FileProjects) {
             height="18"
           />
         ),
-        nameLink: "Challenge",
+        nameFile: "Challenge",
       },
       {
         href: "/apps/sneakersCompany/#solution",
@@ -93,7 +93,7 @@ function FileProject(props : FileProjects) {
             height="18"
           />
         ),
-        nameLink: "SolutionIcon",
+        nameFile: "SolutionIcon",
       },
       {
         href: "/apps/sneakersCompany/#technologies",
@@ -103,7 +103,7 @@ function FileProject(props : FileProjects) {
             height="18"
           />
         ),
-        nameLink: "Technologies",
+        nameFile: "Technologies",
       },
     ],
     rockPaperScissorsGame: [
@@ -115,7 +115,7 @@ function FileProject(props : FileProjects) {
               height="18"
             />
           ),
-          nameLink: "About",
+          nameFile: "About",
         },
         {
           href: "/apps/sneakersCompany/#challenge",
@@ -125,7 +125,7 @@ function FileProject(props : FileProjects) {
               height="18"
             />
           ),
-          nameLink: "Challenge",
+          nameFile: "Challenge",
         },
         {
           href: "/apps/sneakersCompany/#solution",
@@ -135,7 +135,7 @@ function FileProject(props : FileProjects) {
               height="18"
             />
           ),
-          nameLink: "SolutionIcon",
+          nameFile: "SolutionIcon",
         },
         {
           href: "/apps/sneakersCompany/#technologies",
@@ -145,7 +145,7 @@ function FileProject(props : FileProjects) {
               height="18"
             />
           ),
-          nameLink: "Technologies",
+          nameFile: "Technologies",
         },
       ],
   };
@@ -170,10 +170,10 @@ function FileProject(props : FileProjects) {
             ([project, listMenus], index) =>
                 project === props.nameProject &&
               listMenus.map((list, index) => (
-                <MenuLinkProject
+                <CreateFileMenu
                   href={list.href}
                   IconName={list.IconName}
-                  nameLink={list.nameLink}
+                  nameFile={list.nameFile}
                 />
               ))
           )}
