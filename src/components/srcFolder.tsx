@@ -11,101 +11,146 @@ import SolutionIcon from "./icons/SolutionIcon";
 import TechnologiesIcon from "./icons/TechnologiesIcon";
 import ReactJsIcon from "./icons/ReactJsIcon";
 import MenuLinkProject from "./menuLinkProject";
+import FileProject from "./fileProject";
+import { useStore } from "@/store";
 
+const listMenuLinkProjecs: Record<
+  string,
+  { href: string; IconName: ReactNode; nameLink: string }[]
+> = {
+  adminDashboard: [
+    {
+      href: "/apps/adminDashboard/#about",
+      IconName: (
+        <AboutIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "About",
+    },
+    {
+      href: "/apps/adminDashboard/#challenge",
+      IconName: (
+        <ChallengeIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "Challenge",
+    },
+    {
+      href: "/apps/adminDashboard/#solution",
+      IconName: (
+        <SolutionIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "SolutionIcon",
+    },
+    {
+      href: "/apps/adminDashboard/#technologies",
+      IconName: (
+        <TechnologiesIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "Technologies",
+    },
+  ],
+  sneakersCompany: [
+    {
+      href: "/apps/sneakersCompany/#about",
+      IconName: (
+        <AboutIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "About",
+    },
+    {
+      href: "/apps/sneakersCompany/#challenge",
+      IconName: (
+        <ChallengeIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "Challenge",
+    },
+    {
+      href: "/apps/sneakersCompany/#solution",
+      IconName: (
+        <SolutionIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "SolutionIcon",
+    },
+    {
+      href: "/apps/sneakersCompany/#technologies",
+      IconName: (
+        <TechnologiesIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "Technologies",
+    },
+  ],
+  rockPaperScissorsGame: [
+    {
+      href: "/apps/rockPaperScissorsGame/#about",
+      IconName: (
+        <AboutIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "About",
+    },
+    {
+      href: "/apps/rockPaperScissorsGame/#challenge",
+      IconName: (
+        <ChallengeIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "Challenge",
+    },
+    {
+      href: "/apps/rockPaperScissorsGame/#solution",
+      IconName: (
+        <SolutionIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "SolutionIcon",
+    },
+    {
+      href: "/apps/rockPaperScissorsGame/#technologies",
+      IconName: (
+        <TechnologiesIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameLink: "Technologies",
+    },
+  ],
+};
 function SrcFolder() {
   const [isSrc, setIsSrc] = useState(false);
   const [isFolderMyWork, setIsFolderMyWork] = useState(false);
   const [activeLinkproject, setActiveLinkproject] = useState("adminDashboard");
 
-  const listMenuLinkProjecs: Record<
-    string,
-    { href: string; IconName: ReactNode; nameLink: string }[]
-  > = {
-    adminDashboard: [
-      {
-        href: "/apps/adminDashboard/#about",
-        IconName: (
-          <AboutIcon
-            width="18"
-            height="18"
-          />
-        ),
-        nameLink: "About",
-      },
-      {
-        href: "/apps/adminDashboard/#challenge",
-        IconName: (
-          <ChallengeIcon
-            width="18"
-            height="18"
-          />
-        ),
-        nameLink: "Challenge",
-      },
-      {
-        href: "/apps/adminDashboard/#solution",
-        IconName: (
-          <SolutionIcon
-            width="18"
-            height="18"
-          />
-        ),
-        nameLink: "SolutionIcon",
-      },
-      {
-        href: "/apps/adminDashboard/#technologies",
-        IconName: (
-          <TechnologiesIcon
-            width="18"
-            height="18"
-          />
-        ),
-        nameLink: "Technologies",
-      },
-    ],
-    sneakersCompany: [
-      {
-        href: "/apps/sneakersCompany/#about",
-        IconName: (
-          <AboutIcon
-            width="18"
-            height="18"
-          />
-        ),
-        nameLink: "About",
-      },
-      {
-        href: "/apps/sneakersCompany/#challenge",
-        IconName: (
-          <ChallengeIcon
-            width="18"
-            height="18"
-          />
-        ),
-        nameLink: "Challenge",
-      },
-      {
-        href: "/apps/sneakersCompany/#solution",
-        IconName: (
-          <SolutionIcon
-            width="18"
-            height="18"
-          />
-        ),
-        nameLink: "SolutionIcon",
-      },
-      {
-        href: "/apps/sneakersCompany/#technologies",
-        IconName: (
-          <TechnologiesIcon
-            width="18"
-            height="18"
-          />
-        ),
-        nameLink: "Technologies",
-      },
-    ],
-  };
+  const { projectName, changeProjectName } = useStore();
 
   return (
     <div className="src ">
@@ -114,7 +159,6 @@ function SrcFolder() {
           onClick={() => {
             setIsSrc(!isSrc);
             setIsFolderMyWork(true);
-            // setIsAdminDashboardProject(true);
           }}
           className="flex gap-1 items-center py-[2px] w-full hover:bg-borderDarck"
         >
@@ -144,7 +188,7 @@ function SrcFolder() {
                 setIsFolderMyWork(!isFolderMyWork);
                 setActiveLinkproject("adminDashboard");
               }}
-              className="flex gap-1 items-center py-[2px]"
+              className="flex gap-1 items-center py-[2px] w-full hover:bg-borderDarck"
             >
               {isFolderMyWork ? (
                 <DirectionDown01Icon
@@ -166,77 +210,76 @@ function SrcFolder() {
             </button>
             {isFolderMyWork && (
               <>
-                <div className="projectAdminDashboard">
-                  <Link
-                    onClick={() => {
-                      setActiveLinkproject("adminDashboard");
-                    }}
-                    href="/apps/adminDashboard"
-                  >
-                    <div className="adminDashboard hover:bg-borderDarck flex items-center gap-2 pl-10 py-[2px]">
-                      <ReactJsIcon
-                        width="18"
-                        height="18"
-                      />
-                      <p className="text-base">Admin Dashboard</p>
-                    </div>
-                  </Link>
-                  {activeLinkproject === "adminDashboard" && (
-                    <>
-                      {Object.entries(listMenuLinkProjecs).map(
-                        ([nameProject, listMenus], index) =>
-                          nameProject === "adminDashboard" &&
-                          listMenus.map((list, index) => (
+                {Object.entries(listMenuLinkProjecs).map(
+                  ([project, listProject], index) => (
+                    <div
+                      key={index}
+                      className={`${project}`}
+                    >
+                      <Link
+                        onClick={() => {
+                          setActiveLinkproject(project);
+                        }}
+                        href={`/apps/${project}`}
+                      >
+                        <div
+                          key={index}
+                          className="hover:bg-borderDarck flex items-center gap-2 pl-10 py-[2px]"
+                        >
+                          <ReactJsIcon
+                            width="18"
+                            height="18"
+                          />
+                          <p className="text-base">
+                            {project
+                              .replace(/([A-Z])/g, " $1")
+                              .trim()
+                              .charAt(0)
+                              .toUpperCase() +
+                              project
+                                .replace(/([A-Z])/g, " $1")
+                                .trim()
+                                .slice(1)}
+                          </p>
+                        </div>
+                      </Link>
+                      {activeLinkproject === project && (
+                        <>
+                          {listProject.map((item, index) => (
                             <MenuLinkProject
-                              href={list.href}
-                              IconName={list.IconName}
-                              nameLink={list.nameLink}
+                              key={index}
+                              href={item.href}
+                              IconName={item.IconName}
+                              nameLink={item.nameLink}
                             />
-                          ))
+                          ))}
+                          {/* {Object.entries(listMenuLinkProjecs).map(
+                            ([nameProject, listMenus], index) =>
+                              nameProject === "adminDashboard" &&
+                              listMenus.map((list, index) => (
+                                <MenuLinkProject
+                                  href={list.href}
+                                  IconName={list.IconName}
+                                  nameLink={list.nameLink}
+                                />
+                              ))
+                          )} */}
+                        </>
                       )}
-                      {/* <Link href="/apps/adminDashboard/#about">
-                          <div className="aboutProject hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
-                            <AboutIcon
-                              width="18"
-                              height="18"
-                            />
-                            <p className="text-base">About</p>
-                          </div>
-                        </Link> */}
-                    </>
-                  )}
-                </div>
-                <div className="projectSneakersCompany">
-                  <Link
-                    onClick={() => {
-                      setActiveLinkproject("sneakersCompany");
-                    }}
-                    href="/apps/sneakersCompany"
-                  >
-                    <div className="sneakersCompany hover:bg-borderDarck flex items-center gap-2 pl-10 py-[2px]">
-                      <ReactJsIcon
-                        width="18"
-                        height="18"
-                      />
-                      <p className="text-base">Sneakers Company</p>
                     </div>
-                  </Link>
-                  {activeLinkproject === "sneakersCompany" && (
-                    <>
-                      {Object.entries(listMenuLinkProjecs).map(
-                        ([nameProject, listMenus], index) =>
-                          nameProject === "sneakersCompany" &&
-                          listMenus.map((list, index) => (
-                            <MenuLinkProject
-                              href={list.href}
-                              IconName={list.IconName}
-                              nameLink={list.nameLink}
-                            />
-                          ))
-                      )}
-                    </>
-                  )}
-                </div>
+                  )
+                )}
+
+                {/* <FileProject
+                  nameProject="Rock Paper Scissors Game"
+                  href="/apps/rockPaperScissorsGame"
+                  IconProject={
+                    <ReactJsIcon
+                      width="18"
+                      height="18"
+                    />
+                  }
+                /> */}
               </>
             )}
           </div>
