@@ -20,8 +20,8 @@ function Sidebar() {
   const {sideBarShow} = useStore();
 
   return (
-    <div className={`sidebar grid grid-cols-8 ${sideBarShow ? "col-span-1" : "col-span-3 "}`}>
-      <div className={`subSidebar flex flex-col  pb-10 justify-between`}>
+    <div className={`sidebar grid  ${sideBarShow ? "" : "col-span-3 grid-cols-8"}`}>
+      <div className={`subSidebar col-span-1 flex flex-col  pb-10 justify-between`}>
         <div className="partView flex flex-col">
           <button
             onClick={() => {
