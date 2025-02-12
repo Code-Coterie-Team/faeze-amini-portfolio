@@ -47,8 +47,8 @@ function DetailSubSidebar() {
     },
   ];
   return (
-    <div className="detailSubSidebar overflow-hidden">
-      <div className="flex justify-between py-3 pl-5 pr-3 overflow-hidden">
+    <div className="detailSubSidebar ">
+      <div className="flex justify-between py-3 pl-5 pr-3">
         <span className="text-xs">EXPLORER</span>
         <button>
           <MenuCircleVerticalIcon
@@ -57,7 +57,7 @@ function DetailSubSidebar() {
           />
         </button>
       </div>
-      <div className="menuSidebar overflow-hidden">
+      <div className="menuSidebar ">
         <div
           className="item border-b-2 border-b-borderDarck py-1"
           onMouseEnter={() => setHoverOpenEditors(true)}
@@ -104,7 +104,7 @@ function DetailSubSidebar() {
         </div>
 
         <div
-          className="item border-b-2 border-b-borderDarck py-1 transition-all h-full overflow-y-auto"
+          className="item border-b-2 border-b-borderDarck py-1 transition-all "
           onMouseEnter={() => setHoverPortfolio(true)}
           onMouseLeave={() => {
             setHoverPortfolio(false);

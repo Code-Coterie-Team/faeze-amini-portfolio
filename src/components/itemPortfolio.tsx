@@ -86,7 +86,7 @@ function ItemPortfolio() {
     },
   ];
   return (
-    <div className="itemPortfolio overflow-y-auto h-full">
+    <div className="itemPortfolio ">
       <PakageFolder
         IconName={
           <FileNextIcon
