@@ -14,12 +14,13 @@ interface ListTabs {
   id: string;
   tabTitle: string;
   iconTab: ReactNode;
-  href:string;
+  href: string;
 }
 
 interface TabStore {
   tab: ListTabs[];
-  addTab: (tabTitle: string, iconTab: ReactNode, href:string) => void;
+  addTab: (tabTitle: string, iconTab: ReactNode, href: string) => void;
+  removeTab: (id: string) => void;
 }
 export const useStore = create<StoreState>((set) => ({
   sideBarShow: false,
@@ -45,17 +46,26 @@ export const useStore = create<StoreState>((set) => ({
 // ];
 export const addTabStore = create<TabStore>((set) => ({
   tab: [],
-  addTab: (tabTitle, iconTab,href) =>
+  addTab: (tabTitle, iconTab, href) =>
     set((state) => {
       const exists = state.tab.some((tab) => tab.tabTitle === tabTitle);
       if (exists) {
         // console.warn(`Tab with title "${tabTitle}" already exists!`);
-        return state; // بازگشت به حالت قبلی بدون تغییر
+        return state;
       }
 
       const newtabId = uuidv4();
       return {
-        tab: [...state.tab, { id: newtabId, tabTitle, iconTab,href }],
+        tab: [...state.tab, { id: newtabId, tabTitle, iconTab, href }],
+      };
+    }),
+  removeTab: (id) =>
+    set((state) => {
+      if (state.tab.length === 1) {
+        return state;
+      }
+      return {
+        tab: state.tab.filter((tab) => tab.id !== id),
       };
     }),
 }));
