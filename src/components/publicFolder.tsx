@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MailIcon from "./icons/MailIcon";
 import IdeaIcon from "./icons/IdeaIcon";
 import SkillsIcon from "./icons/SkillsIcon";
@@ -11,6 +11,7 @@ import DirectionDown01Icon from "./icons/DirectionDown01Icon";
 import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import FilePublicIcon from "./icons/FilePublicIcon";
 import CreateFileMenu from "./createFileMenu";
+import { addTabStore } from "@/store";
 
 const listPublicFile = [
   {
@@ -67,8 +68,9 @@ const listPublicFile = [
 ];
 
 function PublicFolder() {
-  const [isPublic, setIsPublic] = useState(false);
 
+  const [isPublic, setIsPublic] = useState(false);
+  const { tab, addTab } = addTabStore();
   return (
     <div className="public">
       <button
@@ -99,7 +101,18 @@ function PublicFolder() {
       </button>
       {isPublic ? (
         <div className="menuPublic">
-          <Link href="/">
+          <Link
+            onClick={() => {
+              addTab(
+                "About Me",
+                <StarIcon
+                  width="18"
+                  height="18"
+                />,"/"
+              );
+            }}
+            href="/"
+          >
             <div className="aboutmePart  flex items-center gap-2 pl-10 py-[2px] bg-gray-500/20  hover:bg-borderDarck">
               <StarIcon
                 width="18"
