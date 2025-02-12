@@ -10,7 +10,7 @@ import ChallengeIcon from "./icons/ChallengeIcon";
 import SolutionIcon from "./icons/SolutionIcon";
 import TechnologiesIcon from "./icons/TechnologiesIcon";
 import ReactJsIcon from "./icons/ReactJsIcon";
-import { useStore } from "@/store";
+import { addTabStore, useStore } from "@/store";
 import CreateFileMenu from "./createFileMenu";
 
 const listMenuLinkProjecs: Record<
@@ -150,37 +150,37 @@ function SrcFolder() {
   const [activeLinkproject, setActiveLinkproject] = useState("adminDashboard");
 
   const { projectName, changeProjectName } = useStore();
-
+  const { tab, addTab } = addTabStore();
+  let titleProject = "";
   return (
     <div className="src ">
-    
-        <button
-          onClick={() => {
-            setIsSrc(!isSrc);
-            setIsFolderMyWork(true);
-          }}
-          className="flex gap-1 items-center py-[2px] w-full hover:bg-borderDarck"
-        >
-          {isSrc ? (
-            <DirectionDown01Icon
+      <button
+        onClick={() => {
+          setIsSrc(!isSrc);
+          setIsFolderMyWork(true);
+        }}
+        className="flex gap-1 items-center py-[2px] w-full hover:bg-borderDarck"
+      >
+        {isSrc ? (
+          <DirectionDown01Icon
             className="ml-4"
-              width="18"
-              height="18"
-            />
-          ) : (
-            <DirectionRight01Icon
-            className="ml-4"
-              width="18"
-              height="18"
-            />
-          )}
-          <FileSrcIcon
             width="18"
             height="18"
           />
-          <p className="text-base pl-1">src</p>
-        </button>
-    
+        ) : (
+          <DirectionRight01Icon
+            className="ml-4"
+            width="18"
+            height="18"
+          />
+        )}
+        <FileSrcIcon
+          width="18"
+          height="18"
+        />
+        <p className="text-base pl-1">src</p>
+      </button>
+
       {isSrc ? (
         <>
           <div className="myWorkFolder">
@@ -193,13 +193,13 @@ function SrcFolder() {
             >
               {isFolderMyWork ? (
                 <DirectionDown01Icon
-                className="ml-8"
+                  className="ml-8"
                   width="18"
                   height="18"
                 />
               ) : (
                 <DirectionRight01Icon
-                className="ml-8"
+                  className="ml-8"
                   width="18"
                   height="18"
                 />
@@ -219,9 +219,28 @@ function SrcFolder() {
                       key={index}
                       className={`${project}`}
                     >
+                      {/* {listProjectzzzz} */}
                       <Link
                         onClick={() => {
+                          titleProject =
+                            project
+                              .replace(/([A-Z])/g, " $1")
+                              .trim()
+                              .charAt(0)
+                              .toUpperCase() +
+                            project
+                              .replace(/([A-Z])/g, " $1")
+                              .trim()
+                              .slice(1);
                           setActiveLinkproject(project);
+                          addTab(
+                            titleProject,
+                            <ReactJsIcon
+                              width="18"
+                              height="18"
+                            />,
+                            "/apps/"+project
+                          );
                         }}
                         href={`/apps/${project}`}
                       >
@@ -256,17 +275,6 @@ function SrcFolder() {
                               nameFile={item.nameFile}
                             />
                           ))}
-                          {/* {Object.entries(listMenuLinkProjecs).map(
-                            ([nameProject, listMenus], index) =>
-                              nameProject === "adminDashboard" &&
-                              listMenus.map((list, index) => (
-                                <CreateFileMenu
-                                  href={list.href}
-                                  IconName={list.IconName}
-                                  nameFile={list.nameFile}
-                                />
-                              ))
-                          )} */}
                         </>
                       )}
                     </div>
