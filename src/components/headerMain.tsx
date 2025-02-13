@@ -6,10 +6,13 @@ import OpenChangeIcon from "./icons/OpenChangeIcon";
 import AddNewTab from "./addNewTab";
 import StarIcon from "./icons/StarIcon";
 import { addTabStore } from "@/store";
+import { usePathname } from "next/navigation";
 
 function HeaderMain() {
-  const { tab, addTab } = addTabStore();
-  console.log(tab, "tabList");
+  const path = usePathname();
+
+  const { tab, addTab, changeActiveTab, activeTab } = addTabStore();
+
   useEffect(() => {
     addTab(
       "About Me",
@@ -19,7 +22,9 @@ function HeaderMain() {
       />,
       "/"
     );
-  }, []);
+    changeActiveTab(path);
+  }, [path]);
+
   return (
     <div className="headerMain flex items-center justify-between w-full border-borderDarck border-b-2 bg-darckBg">
       <div className="flex overflow-hidden ">

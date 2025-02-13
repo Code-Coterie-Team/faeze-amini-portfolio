@@ -21,6 +21,9 @@ interface TabStore {
   tab: ListTabs[];
   addTab: (tabTitle: string, iconTab: ReactNode, href: string) => void;
   removeTab: (id: string) => void;
+
+  activeTab:string;
+  changeActiveTab: (newLink: string) => void;
 }
 export const useStore = create<StoreState>((set) => ({
   sideBarShow: false,
@@ -68,4 +71,7 @@ export const addTabStore = create<TabStore>((set) => ({
         tab: state.tab.filter((tab) => tab.id !== id),
       };
     }),
+
+    activeTab: "",
+    changeActiveTab: (newLink) => set((state) => ({ activeTab: newLink })),
 }));

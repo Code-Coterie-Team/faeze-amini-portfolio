@@ -12,12 +12,14 @@ interface ItemTabs {
 }
 
 function AddNewTab({ id, tabTitle, iconTab, href }: ItemTabs) {
-  const { removeTab } = addTabStore();
+  const { removeTab, activeTab } = addTabStore();
   return (
     <Link
       id={id}
       href={href}
-      className="title flex items-center gap-2 text-textActive border-r-borderDarck border-b-blue-600 border-r-2 border-b-2 p-2"
+      className={`title flex items-center gap-2 border-r border-b border-r-borderDarck p-2 ${
+        activeTab === href ? " text-textActive border-b-blue-900 border-b-2" : "border-b-borderDarck"
+      }`}
     >
       {iconTab}
 
