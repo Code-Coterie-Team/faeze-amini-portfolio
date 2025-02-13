@@ -147,7 +147,7 @@ const listMenuLinkProjecs: Record<
 function SrcFolder() {
   const [isSrc, setIsSrc] = useState(false);
   const [isFolderMyWork, setIsFolderMyWork] = useState(false);
-  const [activeLinkproject, setActiveLinkproject] = useState("adminDashboard");
+  const [activeLinkproject, setActiveLinkproject] = useState("");
 
   const { projectName, changeProjectName } = useStore();
   const { tab, addTab } = addTabStore();
@@ -187,7 +187,7 @@ function SrcFolder() {
             <button
               onClick={() => {
                 setIsFolderMyWork(!isFolderMyWork);
-                setActiveLinkproject("adminDashboard");
+                // setActiveLinkproject("adminDashboard");
               }}
               className="flex gap-1 items-center py-[2px] w-full hover:bg-borderDarck"
             >
@@ -219,7 +219,6 @@ function SrcFolder() {
                       key={index}
                       className={`${project}`}
                     >
-                      {/* {listProjectzzzz} */}
                       <Link
                         onClick={() => {
                           titleProject =
