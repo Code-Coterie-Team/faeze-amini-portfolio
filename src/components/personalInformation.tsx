@@ -15,7 +15,7 @@ function PersonalInformation() {
       >
         <div className="flex items-center text-5xl">
           <h1 className=" text-nowrap font-medium text-gray-50">Faeze Amini</h1>
-          <span className="animation animation-rotateAnimation">&#128075;</span>
+          <span className="animate-rotateAnimation">&#128075;</span>
         </div>
         <div className="flex pt-3 pb-1 gap-1 items-center text-base">
           <p className="text-gray-50">Looking for a job</p>
