@@ -6,15 +6,15 @@ import Footer from "../components/footer";
 import Sidebar from "../components/sidebar";
 import HeaderMain from "@/components/headerMain";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "layout Home",
@@ -36,7 +36,7 @@ export default function RootLayout({
           <div className="grid grid-cols-12 overflow-hidden">
             <Sidebar />
             <div className="col-span-9 h-full overflow-hidden pb-5">
-              <div className="h-full">
+              <div className="h-full pt-[3rem]">
                 <HeaderMain />
                 {children}
               </div>
