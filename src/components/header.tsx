@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import VsCodeIcon from "./icons/VsCodeIcon";
 import RemoveIcon from "./icons/RemoveIcon";
@@ -11,7 +11,17 @@ import MenuLineHorizontalIcon from "./icons/MenuLineHorizontalIcon";
 import { useStore } from "@/store";
 
 function Header() {
-  const {toggleSideBarShow,sideBarShow} = useStore();
+  const { toggleSideBarShow, sideBarShow } = useStore();
+  const listMenu = [
+    "File",
+    "Edit",
+    "Selection",
+    "View",
+    "Go",
+    "Run",
+    "Terminal",
+    "Help",
+  ];
 
   return (
     <div className="header flex flex-row justify-between items-center border-b-borderDarck border-b-2">
@@ -30,30 +40,14 @@ function Header() {
         </div>
 
         <div className="md:block hidden pl-2 p-1">
-          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
-            File
-          </button>
-          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
-            Edit
-          </button>
-          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
-            Selection
-          </button>
-          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
-            View
-          </button>
-          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
-            Go
-          </button>
-          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
-            Run
-          </button>
-          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
-            Terminal
-          </button>
-          <button className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base">
-            Help
-          </button>
+          {listMenu.map((item, index) => (
+            <button
+              key={index}
+              className="hover:bg-gray-500 px-2 py-1 rounded-lg cursor-default hover:bg-opacity-30 text-base"
+            >
+              {item}
+            </button>
+          ))}
         </div>
       </div>
 
