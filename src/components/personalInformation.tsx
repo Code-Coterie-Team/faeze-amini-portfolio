@@ -51,16 +51,6 @@ function PersonalInformation() {
               height="24"
             />
           </Link>
-          {/* <a
-            className="text-gray-50 hover:opacity-80"
-            target="_blank"
-            href=""
-          >
-            <GithubIcon
-              width="24"
-              height="24"
-            />
-          </a> */}
           <div className="bg-gray-50 text-gray-950 px-3 py-1 rounded-full hover:opacity-80 flex gap-2">
             <Link href={"/#contactMe"}>Contact Me</Link>
             <ArrowRightIcon
@@ -72,7 +62,7 @@ function PersonalInformation() {
       </div>
 
       <div className="aboutMe">
-       <SectionSeparator/>
+        <SectionSeparator />
         <div className="flex pt-12 items-center">
           <div className="text-gray-50">
             <UserCircleIcon
@@ -131,7 +121,7 @@ function PersonalInformation() {
               <a
                 className="text-gray-50 hover:opacity-80"
                 target="_blank"
-                href=""
+                href={"https://github.com/faeze-amn"}
               >
                 <GithubIcon
                   width="24"
@@ -162,7 +152,7 @@ function PersonalInformation() {
                 B.S. in Computer Science and Technology
               </h3>
               <p className="text-base text-textGreen">
-              Islamic Azad University Najafabad
+                Islamic Azad University Najafabad
               </p>
             </div>
           </div>
