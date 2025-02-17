@@ -1,28 +1,31 @@
-import React, { ReactNode } from "react";
-import StarIcon from "./icons/StarIcon";
+import React, { ReactElement, ReactNode } from "react";
 import RemoveIcon from "./icons/RemoveIcon";
 import Link from "next/link";
 import { addTabStore } from "@/store";
+import StarIcon from "./icons/StarIcon";
+import { usePathname } from "next/navigation";
 
 interface ItemTabs {
   id: string;
   tabTitle: string;
-  iconTab: ReactNode;
   href: string;
 }
 
-function AddNewTab({ id, tabTitle, iconTab, href }: ItemTabs) {
-  const { removeTab, activeTab } = addTabStore();
+function AddNewTab({ id, tabTitle, href }: ItemTabs) {
+  // const path = usePathname();
+  const { removeTab, activeTab, changeActiveTab } = addTabStore();
   return (
     <Link
       id={id}
       href={href}
       className={`title flex items-center gap-2 border-r border-b border-r-borderDarck p-2 ${
-        activeTab === href ? " text-textActive border-b-blue-900 border-b-2" : "border-b-borderDarck"
+        href === activeTab
+          ? " text-textActive border-b-blue-900 border-b-2"
+          : "border-b-borderDarck"
       }`}
+      onClick={() => changeActiveTab(href)}
     >
-      {iconTab}
-
+      <StarIcon />
       <p className="text-base">{tabTitle}</p>
       <button
         onClick={(e) => {

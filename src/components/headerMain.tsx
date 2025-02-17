@@ -6,23 +6,24 @@ import OpenChangeIcon from "./icons/OpenChangeIcon";
 import AddNewTab from "./addNewTab";
 import StarIcon from "./icons/StarIcon";
 import { addTabStore } from "@/store";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 function HeaderMain() {
-  const path = usePathname();
+  const router = useRouter();
+  const { tab, activeTab,changeActiveTab } = addTabStore();
+const path = window.location.pathname;
+  // console.log(activeTab, "activeTab");
 
-  const { tab, addTab, changeActiveTab, activeTab } = addTabStore();
+  //  console.log(tab, "array tab");
 
   useEffect(() => {
-    addTab(
-      "About Me",
-      <StarIcon
-        width="18"
-        height="18"
-      />,
-      "/"
-    );
-    changeActiveTab(path);
+    console.log("mount header main");
+    // console.log(router, "router");
+    console.log(activeTab, "activeTab");
+    console.log(window.location.pathname, "get url ");
+    // localStorage.clear();
+    router.push(path);
+    changeActiveTab(path)
   }, [path]);
 
   return (
@@ -32,26 +33,10 @@ function HeaderMain() {
           <AddNewTab
             key={index}
             tabTitle={itemTab.tabTitle}
-            iconTab={itemTab.iconTab}
             id={itemTab.id}
             href={itemTab.href}
           />
         ))}
-
-        {/* <div className="title flex items-center gap-2 text-textActive border-r-borderDarck border-b-blue-600 border-r-2 border-b-2 p-2">
-          <StarIcon
-            width="18"
-            height="18"
-          />
-
-          <p className="text-base">About Me</p>
-          <button className="p-1 hover:bg-gray-500/30 rounded-md">
-            <RemoveIcon
-              width="16"
-              height="16"
-            />
-          </button>
-        </div> */}
       </div>
 
       <div className="flex px-4">
