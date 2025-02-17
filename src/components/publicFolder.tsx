@@ -16,6 +16,7 @@ import { addTabStore } from "@/store";
 const listPublicFile = [
   {
     href: "/#aboutme",
+    hrefPage: "/",
     IconName: (
       <UserCheckIcon
         width="18"
@@ -26,6 +27,7 @@ const listPublicFile = [
   },
   {
     href: "/#workExperience",
+    hrefPage: "/",
     IconName: (
       <LaptopIcon
         width="18"
@@ -36,6 +38,7 @@ const listPublicFile = [
   },
   {
     href: "/#skills",
+    hrefPage: "/",
     IconName: (
       <SkillsIcon
         width="18"
@@ -46,6 +49,7 @@ const listPublicFile = [
   },
   {
     href: "/#myWork",
+    hrefPage: "/",
     IconName: (
       <IdeaIcon
         width="18"
@@ -56,6 +60,7 @@ const listPublicFile = [
   },
   {
     href: "/#contactMe",
+    hrefPage: "/",
     IconName: (
       <MailIcon
         className="text-blue-600"
@@ -68,9 +73,9 @@ const listPublicFile = [
 ];
 
 function PublicFolder() {
-
   const [isPublic, setIsPublic] = useState(false);
-  const { tab, addTab } = addTabStore();
+  const { addTab,changeActiveTab } = addTabStore();
+
   return (
     <div className="public">
       <button
@@ -105,13 +110,12 @@ function PublicFolder() {
             onClick={() => {
               addTab(
                 "About Me",
-                <StarIcon
-                  width="18"
-                  height="18"
-                />,"/"
+                "/"
               );
+              changeActiveTab("/")
             }}
             href="/"
+          
           >
             <div className="aboutmePart  flex items-center gap-2 pl-10 py-[2px] bg-gray-500/20  hover:bg-borderDarck">
               <StarIcon
@@ -126,6 +130,7 @@ function PublicFolder() {
               key={index}
               nameFile={item.nameFile}
               href={item.href}
+              hrefPage={item.hrefPage}
               IconName={item.IconName}
             />
           ))}
