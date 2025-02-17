@@ -1,4 +1,3 @@
-import HeaderMain from "./headerMain";
 import WorkExperience from "./workExperience";
 import Skills from "./skills";
 import MyWork from "./myWork";

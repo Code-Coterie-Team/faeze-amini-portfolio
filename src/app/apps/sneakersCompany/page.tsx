@@ -1,11 +1,7 @@
 import AboutProject from "@/components/aboutProject";
 import ChallengeProject from "@/components/challengeProject";
-import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
-import SectionSeparator from "@/components/sectionSeparator";
 import SolutionProject from "@/components/solutionProject";
 import TechnologiesProject from "@/components/technologiesProject";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 function page() {
