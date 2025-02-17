@@ -6,6 +6,8 @@ import Image from "next/image";
 import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import Link from "next/link";
 import SectionSeparator from "./sectionSeparator";
+import MaximizeIcon from "./icons/MaximizeIcon";
+import CodeIcon from "./icons/CodeIcon";
 
 interface workProject {
   name: string;
@@ -23,15 +25,16 @@ const workProjects: workProject[] = [
     image: "/Image/react-admin-project01.png",
     linkGit: "",
     linkDemo: "",
-    href : "/apps/adminDashboard",
+    href: "/apps/adminDashboard",
   },
   {
     name: "Sneakers Company",
-    description: "This platform is designed to make your shopping experience easier and more enjoyable.",
+    description:
+      "This platform is designed to make your shopping experience easier and more enjoyable.",
     image: "/Image/sneakers-company-project01.png",
     linkGit: "",
     linkDemo: "",
-    href : "/apps/sneakersCompany",
+    href: "/apps/sneakersCompany",
   },
   {
     name: "Challenges Rock Paper Scissors Game",
@@ -39,7 +42,7 @@ const workProjects: workProject[] = [
     image: "/Image/challenges-rock-paper-scissors-game01.png",
     linkGit: "",
     linkDemo: "",
-    href : "/",
+    href: "/",
   },
   {
     name: "Drink Water",
@@ -47,7 +50,7 @@ const workProjects: workProject[] = [
     image: "/Image/Drink-Water02.png",
     linkGit: "",
     linkDemo: "",
-    href : "/",
+    href: "/",
   },
   {
     name: "Routing Navigation",
@@ -55,7 +58,7 @@ const workProjects: workProject[] = [
     image: "/Image/Routing-Navigation01.png",
     linkGit: "",
     linkDemo: "",
-    href : "/",
+    href: "/",
   },
   {
     name: "Form Input Wave",
@@ -63,7 +66,7 @@ const workProjects: workProject[] = [
     image: "/Image/Form-Input-Wave01.png",
     linkGit: "",
     linkDemo: "",
-    href : "/",
+    href: "/",
   },
   {
     name: "Dad Jokes App",
@@ -71,7 +74,7 @@ const workProjects: workProject[] = [
     image: "/Image/dad-jokes-app.png",
     linkGit: "",
     linkDemo: "",
-    href : "/",
+    href: "/",
   },
   {
     name: "Auto Text Effect",
@@ -79,14 +82,11 @@ const workProjects: workProject[] = [
     image: "/Image/Auto-Text-Effect.png",
     linkGit: "",
     linkDemo: "",
-    href : "/",
+    href: "/",
   },
-
-
 ];
 
 function MyWork() {
-
   const [isHoverShowProject, setIsHoverShowProject] = useState(false);
 
   return (
@@ -94,7 +94,7 @@ function MyWork() {
       id="myWork"
       className="myWork"
     >
-        <SectionSeparator/>
+      <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
           <PackageBoxIcon
@@ -113,13 +113,17 @@ function MyWork() {
       </div>
       <div className="workChildren flex flex-col gap-6">
         {workProjects.map((project, index) => (
-          <div key={index} className="item flex items-center border border-tGrayAll/30 rounded-2xl shadow">
+          <div
+            key={index}
+            className="item flex items-center border border-tGrayAll/30 rounded-2xl shadow"
+          >
             <div className="w-1/2 p-12 pb-5 flex flex-col gap-10">
               <h3 className="font-semibold">
-               <p className="text-4xl text-textYelowLight whitespace-nowrap"> {project.name}</p>
-                <p className="text-2xl text-gray-50">
-                  {project.description}
+                <p className="text-4xl text-textYelowLight whitespace-nowrap">
+                  {" "}
+                  {project.name}
                 </p>
+                <p className="text-2xl text-gray-50">{project.description}</p>
               </h3>
 
               <Link
@@ -128,7 +132,10 @@ function MyWork() {
                 onMouseEnter={() => setIsHoverShowProject(true)}
                 onMouseLeave={() => setIsHoverShowProject(false)}
               >
-                <span className="text-2xl text-gray-50 font-semibold border-b-2 border-b-darckBg hover:border-b-2 hover:border-b-textYelowLight">
+                <span
+                  className="text-2xl text-gray-50 font-semibold border-b-2 border-b-darckBg 
+                  hover:border-b-2 hover:border-b-textYelowLight"
+                >
                   Learn More
                 </span>
 
@@ -147,7 +154,32 @@ function MyWork() {
                 )}
               </Link>
             </div>
-            <div className="h-[300px] w-1/2 flex justify-end flex-col rounded-2xl ">
+            <div className="h-[300px] w-1/2 flex justify-end flex-col rounded-2xl relative items-center">
+              <div className="demoProject absolute flex gap-4 top-1/2">
+                <Link
+                  className="bg-gray-500/40 p-2 rounded-full text-gray-50 hover:scale-125"
+                  href={"https://github.com/faeze-amn?tab=repositories"}
+                  target="_blank"
+                >
+                  <MaximizeIcon
+                    width="24"
+                    height="24"
+                  />
+                </Link>
+                <Link
+                  className="bg-gray-500/40 p-2 rounded-full text-gray-50 hover:scale-125"
+                  href={
+                    "https://github.com/Code-Coterie-Team/react-admin-project"
+                  }
+                  target="_blank"
+                >
+                  <CodeIcon
+                    width="24"
+                    height="24"
+                  />
+                </Link>
+              </div>
+
               <Image
                 className="h-[95%] w-full rounded-2xl shadow-styleShadowMyWorkBox"
                 src={project.image}
@@ -158,7 +190,6 @@ function MyWork() {
             </div>
           </div>
         ))}
-
       </div>
     </div>
   );
