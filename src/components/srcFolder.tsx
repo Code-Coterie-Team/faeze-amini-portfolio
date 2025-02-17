@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import FileSrcIcon from "./icons/FileSrcIcon";
 import DirectionDown01Icon from "./icons/DirectionDown01Icon";
@@ -15,11 +15,12 @@ import CreateFileMenu from "./createFileMenu";
 
 const listMenuLinkProjecs: Record<
   string,
-  { href: string; IconName: ReactNode; nameFile: string }[]
+  { href: string; hrefPage: string; IconName: ReactNode; nameFile: string }[]
 > = {
   adminDashboard: [
     {
       href: "/apps/adminDashboard/#about",
+      hrefPage: "/apps/adminDashboard",
       IconName: (
         <AboutIcon
           width="18"
@@ -30,6 +31,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/adminDashboard/#challenge",
+      hrefPage: "/apps/adminDashboard",
       IconName: (
         <ChallengeIcon
           width="18"
@@ -40,6 +42,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/adminDashboard/#solution",
+      hrefPage: "/apps/adminDashboard",
       IconName: (
         <SolutionIcon
           width="18"
@@ -50,6 +53,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/adminDashboard/#technologies",
+      hrefPage: "/apps/adminDashboard",
       IconName: (
         <TechnologiesIcon
           width="18"
@@ -62,6 +66,7 @@ const listMenuLinkProjecs: Record<
   sneakersCompany: [
     {
       href: "/apps/sneakersCompany/#about",
+      hrefPage: "/apps/sneakersCompany",
       IconName: (
         <AboutIcon
           width="18"
@@ -72,6 +77,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/sneakersCompany/#challenge",
+      hrefPage: "/apps/sneakersCompany",
       IconName: (
         <ChallengeIcon
           width="18"
@@ -82,6 +88,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/sneakersCompany/#solution",
+      hrefPage: "/apps/sneakersCompany",
       IconName: (
         <SolutionIcon
           width="18"
@@ -92,6 +99,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/sneakersCompany/#technologies",
+      hrefPage: "/apps/sneakersCompany",
       IconName: (
         <TechnologiesIcon
           width="18"
@@ -104,6 +112,7 @@ const listMenuLinkProjecs: Record<
   rockPaperScissorsGame: [
     {
       href: "/apps/rockPaperScissorsGame/#about",
+      hrefPage: "/apps/rockPaperScissorsGame",
       IconName: (
         <AboutIcon
           width="18"
@@ -114,6 +123,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/rockPaperScissorsGame/#challenge",
+      hrefPage: "/apps/rockPaperScissorsGame",
       IconName: (
         <ChallengeIcon
           width="18"
@@ -124,6 +134,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/rockPaperScissorsGame/#solution",
+      hrefPage: "/apps/rockPaperScissorsGame",
       IconName: (
         <SolutionIcon
           width="18"
@@ -134,6 +145,7 @@ const listMenuLinkProjecs: Record<
     },
     {
       href: "/apps/rockPaperScissorsGame/#technologies",
+      hrefPage: "/apps/rockPaperScissorsGame",
       IconName: (
         <TechnologiesIcon
           width="18"
@@ -150,8 +162,12 @@ function SrcFolder() {
   const [activeLinkproject, setActiveLinkproject] = useState("");
 
   const { projectName, changeProjectName } = useStore();
-  const { tab, addTab } = addTabStore();
+  const { tab, addTab, changeActiveTab, activeTab } = addTabStore();
   let titleProject = "";
+  useEffect(() => {
+    console.log(activeLinkproject, "name proje is baz");
+  }, [activeLinkproject]);
+
   return (
     <div className="src ">
       <button
@@ -232,14 +248,8 @@ function SrcFolder() {
                               .trim()
                               .slice(1);
                           setActiveLinkproject(project);
-                          addTab(
-                            titleProject,
-                            <ReactJsIcon
-                              width="18"
-                              height="18"
-                            />,
-                            "/apps/"+project
-                          );
+                          addTab(titleProject, "/apps/" + project);
+                          changeActiveTab(`/apps/${project}`);
                         }}
                         href={`/apps/${project}`}
                       >
@@ -270,6 +280,7 @@ function SrcFolder() {
                             <CreateFileMenu
                               key={index}
                               href={item.href}
+                              hrefPage={item.hrefPage}
                               IconName={item.IconName}
                               nameFile={item.nameFile}
                             />
