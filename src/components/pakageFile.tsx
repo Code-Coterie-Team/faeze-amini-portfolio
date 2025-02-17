@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 
 interface PakageFiles {
-
   IconName: ReactNode;
   nameFile: string;
 }
