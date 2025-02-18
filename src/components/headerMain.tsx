@@ -6,24 +6,17 @@ import OpenChangeIcon from "./icons/OpenChangeIcon";
 import AddNewTab from "./addNewTab";
 import StarIcon from "./icons/StarIcon";
 import { addTabStore } from "@/store";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 function HeaderMain() {
-  const router = useRouter();
-  const { tab, activeTab,changeActiveTab } = addTabStore();
-const path = window.location.pathname;
-  // console.log(activeTab, "activeTab");
-
-  //  console.log(tab, "array tab");
+  // const router = useRouter();
+  const { tab, changeActiveTab, activeTab } = addTabStore();
+  const path = usePathname();
 
   useEffect(() => {
-    console.log("mount header main");
-    // console.log(router, "router");
+    // router.push(path);
+    activeTab === path ? "" : changeActiveTab(path);
     console.log(activeTab, "activeTab");
-    console.log(window.location.pathname, "get url ");
-    // localStorage.clear();
-    router.push(path);
-    changeActiveTab(path)
   }, [path]);
 
   return (
