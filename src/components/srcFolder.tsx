@@ -157,27 +157,28 @@ const listMenuLinkProjecs: Record<
   ],
 };
 function SrcFolder() {
-  const [isSrc, setIsSrc] = useState(false);
-  const [isFolderMyWork, setIsFolderMyWork] = useState(false);
-  const [activeLinkproject, setActiveLinkproject] = useState("");
-
-  const { projectName, changeProjectName } = useStore();
-  const { tab, addTab, changeActiveTab, activeTab } = addTabStore();
+  const {
+    tab,
+    addTab,
+    changeActiveTab,
+    activeTab,
+    isMyFolderSideBar,
+    isSrcFolderSideBar,
+    changeMyFolderSideBar,
+    changeSrcFolderSideBar,
+  } = addTabStore();
   let titleProject = "";
-  useEffect(() => {
-    console.log(activeLinkproject, "name proje is baz");
-  }, [activeLinkproject]);
 
   return (
     <div className="src ">
       <button
         onClick={() => {
-          setIsSrc(!isSrc);
-          setIsFolderMyWork(true);
+          changeSrcFolderSideBar(!isSrcFolderSideBar);
+          changeMyFolderSideBar(true);
         }}
         className="flex gap-1 items-center py-[2px] w-full hover:bg-borderDarck"
       >
-        {isSrc ? (
+        {isSrcFolderSideBar ? (
           <DirectionDown01Icon
             className="ml-4"
             width="18"
@@ -197,17 +198,16 @@ function SrcFolder() {
         <p className="text-base pl-1">src</p>
       </button>
 
-      {isSrc ? (
+      {isSrcFolderSideBar ? (
         <>
           <div className="myWorkFolder">
             <button
               onClick={() => {
-                setIsFolderMyWork(!isFolderMyWork);
-                // setActiveLinkproject("adminDashboard");
+                changeMyFolderSideBar(!isMyFolderSideBar);
               }}
               className="flex gap-1 items-center py-[2px] w-full hover:bg-borderDarck"
             >
-              {isFolderMyWork ? (
+              {isMyFolderSideBar ? (
                 <DirectionDown01Icon
                   className="ml-8"
                   width="18"
@@ -227,7 +227,7 @@ function SrcFolder() {
               />
               <p className="text-base pl-1">my work</p>
             </button>
-            {isFolderMyWork && (
+            {isMyFolderSideBar && (
               <>
                 {Object.entries(listMenuLinkProjecs).map(
                   ([project, listProject], index) => (
@@ -247,7 +247,7 @@ function SrcFolder() {
                               .replace(/([A-Z])/g, " $1")
                               .trim()
                               .slice(1);
-                          setActiveLinkproject(project);
+
                           addTab(titleProject, "/apps/" + project);
                           changeActiveTab(`/apps/${project}`);
                         }}
@@ -274,7 +274,7 @@ function SrcFolder() {
                           </p>
                         </div>
                       </Link>
-                      {activeLinkproject === project && (
+                      {activeTab === `/apps/${project}` && (
                         <>
                           {listProject.map((item, index) => (
                             <CreateFileMenu
