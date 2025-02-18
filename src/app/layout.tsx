@@ -36,7 +36,7 @@ export default function RootLayout({
           <div className="grid grid-cols-12 overflow-hidden">
             <Sidebar />
             <div className="col-span-9 h-full overflow-hidden pb-5">
-              <div className="h-full pt-[3rem]">
+              <div className="h-full">
                 <HeaderMain />
                 {children}
               </div>
