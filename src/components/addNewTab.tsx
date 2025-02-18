@@ -13,7 +13,14 @@ interface ItemTabs {
 
 function AddNewTab({ id, tabTitle, href }: ItemTabs) {
   // const path = usePathname();
-  const { removeTab, activeTab, changeActiveTab } = addTabStore();
+  const {
+    removeTab,
+    activeTab,
+    changeActiveTab,
+    changeIsPublicSideBar,
+    changeMyFolderSideBar,
+    changeSrcFolderSideBar,
+  } = addTabStore();
   return (
     <Link
       id={id}
@@ -23,7 +30,14 @@ function AddNewTab({ id, tabTitle, href }: ItemTabs) {
           ? " text-textActive border-b-blue-900 border-b-2"
           : "border-b-borderDarck"
       }`}
-      onClick={() => changeActiveTab(href)}
+      onClick={() => {
+        changeActiveTab(href);
+        href === "/" ? changeIsPublicSideBar(true) : "";
+        if (href.includes("/apps/")) {
+          changeMyFolderSideBar(true);
+          changeSrcFolderSideBar(true);
+        }
+      }}
     >
       <StarIcon />
       <p className="text-base">{tabTitle}</p>
