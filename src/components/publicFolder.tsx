@@ -73,18 +73,23 @@ const listPublicFile = [
 ];
 
 function PublicFolder() {
-  const [isPublic, setIsPublic] = useState(false);
-  const { addTab,changeActiveTab } = addTabStore();
 
+  const {
+    addTab,
+    changeActiveTab,
+    activeTab,
+    isPublicSideBar,
+    changeIsPublicSideBar,
+  } = addTabStore();
   return (
     <div className="public">
       <button
         onClick={() => {
-          setIsPublic(!isPublic);
+          changeIsPublicSideBar(!isPublicSideBar);
         }}
         className="flex gap-1 items-center py-[2px] w-full hover:bg-borderDarck"
       >
-        {isPublic ? (
+        {isPublicSideBar ? (
           <DirectionDown01Icon
             className="ml-4"
             width="18"
@@ -104,18 +109,14 @@ function PublicFolder() {
         />
         <p className="text-base pl-1">public</p>
       </button>
-      {isPublic ? (
+      {isPublicSideBar ? (
         <div className="menuPublic">
           <Link
             onClick={() => {
-              addTab(
-                "About Me",
-                "/"
-              );
-              changeActiveTab("/")
+              addTab("About Me", "/");
+              changeActiveTab("/");
             }}
             href="/"
-          
           >
             <div className="aboutmePart  flex items-center gap-2 pl-10 py-[2px] bg-gray-500/20  hover:bg-borderDarck">
               <StarIcon
@@ -125,15 +126,17 @@ function PublicFolder() {
               <p className="text-base">about_me.ts</p>
             </div>
           </Link>
-          {listPublicFile.map((item, index) => (
-            <CreateFileMenu
-              key={index}
-              nameFile={item.nameFile}
-              href={item.href}
-              hrefPage={item.hrefPage}
-              IconName={item.IconName}
-            />
-          ))}
+          {activeTab === "/"
+            ? listPublicFile.map((item, index) => (
+                <CreateFileMenu
+                  key={index}
+                  nameFile={item.nameFile}
+                  href={item.href}
+                  hrefPage={item.hrefPage}
+                  IconName={item.IconName}
+                />
+              ))
+            : undefined}
           {/* <Link href="/#aboutme">
             <div className="aboutme flex items-center gap-2  py-[2px]">
               <UserCheckIcon
