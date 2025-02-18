@@ -108,7 +108,7 @@ function Sidebar() {
       <div
         className={`${
           sideBarShow ? "hidden" : "col-span-7"
-        } ml-4 border-r border-r-borderDarck`}
+        } ml-4 border-r border-r-borderDarck overflow-hidden`}
       >
         {isActiveSidebar === "file" && <DetailSubSidebar />}
       </div>
