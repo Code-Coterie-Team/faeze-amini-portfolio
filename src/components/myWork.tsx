@@ -42,7 +42,7 @@ const workProjects: workProject[] = [
     image: "/Image/challenges-rock-paper-scissors-game01.png",
     linkGit: "",
     linkDemo: "",
-    href: "/",
+    href: "/apps/ChallengesRockPaperScissorsGame",
   },
   {
     name: "Drink Water",
@@ -50,7 +50,7 @@ const workProjects: workProject[] = [
     image: "/Image/Drink-Water02.png",
     linkGit: "",
     linkDemo: "",
-    href: "/",
+    href: "/apps/DrinkWater",
   },
   {
     name: "Routing Navigation",
@@ -58,7 +58,7 @@ const workProjects: workProject[] = [
     image: "/Image/Routing-Navigation01.png",
     linkGit: "",
     linkDemo: "",
-    href: "/",
+    href: "/apps/RoutingNavigation",
   },
   {
     name: "Form Input Wave",
@@ -66,7 +66,7 @@ const workProjects: workProject[] = [
     image: "/Image/Form-Input-Wave01.png",
     linkGit: "",
     linkDemo: "",
-    href: "/",
+    href: "/apps/FormInputWave",
   },
   {
     name: "Dad Jokes App",
@@ -74,7 +74,7 @@ const workProjects: workProject[] = [
     image: "/Image/dad-jokes-app.png",
     linkGit: "",
     linkDemo: "",
-    href: "/",
+    href: "/apps/DadJokesApp",
   },
   {
     name: "Auto Text Effect",
@@ -82,12 +82,12 @@ const workProjects: workProject[] = [
     image: "/Image/Auto-Text-Effect.png",
     linkGit: "",
     linkDemo: "",
-    href: "/",
+    href: "/apps/AutoTextEffect",
   },
 ];
 
 function MyWork() {
-  const [isHoverShowProject, setIsHoverShowProject] = useState(false);
+  const [isHoverShowProject, setIsHoverShowProject] = useState("");
 
   return (
     <div
@@ -129,8 +129,8 @@ function MyWork() {
               <Link
                 href={project.href}
                 className="flex items-center"
-                onMouseEnter={() => setIsHoverShowProject(true)}
-                onMouseLeave={() => setIsHoverShowProject(false)}
+                onMouseEnter={() => setIsHoverShowProject(project.href)}
+                onMouseLeave={() => setIsHoverShowProject("")}
               >
                 <span
                   className="text-2xl text-gray-50 font-semibold border-b-2 border-b-darckBg 
@@ -139,7 +139,7 @@ function MyWork() {
                   Learn More
                 </span>
 
-                {isHoverShowProject ? (
+                {isHoverShowProject === project.href ? (
                   <ArrowRightIcon
                     className="mt-2 text-gray-50 "
                     width="24"
