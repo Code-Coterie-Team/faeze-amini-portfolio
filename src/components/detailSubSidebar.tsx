@@ -14,7 +14,7 @@ function DetailSubSidebar() {
   const [isOpenEditors, setIsOpenEditors] = useState(false);
   const [hoverOpenEditors, setHoverOpenEditors] = useState(false);
 
-  const [isPortfolio, setIsPortfolio] = useState(false);
+  const [isPortfolio, setIsPortfolio] = useState(true);
   const [hoverPortfolio, setHoverPortfolio] = useState(false);
 
   const listSidebarMenu = [
