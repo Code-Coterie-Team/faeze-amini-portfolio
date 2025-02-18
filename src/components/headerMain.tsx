@@ -10,14 +10,19 @@ import { usePathname, useRouter } from "next/navigation";
 
 function HeaderMain() {
   // const router = useRouter();
-  const { tab, changeActiveTab, activeTab } = addTabStore();
+  const { tab, changeActiveTab, activeTab, addTab } = addTabStore();
   const path = usePathname();
 
   useEffect(() => {
-    // router.push(path);
+
+    if (tab.length === 0) {
+      changeActiveTab(path);
+      addTab("About Me", path);
+    }
+
     activeTab === path ? "" : changeActiveTab(path);
-    console.log(activeTab, "activeTab");
-  }, [path]);
+    
+  }, [path, activeTab]);
 
   return (
     <div className="headerMain flex items-center justify-between w-full border-borderDarck border-b-2 bg-darckBg">

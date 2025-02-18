@@ -42,17 +42,11 @@ export const useStore = create<StoreState>((set) => ({
   projectName: "adminDashboard",
   changeProjectName: (newName) => set((state) => ({ projectName: newName })),
 }));
-const initialTabs: ListTabs[] = [
-  {
-    id: uuidv4(),
-    tabTitle: "About Me",
-    href: "/",
-  },
-];
+
 export const addTabStore = create<TabStore>()(
   persist(
     (set, get) => ({
-      tab: initialTabs,
+      tab: [],
       addTab: (tabTitle, href) =>
         set((state) => {
           const exists = state.tab.some((tab) => tab.tabTitle === tabTitle);
@@ -76,7 +70,7 @@ export const addTabStore = create<TabStore>()(
           };
         }),
 
-      activeTab: "/",
+      activeTab: "",
       changeActiveTab: (newLink) => set((state) => ({ activeTab: newLink })),
 
       isPublicSideBar: true,
