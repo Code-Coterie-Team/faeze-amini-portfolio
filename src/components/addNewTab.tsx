@@ -6,12 +6,12 @@ import StarIcon from "./icons/StarIcon";
 import { usePathname } from "next/navigation";
 
 interface ItemTabs {
-  id: string;
   tabTitle: string;
   href: string;
+  iconTab:ReactElement;
 }
 
-function AddNewTab({ id, tabTitle, href }: ItemTabs) {
+function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
   // const path = usePathname();
   const {
     removeTab,
@@ -23,7 +23,6 @@ function AddNewTab({ id, tabTitle, href }: ItemTabs) {
   } = addTabStore();
   return (
     <Link
-      id={id}
       href={href}
       className={`title flex items-center gap-2 border-r border-b border-r-borderDarck p-2 ${
         href === activeTab
@@ -32,19 +31,19 @@ function AddNewTab({ id, tabTitle, href }: ItemTabs) {
       }`}
       onClick={() => {
         changeActiveTab(href);
-        href === "/" ? changeIsPublicSideBar(true) : "";
+        href === "/" ? changeIsPublicSideBar(true) : undefined
         if (href.includes("/apps/")) {
           changeMyFolderSideBar(true);
           changeSrcFolderSideBar(true);
         }
       }}
     >
-      <StarIcon />
+     {iconTab}
       <p className="text-base">{tabTitle}</p>
       <button
         onClick={(e) => {
           e.preventDefault();
-          removeTab(id);
+          removeTab(href);
         }}
         className="p-1 hover:bg-gray-500/30 rounded-md"
       >
