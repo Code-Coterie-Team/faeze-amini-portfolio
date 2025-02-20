@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import VsCodeIcon from "./icons/VsCodeIcon";
 import RemoveIcon from "./icons/RemoveIcon";
 import CopyIcon from "./icons/CopyIcon";
@@ -11,7 +11,7 @@ import MenuLineHorizontalIcon from "./icons/MenuLineHorizontalIcon";
 import { useStore } from "@/store";
 
 function Header() {
-  const { toggleSideBarShow, sideBarShow } = useStore();
+  const { toggleSideBarShow } = useStore();
   const listMenu = [
     "File",
     "Edit",
@@ -28,10 +28,7 @@ function Header() {
       <div className="menuBar flex flex-row gap-1 p-1 items-center">
         <div className="flex gap-4">
           <div>
-            <VsCodeIcon
-              width="30"
-              height="30"
-            />
+            <VsCodeIcon width="30" height="30" />
           </div>
 
           <div className="block md:hidden">
@@ -61,43 +58,25 @@ function Header() {
             }}
             className="hover:bg-gray-500 hover:bg-opacity-30 p-1 rounded-md"
           >
-            <Layout11Icon
-              width="20"
-              height="20"
-            />
+            <Layout11Icon width="20" height="20" />
           </button>
           <button className="hover:bg-gray-500 hover:bg-opacity-30 p-1 rounded-md">
-            <Layout9Icon
-              width="20"
-              height="20"
-            />
+            <Layout9Icon width="20" height="20" />
           </button>
           <button className="hover:bg-gray-500 hover:bg-opacity-30 p-1 rounded-md">
-            <Layout10Icon
-              width="20"
-              height="20"
-            />
+            <Layout10Icon width="20" height="20" />
           </button>
         </div>
         <div className="flex flex-row">
           <div className="hover:bg-gray-500 hover:text-gray-50 p-3 hover:bg-opacity-30">
-            <MinusIcon
-              width="16"
-              height="16"
-            />
+            <MinusIcon width="16" height="16" />
           </div>
 
           <div className="hover:bg-gray-500 hover:text-gray-50 p-3 hover:bg-opacity-30">
-            <CopyIcon
-              width="16"
-              height="16"
-            />
+            <CopyIcon width="16" height="16" />
           </div>
           <div className="hover:bg-red-700 hover:text-gray-50 p-3 ">
-            <RemoveIcon
-              width="16"
-              height="16"
-            />
+            <RemoveIcon width="16" height="16" />
           </div>
         </div>
       </div>

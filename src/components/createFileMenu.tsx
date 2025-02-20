@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { ReactNode } from "react";
-import { addTabStore, useStore } from "@/store";
+import { addTabStore } from "@/store";
 
 interface CreateFileMenus {
   href: string;
@@ -11,9 +11,7 @@ interface CreateFileMenus {
 function CreateFileMenu(props: CreateFileMenus) {
   const { changeActiveTab } = addTabStore();
   return (
-    <Link onClick={() => (
-      changeActiveTab(props.hrefPage)
-    )} href={props.href}>
+    <Link onClick={() => changeActiveTab(props.hrefPage)} href={props.href}>
       <div className="flex items-center gap-2 pl-14 py-[2px]">
         {props.IconName}
         <p className="text-base">{props.nameFile}</p>

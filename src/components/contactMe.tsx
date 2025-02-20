@@ -46,23 +46,17 @@ function ContactMe() {
   }
 
   return (
-    <div
-      id="contactMe"
-      className="contactMe"
-    >
+    <div id="contactMe" className="contactMe">
       <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
-          <MailIcon
-            width="28"
-            height="28"
-          />
+          <MailIcon width="28" height="28" />
         </div>
         <p className="text-gray-50 text-2xl pl-7">Contact Me</p>
       </div>
       <div className="max-w-3xl text-5xl pt-9 mb-10">
         <span className="text-gray-50">
-          Get in contact and let's work together{" "}
+          Get in contact and let&apos;s work together{" "}
         </span>
       </div>
       <div className="listContact  rounded-3xl py-16">
@@ -80,9 +74,7 @@ function ContactMe() {
           focus:outline-none focus:border-colorInputB focus:border-2"
             id="name"
             type="text"
-            onChange={() => {
-              handleChangeName;
-            }}
+            onChange={handleChangeName}
             onFocus={() => setIsFocusedName(true)}
             onBlur={() => {
               if (isInputChangeName) {
@@ -109,9 +101,7 @@ function ContactMe() {
             className="bg-darckBg pb-4 pt-12 px-6 border border-tGrayAll/30 
           focus:outline-none focus:border-colorInputB focus:border-2"
             type="text"
-            onChange={() => {
-              handleChangeEmail;
-            }}
+            onChange={handleChangeEmail}
             onFocus={() => setIsFocusedEmail(true)}
             onBlur={() => {
               if (isInputChangeEmail) {
@@ -138,9 +128,7 @@ function ContactMe() {
             className="bg-darckBg pb-4 pt-12 px-6 border border-tGrayAll/30 
           focus:outline-none focus:border-colorInputB focus:border-2"
             type="text"
-            onChange={() => {
-              handleChangeCompany;
-            }}
+            onChange={handleChangeCompany}
             onFocus={() => setIsFocusedCompany(true)}
             onBlur={() => {
               if (isInputChangeCompany) {
@@ -167,9 +155,7 @@ function ContactMe() {
             className="bg-darckBg pb-4 pt-12 px-6 border border-tGrayAll/30 
          focus:outline-none focus:border-colorInputB focus:border-2 rounded-b-3xl"
             type="text"
-            onChange={() => {
-              handleChangeMessage;
-            }}
+            onChange={handleChangeMessage}
             onFocus={() => setIsFocusedMessage(true)}
             onBlur={() => {
               if (isInputChangeMessage) {

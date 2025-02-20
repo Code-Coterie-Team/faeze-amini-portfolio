@@ -40,12 +40,12 @@ export const useStore = create<StoreState>((set) => ({
     set((state) => ({ sideBarShow: !state.sideBarShow })),
 
   projectName: "adminDashboard",
-  changeProjectName: (newName) => set((state) => ({ projectName: newName })),
+  changeProjectName: (newName) => set(() => ({ projectName: newName })),
 }));
 
 export const addTabStore = create<TabStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       tab: [],
       addTab: (tabTitle, href) =>
         set((state) => {
@@ -71,19 +71,19 @@ export const addTabStore = create<TabStore>()(
         }),
 
       activeTab: "",
-      changeActiveTab: (newLink) => set((state) => ({ activeTab: newLink })),
+      changeActiveTab: (newLink) => set(() => ({ activeTab: newLink })),
 
       isPublicSideBar: true,
       changeIsPublicSideBar: (isStatus) =>
-        set((state) => ({ isPublicSideBar: isStatus })),
+        set(() => ({ isPublicSideBar: isStatus })),
 
       isSrcFolderSideBar: true,
       changeSrcFolderSideBar: (isStatus) =>
-        set((state) => ({ isSrcFolderSideBar: isStatus })),
+        set(() => ({ isSrcFolderSideBar: isStatus })),
 
       isMyFolderSideBar: true,
       changeMyFolderSideBar: (isStatus) =>
-        set((state) => ({ isMyFolderSideBar: isStatus })),
+        set(() => ({ isMyFolderSideBar: isStatus })),
     }),
 
     {
