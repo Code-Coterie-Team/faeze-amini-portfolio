@@ -19,45 +19,27 @@ function DetailSubSidebar() {
 
   const listSidebarMenu = [
     {
-      iconMenu: (
-        <DirectionRight01Icon
-          width="18"
-          height="18"
-        />
-      ),
+      iconMenu: <DirectionRight01Icon width="18" height="18" />,
       menuName: "OUTLINE",
     },
     {
-      iconMenu: (
-        <DirectionRight01Icon
-          width="18"
-          height="18"
-        />
-      ),
+      iconMenu: <DirectionRight01Icon width="18" height="18" />,
       menuName: "TIMELINE",
     },
     {
-      iconMenu: (
-        <DirectionRight01Icon
-          width="18"
-          height="18"
-        />
-      ),
+      iconMenu: <DirectionRight01Icon width="18" height="18" />,
       menuName: "SCRIPTS",
     },
   ];
   return (
-    <div className="detailSubSidebar overflow-hidden">
+    <div className="detailSubSidebar overflow-hidden flex-1 flex flex-col  w-80">
       <div className="flex justify-between py-3 pl-5 pr-3">
         <span className="text-xs">EXPLORER</span>
         <button>
-          <MenuCircleVerticalIcon
-            width="16"
-            height="16"
-          />
+          <MenuCircleVerticalIcon width="16" height="16" />
         </button>
       </div>
-      <div className="menuSidebar ">
+      <div className="menuSidebar flex-1 flex flex-col">
         <div
           className="item border-b-2 border-b-borderDarck py-1"
           onMouseEnter={() => setHoverOpenEditors(true)}
@@ -73,15 +55,9 @@ function DetailSubSidebar() {
           >
             <div className="flex">
               {isOpenEditors ? (
-                <DirectionDown01Icon
-                  width="18"
-                  height="18"
-                />
+                <DirectionDown01Icon width="18" height="18" />
               ) : (
-                <DirectionRight01Icon
-                  width="18"
-                  height="18"
-                />
+                <DirectionRight01Icon width="18" height="18" />
               )}
 
               <span className="font-extrabold text-xs pl-1">OPEN EDITORS</span>
@@ -104,7 +80,7 @@ function DetailSubSidebar() {
         </div>
 
         <div
-          className="item border-b-2 border-b-borderDarck py-1 transition-all overflow-hidden"
+          className="item border-b-2 flex-1 border-b-borderDarck py-1 transition-all overflow-hidden"
           onMouseEnter={() => setHoverPortfolio(true)}
           onMouseLeave={() => {
             setHoverPortfolio(false);
@@ -118,47 +94,25 @@ function DetailSubSidebar() {
           >
             <div className="flex">
               {isPortfolio ? (
-                <DirectionDown01Icon
-                  width="18"
-                  height="18"
-                />
+                <DirectionDown01Icon width="18" height="18" />
               ) : (
-                <DirectionRight01Icon
-                  width="18"
-                  height="18"
-                />
+                <DirectionRight01Icon width="18" height="18" />
               )}
               <span className="font-extrabold text-xs pl-1">PORTFOLIO</span>
             </div>
             {isPortfolio && hoverPortfolio && (
-              <div className="flex pr-1 gap-1">
+              <div className="flex pr-1 gap-1 ">
                 <div className=" hover:bg-gray-500/30 rounded-md">
-                  <NewFileIcon
-                    className=" "
-                    width="18"
-                    height="18"
-                  />
+                  <NewFileIcon className=" " width="18" height="18" />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
-                  <NewFolderIcon
-                    className=""
-                    width="18"
-                    height="18"
-                  />
+                  <NewFolderIcon className="" width="18" height="18" />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
-                  <RefreshIcon
-                    className=""
-                    width="18"
-                    height="18"
-                  />
+                  <RefreshIcon className="" width="18" height="18" />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
-                  <CollapseFolderIcon
-                    className=""
-                    width="18"
-                    height="18"
-                  />
+                  <CollapseFolderIcon className="" width="18" height="18" />
                 </div>
               </div>
             )}
@@ -172,7 +126,6 @@ function DetailSubSidebar() {
             menuName={itemMenu.menuName}
           />
         ))}
-     
       </div>
     </div>
   );
