@@ -1,8 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import RemoveIcon from "./icons/RemoveIcon";
 import Link from "next/link";
 import { addTabStore } from "@/store";
 import StarIcon from "./icons/StarIcon";
+import { usePathname } from "next/navigation";
 
 interface ItemTabs {
   tabTitle: string;
@@ -30,7 +31,7 @@ function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
       }`}
       onClick={() => {
         changeActiveTab(href);
-        href === "/" ? changeIsPublicSideBar(true) : "";
+        href === "/" ? changeIsPublicSideBar(true) : undefined
         if (href.includes("/apps/")) {
           changeMyFolderSideBar(true);
           changeSrcFolderSideBar(true);
@@ -46,7 +47,10 @@ function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
         }}
         className="p-1 hover:bg-gray-500/30 rounded-md"
       >
-        <RemoveIcon width="16" height="16" />
+        <RemoveIcon
+          width="16"
+          height="16"
+        />
       </button>
     </Link>
   );
