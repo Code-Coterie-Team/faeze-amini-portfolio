@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { v4 as uuidv4 } from "uuid";
@@ -11,16 +12,15 @@ interface StoreState {
 }
 
 interface ListTabs {
-  id: string;
   tabTitle: string;
-
   href: string;
+  iconTab:ReactElement;
 }
 
 interface TabStore {
   tab: ListTabs[];
-  addTab: (tabTitle: string, href: string) => void;
-  removeTab: (id: string) => void;
+  addTab: (tabTitle: string, href: string, iconTab:ReactElement) => void;
+  removeTab: (href: string) => void;
 
   activeTab: string;
   changeActiveTab: (newLink: string) => void;
@@ -33,6 +33,12 @@ interface TabStore {
 
   isMyFolderSideBar: boolean;
   changeMyFolderSideBar: (isStatus: boolean) => void;
+
+  isShowModalSuccessful:boolean;
+  setIsShowModalSuccessful: (isStatus: boolean) => void;
+
+  isShowModalFail:boolean;
+  setIsShowModalFail: (isStatus: boolean) => void;
 }
 export const useStore = create<StoreState>((set) => ({
   sideBarShow: false,
@@ -47,7 +53,7 @@ export const addTabStore = create<TabStore>()(
   persist(
     (set, get) => ({
       tab: [],
-      addTab: (tabTitle, href) =>
+      addTab: (tabTitle, href, iconTab) =>
         set((state) => {
           const exists = state.tab.some((tab) => tab.tabTitle === tabTitle);
           if (exists) {
@@ -55,18 +61,30 @@ export const addTabStore = create<TabStore>()(
             return state;
           }
 
-          const newtabId = uuidv4();
           return {
-            tab: [...state.tab, { id: newtabId, tabTitle, href }],
+            tab: [...state.tab, { tabTitle, href, iconTab }],
           };
         }),
-      removeTab: (id) =>
+      removeTab: (href) =>
         set((state) => {
+          console.log(
+            "tab href delete",
+            state.tab.filter((tab) => tab.href !== href)
+          );
+
           if (state.tab.length === 1) {
             return state;
           }
+          const newTabs = state.tab.filter((tab) => tab.href !== href);
+          const indexTabDelete = state.tab.findIndex(
+            (tab) => tab.href === href
+          );
+          const newActiveTab =
+            newTabs[indexTabDelete - 1]?.href || newTabs[0]?.href;
+          console.log("new Active Tav", newActiveTab);
           return {
-            tab: state.tab.filter((tab) => tab.id !== id),
+            tab: newTabs,
+            activeTab: newActiveTab,
           };
         }),
 
@@ -84,6 +102,14 @@ export const addTabStore = create<TabStore>()(
       isMyFolderSideBar: true,
       changeMyFolderSideBar: (isStatus) =>
         set((state) => ({ isMyFolderSideBar: isStatus })),
+
+      isShowModalSuccessful: false,
+      setIsShowModalSuccessful: (stateModal) =>
+        set((state) => ({ isShowModalSuccessful: stateModal })),
+
+      isShowModalFail: false,
+      setIsShowModalFail: (stateModal) =>
+        set((state) => ({ isShowModalFail: stateModal })),
     }),
 
     {
