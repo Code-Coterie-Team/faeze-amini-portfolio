@@ -1,4 +1,3 @@
-
 import React, { ReactNode } from "react";
 import FileNextIcon from "./icons/FileNextIcon";
 import FileNodeModulesIcon from "./icons/FileNodeModulesIcon";
@@ -19,7 +18,6 @@ interface listPajageFiles {
 }
 
 function ItemPortfolio() {
-
   const listPakageFile: listPajageFiles[] = [
     {
       IconName: (
@@ -111,7 +109,8 @@ function ItemPortfolio() {
       <SrcFolder />
 
       {listPakageFile.map((pakageFile, index) => (
-        <PakageFile key={index}
+        <PakageFile
+          key={index}
           IconName={pakageFile.IconName}
           nameFile={pakageFile.nameFile}
         />
