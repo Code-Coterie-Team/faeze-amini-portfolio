@@ -19,7 +19,7 @@ const activeIconSidebar: IActiveIconSidebars[] = [
     activeIcon: "file",
     iconSidebarName: (
       <FileIcon
-        className=""
+       
         width="32"
         height="32"
       />
@@ -76,12 +76,15 @@ function Sidebar() {
       >
         <div className="partView flex flex-col">
           {activeIconSidebar.map((item, index) => (
-            <button key={index}
+            <button
+              key={index}
               onClick={() => {
                 setIsActiveSidebar(item.activeIcon);
               }}
               className={`p-3 text-gray-500 hover:text-tGrayAll  ${
-                isActiveSidebar === item.activeIcon ? "border-l-2" : ""
+                isActiveSidebar === item.activeIcon
+                  ? "border-l-2 border-tGrayAll text-tGrayAll"
+                  : ""
               }`}
             >
               {item.iconSidebarName}
