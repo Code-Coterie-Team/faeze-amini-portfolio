@@ -81,6 +81,11 @@ function PublicFolder() {
     isPublicSideBar,
     changeIsPublicSideBar,
   } = addTabStore();
+
+  useEffect(() => {
+    changeIsPublicSideBar(false)
+  
+  }, []);
   return (
     <div className="public">
       <button
@@ -113,7 +118,7 @@ function PublicFolder() {
         <div className="menuPublic">
           <Link
             onClick={() => {
-              addTab("About Me", "/");
+              addTab("About Me", "/",<StarIcon width="18"  height="18"/>);
               changeActiveTab("/");
             }}
             href="/"
@@ -186,7 +191,7 @@ function PublicFolder() {
           </Link> */}
         </div>
       ) : (
-        ""
+        undefined
       )}
     </div>
   );
