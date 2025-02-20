@@ -98,7 +98,7 @@ function PersonalInformation() {
           </div>
         </div>
         <div className="pt-16 flex gap-5 w-full justify-between">
-          <div className="">
+          <div>
             <h4 className="text-textGreen text-base border-b  pb-1">
               | Languages
             </h4>
