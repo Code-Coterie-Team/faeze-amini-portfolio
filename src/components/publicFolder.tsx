@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import MailIcon from "./icons/MailIcon";
 import IdeaIcon from "./icons/IdeaIcon";
 import SkillsIcon from "./icons/SkillsIcon";

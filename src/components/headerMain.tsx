@@ -6,6 +6,7 @@ import OpenChangeIcon from "./icons/OpenChangeIcon";
 import AddNewTab from "./addNewTab";
 import { addTabStore } from "@/store";
 import { usePathname } from "next/navigation";
+import StarIcon from "./icons/StarIcon";
 
 function HeaderMain() {
   // const router = useRouter();
