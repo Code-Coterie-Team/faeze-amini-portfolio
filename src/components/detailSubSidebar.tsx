@@ -134,28 +134,28 @@ function DetailSubSidebar() {
               <div className="flex pr-1 gap-1">
                 <div className=" hover:bg-gray-500/30 rounded-md">
                   <NewFileIcon
-                    className=" "
+              
                     width="18"
                     height="18"
                   />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
                   <NewFolderIcon
-                    className=""
+                 
                     width="18"
                     height="18"
                   />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
                   <RefreshIcon
-                    className=""
+              
                     width="18"
                     height="18"
                   />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
                   <CollapseFolderIcon
-                    className=""
+                 
                     width="18"
                     height="18"
                   />
@@ -172,7 +172,6 @@ function DetailSubSidebar() {
             menuName={itemMenu.menuName}
           />
         ))}
-     
       </div>
     </div>
   );
