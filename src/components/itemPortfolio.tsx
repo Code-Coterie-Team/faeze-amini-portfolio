@@ -20,87 +20,42 @@ interface listPajageFiles {
 function ItemPortfolio() {
   const listPakageFile: listPajageFiles[] = [
     {
-      IconName: (
-        <EslintrcIcon
-          width="18"
-          height="18"
-        />
-      ),
+      IconName: <EslintrcIcon width="18" height="18" />,
       nameFile: ".eslintrc.json",
     },
     {
-      IconName: (
-        <GitignoreIcon
-          width="18"
-          height="18"
-        />
-      ),
+      IconName: <GitignoreIcon width="18" height="18" />,
       nameFile: ".gitignore",
     },
     {
-      IconName: (
-        <NextConfigIcon
-          width="18"
-          height="18"
-        />
-      ),
+      IconName: <NextConfigIcon width="18" height="18" />,
       nameFile: "next.config.js",
     },
     {
-      IconName: (
-        <PackageIcon
-          width="18"
-          height="18"
-        />
-      ),
+      IconName: <PackageIcon width="18" height="18" />,
       nameFile: "package-lock.json",
     },
     {
-      IconName: (
-        <PackageIcon
-          width="18"
-          height="18"
-        />
-      ),
+      IconName: <PackageIcon width="18" height="18" />,
       nameFile: "package.json",
     },
     {
-      IconName: (
-        <TailwindIcon
-          width="18"
-          height="18"
-        />
-      ),
+      IconName: <TailwindIcon width="18" height="18" />,
       nameFile: "tailwind.config.ts",
     },
     {
-      IconName: (
-        <TsconfigIcon
-          width="18"
-          height="18"
-        />
-      ),
+      IconName: <TsconfigIcon width="18" height="18" />,
       nameFile: "tsconfig.json",
     },
   ];
   return (
-    <div className="itemPortfolio  h-screen overflow-y-auto">
+    <div className="itemPortfolio  overflow-y-auto">
       <PakageFolder
-        IconName={
-          <FileNextIcon
-            width="18"
-            height="18"
-          />
-        }
+        IconName={<FileNextIcon width="18" height="18" />}
         nameFolder=".next"
       />
       <PakageFolder
-        IconName={
-          <FileNodeModulesIcon
-            width="18"
-            height="18"
-          />
-        }
+        IconName={<FileNodeModulesIcon width="18" height="18" />}
         nameFolder="node_modules"
       />
 

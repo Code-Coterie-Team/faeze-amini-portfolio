@@ -9,10 +9,7 @@ import SectionSeparator from "./sectionSeparator";
 function PersonalInformation() {
   return (
     <div className="flex flex-col gap-80">
-      <div
-        id="aboutme"
-        className=" myIntroduction pt-[10rem]"
-      >
+      <div id="aboutme" className=" myIntroduction pt-[10rem]">
         <div className="flex items-center text-5xl">
           <h1 className=" text-nowrap font-medium text-gray-50">Faeze Amini</h1>
           <span className="animate-rotateAnimation">&#128075;</span>
@@ -36,27 +33,18 @@ function PersonalInformation() {
             href={"https://www.linkedin.com/"}
             target="_blank"
           >
-            <LinkedinIcon
-              width="24"
-              height="24"
-            />
+            <LinkedinIcon width="24" height="24" />
           </Link>
           <Link
             className="text-gray-50 hover:opacity-80"
             href={"https://github.com/faeze-amn"}
             target="_blank"
           >
-            <GithubIcon
-              width="24"
-              height="24"
-            />
+            <GithubIcon width="24" height="24" />
           </Link>
           <div className="bg-gray-50 text-gray-950 px-3 py-1 rounded-full hover:opacity-80 flex gap-2">
             <Link href={"/#contactMe"}>Contact Me</Link>
-            <ArrowRightIcon
-              width="24"
-              height="24"
-            />
+            <ArrowRightIcon width="24" height="24" />
           </div>
         </div>
       </div>
@@ -65,15 +53,12 @@ function PersonalInformation() {
         <SectionSeparator />
         <div className="flex pt-12 items-center">
           <div className="text-gray-50">
-            <UserCircleIcon
-              width="28"
-              height="28"
-            />
+            <UserCircleIcon width="28" height="28" />
           </div>
           <p className="text-gray-50 text-2xl pl-7">About Me</p>
         </div>
         <div className="max-w-3xl text-5xl pt-9">
-          <span className="text-gray-50">I'm a </span>
+          <span className="text-gray-50">I&apos;m a </span>
           <span className="text-textGreen">software developer</span>
           <span className="text-gray-50"> specialized on </span>
           <span className="text-textGreen">Web Applications</span>
@@ -113,27 +98,18 @@ function PersonalInformation() {
                 target="_blank"
                 href="https://tailwindcss.com/docs/font-size"
               >
-                <LinkedinIcon
-                  width="24"
-                  height="24"
-                />
+                <LinkedinIcon width="24" height="24" />
               </a>
               <a
                 className="text-gray-50 hover:opacity-80"
                 target="_blank"
                 href={"https://github.com/faeze-amn"}
               >
-                <GithubIcon
-                  width="24"
-                  height="24"
-                />
+                <GithubIcon width="24" height="24" />
               </a>
               <div className="bg-gray-50 text-gray-950 px-3 py-1 rounded-full hover:opacity-80 flex gap-2">
                 <Link href={"/#contactMe"}>Contact Me</Link>
-                <ArrowRightIcon
-                  width="24"
-                  height="24"
-                />
+                <ArrowRightIcon width="24" height="24" />
               </div>
             </div>
           </div>

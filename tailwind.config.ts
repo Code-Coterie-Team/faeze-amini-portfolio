@@ -8,6 +8,19 @@ export default {
   ],
   theme: {
     extend: {
+      gridTemplateRows: {
+        "min-min-one": "min-content min-content 1fr",
+        "min-one-min": "min-content 1fr min-content",
+        "min-one": "min-content 1fr",
+        "one-min": "1fr min-content",
+      },
+      gridTemplateColumns: {
+        "min-min-one": "min-content min-content 1fr",
+        "min-one-min": "min-content 1fr min-content",
+        "min-one": "min-content 1fr",
+        "one-min": "1fr min-content",
+      },
+
       boxShadow: {
         styleShadowCircle:
           "-5px -5px 5px hsla(0, 0%, 100%, .1), 10px 10px 10px rgba(0, 0, 0, .4), inset -5px -5px 5px hsla(0, 0%, 100%, .2), inset 10px 10px 10px rgba(0, 0, 0, .4)",

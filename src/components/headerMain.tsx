@@ -4,9 +4,8 @@ import Layout10Icon from "./icons/Layout10Icon";
 import MenuCircleVerticalIcon from "./icons/MenuCircleVerticalIcon";
 import OpenChangeIcon from "./icons/OpenChangeIcon";
 import AddNewTab from "./addNewTab";
-import StarIcon from "./icons/StarIcon";
 import { addTabStore } from "@/store";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 function HeaderMain() {
   // const router = useRouter();
@@ -44,16 +43,10 @@ function HeaderMain() {
           />
         </button>
         <button className="p-1 hover:bg-gray-500/30 rounded-md">
-          <Layout10Icon
-            width="18"
-            height="18"
-          />
+          <Layout10Icon width="18" height="18" />
         </button>
         <button className="p-1 hover:bg-gray-500/30 rounded-md">
-          <MenuCircleVerticalIcon
-            width="18"
-            height="18"
-          />
+          <MenuCircleVerticalIcon width="18" height="18" />
         </button>
       </div>
     </div>

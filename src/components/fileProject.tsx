@@ -23,45 +23,25 @@ function FileProject(props: FileProjects) {
     adminDashboard: [
       {
         href: "/apps/adminDashboard/#about",
-        IconName: (
-          <AboutIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <AboutIcon width="18" height="18" />,
         nameFile: "About",
         hrefPage: "/apps/adminDashboard",
       },
       {
         href: "/apps/adminDashboard/#challenge",
-        IconName: (
-          <ChallengeIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <ChallengeIcon width="18" height="18" />,
         nameFile: "Challenge",
         hrefPage: "/apps/adminDashboard",
       },
       {
         href: "/apps/adminDashboard/#solution",
-        IconName: (
-          <SolutionIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <SolutionIcon width="18" height="18" />,
         nameFile: "SolutionIcon",
         hrefPage: "/apps/adminDashboard",
       },
       {
         href: "/apps/adminDashboard/#technologies",
-        IconName: (
-          <TechnologiesIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <TechnologiesIcon width="18" height="18" />,
         nameFile: "Technologies",
         hrefPage: "/apps/adminDashboard",
       },
@@ -69,45 +49,25 @@ function FileProject(props: FileProjects) {
     sneakersCompany: [
       {
         href: "/apps/sneakersCompany/#about",
-        IconName: (
-          <AboutIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <AboutIcon width="18" height="18" />,
         nameFile: "About",
         hrefPage: "/apps/sneakersCompany",
       },
       {
         href: "/apps/sneakersCompany/#challenge",
-        IconName: (
-          <ChallengeIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <ChallengeIcon width="18" height="18" />,
         nameFile: "Challenge",
         hrefPage: "/apps/sneakersCompany",
       },
       {
         href: "/apps/sneakersCompany/#solution",
-        IconName: (
-          <SolutionIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <SolutionIcon width="18" height="18" />,
         nameFile: "SolutionIcon",
         hrefPage: "/apps/sneakersCompany",
       },
       {
         href: "/apps/sneakersCompany/#technologies",
-        IconName: (
-          <TechnologiesIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <TechnologiesIcon width="18" height="18" />,
         nameFile: "Technologies",
         hrefPage: "/apps/sneakersCompany",
       },
@@ -115,45 +75,25 @@ function FileProject(props: FileProjects) {
     rockPaperScissorsGame: [
       {
         href: "/apps/sneakersCompany/#about",
-        IconName: (
-          <AboutIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <AboutIcon width="18" height="18" />,
         nameFile: "About",
         hrefPage: "/apps/sneakersCompany",
       },
       {
         href: "/apps/sneakersCompany/#challenge",
-        IconName: (
-          <ChallengeIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <ChallengeIcon width="18" height="18" />,
         nameFile: "Challenge",
         hrefPage: "/apps/sneakersCompany",
       },
       {
         href: "/apps/sneakersCompany/#solution",
-        IconName: (
-          <SolutionIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <SolutionIcon width="18" height="18" />,
         nameFile: "SolutionIcon",
         hrefPage: "/apps/sneakersCompany",
       },
       {
         href: "/apps/sneakersCompany/#technologies",
-        IconName: (
-          <TechnologiesIcon
-            width="18"
-            height="18"
-          />
-        ),
+        IconName: <TechnologiesIcon width="18" height="18" />,
         nameFile: "Technologies",
         hrefPage: "/apps/sneakersCompany",
       },
@@ -176,10 +116,11 @@ function FileProject(props: FileProjects) {
       {projectName === props.nameProject && (
         <>
           {Object.entries(listMenuLinkProjecs).map(
-            ([project, listMenus], index) =>
+            ([project, listMenus]) =>
               project === props.nameProject &&
               listMenus.map((list, index) => (
                 <CreateFileMenu
+                  key={index}
                   href={list.href}
                   IconName={list.IconName}
                   nameFile={list.nameFile}

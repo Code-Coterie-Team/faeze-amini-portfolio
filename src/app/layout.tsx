@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -33,10 +32,10 @@ export default function RootLayout({
           <div className="sticky">
             <Header />
           </div>
-          <div className="grid grid-cols-12 overflow-hidden">
+          <div className="grid grid-cols-min-one overflow-hidden">
             <Sidebar />
-            <div className="col-span-9 h-full overflow-hidden pb-5">
-              <div className="h-full">
+            <div className=" h-full overflow-hidden pb-5">
+              <div className="h-full flex flex-col">
                 <HeaderMain />
                 {children}
               </div>
