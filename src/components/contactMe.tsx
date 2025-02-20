@@ -1,11 +1,10 @@
 "use client";
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MailIcon from "./icons/MailIcon";
 import SectionSeparator from "./sectionSeparator";
-import { sendFormData } from "../api/index";
-import axios from "axios";
 import { addTabStore } from "@/store";
 import ModalShow from "./modal/modalShow";
+import axios from "axios";
 
 function ContactMe() {
   const {
@@ -16,16 +15,16 @@ function ContactMe() {
   } = addTabStore();
 
   const [isFocusedName, setIsFocusedName] = useState(false);
-  const [isInputChangeName, setInputChangeName] = useState(false);
+  const [isInputChangeName] = useState(false);
 
   const [isFocusedEmail, setIsFocusedEmail] = useState(false);
-  const [isInputChangeEmail, setInputChangeEmail] = useState(false);
+  const [isInputChangeEmail] = useState(false);
 
   const [isFocusedCompany, setIsFocusedCompany] = useState(false);
-  const [isInputChangeCompany, setInputChangeCompany] = useState(false);
+  const [isInputChangeCompany] = useState(false);
 
   const [isFocusedMessage, setIsFocusedMessage] = useState(false);
-  const [isInputChangeMessage, setInputChangeMessage] = useState(false);
+  const [isInputChangeMessage] = useState(false);
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -45,7 +44,7 @@ function ContactMe() {
     }
     try {
       const response = await axios.post(
-       "https://67b704c52bddacfb270d4c25.mockapi.io/api/contactme/message",
+        "https://67b704c52bddacfb270d4c25.mockapi.io/api/contactme/message",
         formData
       );
       console.log("Data sent successfully:", response.data);
@@ -64,8 +63,8 @@ function ContactMe() {
   }, [isShowModalSuccessful, isShowModalFail]);
 
   useEffect(() => {
-    setIsShowModalSuccessful(false)
-    setIsShowModalFail(false)
+    setIsShowModalSuccessful(false);
+    setIsShowModalFail(false);
   }, []);
   interface FormDatas {
     name: string;
@@ -86,30 +85,20 @@ function ContactMe() {
   };
   return (
     <>
-      <div
-        id="contactMe"
-        className="contactMe"
-      >
+      <div id="contactMe" className="contactMe">
         <SectionSeparator />
         <div className="flex  items-center">
           <div className="text-gray-50">
-            <MailIcon
-              width="28"
-              height="28"
-            />
+            <MailIcon width="28" height="28" />
           </div>
           <p className="text-gray-50 text-2xl pl-7">Contact Me</p>
         </div>
         <div className="max-w-3xl text-5xl pt-9 mb-16">
           <span className="text-gray-50">
-            Get in contact and let's work together{" "}
+            Get in contact and let&apos;s work together{" "}
           </span>
         </div>
-        <form
-          className="py-10 mb-16"
-          method="post"
-          onSubmit={handleSubmit}
-        >
+        <form className="py-10 mb-16" method="post" onSubmit={handleSubmit}>
           <div className="listContact  rounded-3xl">
             <div className="flex flex-col relative">
               <label
@@ -243,21 +232,11 @@ function ContactMe() {
         </form>
       </div>
       {isShowModalSuccessful ? (
-        <ModalShow
-          title={"Email successful"}
-          status={"successful"}
-        />
-      ) : (
-      undefined
-      )}
+        <ModalShow title={"Email successful"} status={"successful"} />
+      ) : undefined}
       {isShowModalFail ? (
-        <ModalShow
-          title={"Please fill out the form"}
-          status={"Fail"}
-        />
-      ) : (
-        undefined
-      )}
+        <ModalShow title={"Please fill out the form"} status={"Fail"} />
+      ) : undefined}
     </>
   );
 }

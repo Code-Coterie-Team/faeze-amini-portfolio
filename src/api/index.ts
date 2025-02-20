@@ -1,6 +1,4 @@
-import { addTabStore } from "@/store";
 import axios from "axios";
-
 
 // const { isShowModalSuccessful, setIsShowModalSuccessful } = addTabStore();
 export const sendFormData = async (formData: {
@@ -16,11 +14,9 @@ export const sendFormData = async (formData: {
     );
     console.log("Data sent successfully:", response.data);
     // setIsShowModalSuccessful(true);
-    
+
     // await sendEmail(formData);
   } catch (error) {
     console.error("Error sending data:", error);
   }
 };
-
-

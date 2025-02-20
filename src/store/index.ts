@@ -1,7 +1,6 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { v4 as uuidv4 } from "uuid";
 
 interface StoreState {
   sideBarShow: boolean;
@@ -14,12 +13,12 @@ interface StoreState {
 interface ListTabs {
   tabTitle: string;
   href: string;
-  iconTab:ReactElement;
+  iconTab: ReactElement;
 }
 
 interface TabStore {
   tab: ListTabs[];
-  addTab: (tabTitle: string, href: string, iconTab:ReactElement) => void;
+  addTab: (tabTitle: string, href: string, iconTab: ReactElement) => void;
   removeTab: (href: string) => void;
 
   activeTab: string;
@@ -34,10 +33,10 @@ interface TabStore {
   isMyFolderSideBar: boolean;
   changeMyFolderSideBar: (isStatus: boolean) => void;
 
-  isShowModalSuccessful:boolean;
+  isShowModalSuccessful: boolean;
   setIsShowModalSuccessful: (isStatus: boolean) => void;
 
-  isShowModalFail:boolean;
+  isShowModalFail: boolean;
   setIsShowModalFail: (isStatus: boolean) => void;
 }
 export const useStore = create<StoreState>((set) => ({
@@ -101,15 +100,15 @@ export const addTabStore = create<TabStore>()(
 
       isMyFolderSideBar: true,
       changeMyFolderSideBar: (isStatus) =>
-        set((state) => ({ isMyFolderSideBar: isStatus })),
+        set(() => ({ isMyFolderSideBar: isStatus })),
 
       isShowModalSuccessful: false,
       setIsShowModalSuccessful: (stateModal) =>
-        set((state) => ({ isShowModalSuccessful: stateModal })),
+        set(() => ({ isShowModalSuccessful: stateModal })),
 
       isShowModalFail: false,
       setIsShowModalFail: (stateModal) =>
-        set((state) => ({ isShowModalFail: stateModal })),
+        set(() => ({ isShowModalFail: stateModal })),
     }),
 
     {

@@ -16,10 +16,12 @@ function HeaderMain() {
   useEffect(() => {
     if (tab.length === 0 && path === "/") {
       changeActiveTab(path);
-      addTab("About Me", path,<StarIcon width="18"  height="18"/>);
+      addTab("About Me", path, <StarIcon width="18" height="18" />);
     }
 
-    activeTab === path ? "" : changeActiveTab(path);
+    if (activeTab !== path) {
+      changeActiveTab(path);
+    }
   }, [path, activeTab, tab]);
 
   return (
@@ -37,11 +39,7 @@ function HeaderMain() {
 
       <div className="flex px-4">
         <button className="p-1 hover:bg-gray-500/30 rounded-md">
-          <OpenChangeIcon
-        
-            width="18"
-            height="18"
-          />
+          <OpenChangeIcon width="18" height="18" />
         </button>
         <button className="p-1 hover:bg-gray-500/30 rounded-md">
           <Layout10Icon width="18" height="18" />
