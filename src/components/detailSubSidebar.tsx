@@ -39,7 +39,7 @@ function DetailSubSidebar() {
           <MenuCircleVerticalIcon width="16" height="16" />
         </button>
       </div>
-      <div className="menuSidebar flex-1 flex flex-col">
+      <div className="menuSidebar flex-1 flex flex-col overflow-hidden">
         <div
           className="item border-b-2 border-b-borderDarck py-1"
           onMouseEnter={() => setHoverOpenEditors(true)}
@@ -103,32 +103,16 @@ function DetailSubSidebar() {
             {isPortfolio && hoverPortfolio && (
               <div className="flex pr-1 gap-1 ">
                 <div className=" hover:bg-gray-500/30 rounded-md">
-                  <NewFileIcon
-              
-                    width="18"
-                    height="18"
-                  />
+                  <NewFileIcon width="18" height="18" />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
-                  <NewFolderIcon
-                 
-                    width="18"
-                    height="18"
-                  />
+                  <NewFolderIcon width="18" height="18" />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
-                  <RefreshIcon
-              
-                    width="18"
-                    height="18"
-                  />
+                  <RefreshIcon width="18" height="18" />
                 </div>
                 <div className=" hover:bg-gray-500/30 rounded-md">
-                  <CollapseFolderIcon
-                 
-                    width="18"
-                    height="18"
-                  />
+                  <CollapseFolderIcon width="18" height="18" />
                 </div>
               </div>
             )}

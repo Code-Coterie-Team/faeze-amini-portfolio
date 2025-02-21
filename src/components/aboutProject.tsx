@@ -20,10 +20,7 @@ function AboutProject({
   imageAlt,
 }: ItemAboutPaje) {
   return (
-    <div
-      id="about"
-      className="about"
-    >
+    <div id="about" className="about">
       <div className=" px-4 py-6">
         <div className="flex flex-col justify-center items-center mt-24 gap-4">
           <p className=" text-base font-semibold text-textActive">Case Study</p>

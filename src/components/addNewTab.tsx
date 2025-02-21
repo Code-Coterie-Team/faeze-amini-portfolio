@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import RemoveIcon from "./icons/RemoveIcon";
 import Link from "next/link";
 import { addTabStore } from "@/store";
@@ -6,10 +6,9 @@ import { addTabStore } from "@/store";
 interface ItemTabs {
   tabTitle: string;
   href: string;
-  iconTab: ReactElement;
 }
 
-function AddNewTab({ tabTitle, href, iconTab }: ItemTabs) {
+function AddNewTab({ tabTitle, href }: ItemTabs) {
   // const path = usePathname();
   const {
     removeTab,
@@ -39,7 +38,6 @@ function AddNewTab({ tabTitle, href, iconTab }: ItemTabs) {
         }
       }}
     >
-      {iconTab}
       <p className="text-base">{tabTitle}</p>
       <button
         onClick={(e) => {

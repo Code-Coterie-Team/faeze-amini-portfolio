@@ -90,17 +90,11 @@ function MyWork() {
   const [isHoverShowProject, setIsHoverShowProject] = useState("");
 
   return (
-    <div
-      id="myWork"
-      className="myWork"
-    >
+    <div id="myWork" className="myWork">
       <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
-          <PackageBoxIcon
-            width="28"
-            height="28"
-          />
+          <PackageBoxIcon width="28" height="28" />
         </div>
         <p className="text-gray-50 text-2xl pl-7">My Work</p>
       </div>
@@ -161,10 +155,7 @@ function MyWork() {
                   href={"https://github.com/faeze-amn?tab=repositories"}
                   target="_blank"
                 >
-                  <MaximizeIcon
-                    width="24"
-                    height="24"
-                  />
+                  <MaximizeIcon width="24" height="24" />
                 </Link>
                 <Link
                   className="bg-gray-500/40 p-2 rounded-full text-gray-50 hover:scale-125"
@@ -173,10 +164,7 @@ function MyWork() {
                   }
                   target="_blank"
                 >
-                  <CodeIcon
-                    width="24"
-                    height="24"
-                  />
+                  <CodeIcon width="24" height="24" />
                 </Link>
               </div>
 

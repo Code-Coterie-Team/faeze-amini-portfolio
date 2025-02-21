@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased h-screen w-screen">
+      <body className="antialiased h-screen w-screen overflow-hidden">
         <div className="relative overflow-hidden bg-darckBg text-tGrayAll flex flex-col h-full">
           <div className="sticky">
             <Header />

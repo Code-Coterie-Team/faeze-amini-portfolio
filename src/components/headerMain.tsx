@@ -11,6 +11,7 @@ import StarIcon from "./icons/StarIcon";
 function HeaderMain() {
   // const router = useRouter();
   const { tab, changeActiveTab, activeTab, addTab } = addTabStore();
+
   const path = usePathname();
 
   useEffect(() => {
@@ -32,7 +33,6 @@ function HeaderMain() {
             key={index}
             tabTitle={itemTab.tabTitle}
             href={itemTab.href}
-            iconTab={itemTab.iconTab}
           />
         ))}
       </div>

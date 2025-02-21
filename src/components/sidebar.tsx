@@ -17,48 +17,23 @@ interface IActiveIconSidebars {
 const activeIconSidebar: IActiveIconSidebars[] = [
   {
     activeIcon: "file",
-    iconSidebarName: (
-      <FileIcon
-        width="32"
-        height="32"
-      />
-    ),
+    iconSidebarName: <FileIcon width="32" height="32" />,
   },
   {
     activeIcon: "search",
-    iconSidebarName: (
-      <SearchIcon
-        width="32"
-        height="32"
-      />
-    ),
+    iconSidebarName: <SearchIcon width="32" height="32" />,
   },
   {
     activeIcon: "branch",
-    iconSidebarName: (
-      <BranchIcon
-        width="32"
-        height="32"
-      />
-    ),
+    iconSidebarName: <BranchIcon width="32" height="32" />,
   },
   {
     activeIcon: "runTime",
-    iconSidebarName: (
-      <RunitemIcon
-        width="32"
-        height="32"
-      />
-    ),
+    iconSidebarName: <RunitemIcon width="32" height="32" />,
   },
   {
     activeIcon: "extentionitem",
-    iconSidebarName: (
-      <ExtentionitemIcon
-        width="32"
-        height="32"
-      />
-    ),
+    iconSidebarName: <ExtentionitemIcon width="32" height="32" />,
   },
 ];
 function Sidebar() {
@@ -67,7 +42,7 @@ function Sidebar() {
   const { sideBarShow } = useStore();
 
   return (
-    <div className={`sidebar flex w-full flex-1`}>
+    <div className={`sidebar flex w-full flex-1 overflow-hidden`}>
       <div className={`subSidebar flex flex-col  pb-10 justify-between`}>
         <div className="partView flex flex-col">
           {activeIconSidebar.map((item, index) => (
@@ -89,16 +64,10 @@ function Sidebar() {
 
         <div className="partSetting flex flex-col">
           <button className="p-3 text-gray-500 hover:text-tGrayAll ">
-            <UserCircleIcon
-              width="32"
-              height="32"
-            />
+            <UserCircleIcon width="32" height="32" />
           </button>
           <button className="p-3 text-gray-500 hover:text-tGrayAll ">
-            <SettingIcon
-              width="32"
-              height="32"
-            />
+            <SettingIcon width="32" height="32" />
           </button>
         </div>
       </div>

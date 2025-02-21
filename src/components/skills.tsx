@@ -20,7 +20,7 @@ function Skills() {
     }, 2000);
     return () => clearInterval(interval);
   }, []);
- 
+
   const skillsCollection: Record<string, { image: string; name: string }[]> = {
     Languages: [
       { image: "/Image/js-logo.webp", name: "JavaScript" },
@@ -42,7 +42,6 @@ function Skills() {
       { image: "/Image/tailwindcss-logo.webp", name: "Tailwind CSS" },
       { image: "/Image/bootstrap-logo.svg", name: "Bootstrap" },
       { image: "/Image/sass-logo.webp", name: "sass" },
-     
     ],
     Back: [
       { image: "/Image/csharp-logo.webp", name: "c#" },
@@ -50,17 +49,11 @@ function Skills() {
     ],
   };
   return (
-    <div
-      id="skills"
-      className="skills"
-    >
-         <SectionSeparator/>
+    <div id="skills" className="skills">
+      <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
-          <OpenBookIcon
-            width="28"
-            height="28"
-          />
+          <OpenBookIcon width="28" height="28" />
         </div>
         <p className="text-gray-50 text-2xl pl-7">Skills</p>
       </div>
@@ -124,16 +117,19 @@ function Skills() {
 
         <div>
           {Object.entries(skillsCollection).map(
-            ([category, skills],index) =>
+            ([category, skills], index) =>
               changeSkills === category && (
-                <div  key={index} className="flex flex-col">
+                <div key={index} className="flex flex-col">
                   <h2 className="text-3xl font-semibold text-gray-50">
                     {category}
                   </h2>
 
                   <div className="flex gap-8 pt-8 flex-wrap">
-                    {skills.map((skill,index) => (
-                      <div key={index} className="h-[115px] flex flex-col items-center">
+                    {skills.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="h-[115px] flex flex-col items-center"
+                      >
                         <Image
                           className="w-[64px] h-[64px] "
                           src={skill.image}
