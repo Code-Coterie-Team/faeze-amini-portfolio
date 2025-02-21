@@ -52,7 +52,7 @@ function Sidebar() {
                 setIsActiveSidebar(item.activeIcon);
               }}
               className={`p-3 text-gray-500 hover:text-tGrayAll  ${
-                isActiveSidebar === item.activeIcon
+                isActiveSidebar === item.activeIcon && sideBarShow == true
                   ? "border-l-2 border-tGrayAll text-tGrayAll"
                   : ""
               }`}
@@ -73,11 +73,12 @@ function Sidebar() {
       </div>
 
       <div
-        className={`flex flex-col ${
-          !sideBarShow && "hidden"
-        } ml-4 border-r border-r-borderDarck overflow-hidden`}
+        className={`flex flex-col ${!sideBarShow && "hidden" } border-r border-r-borderDarck overflow-hidden`}
       >
-        {isActiveSidebar === "file" && <DetailSubSidebar />}
+         <div className="w-[18rem]">
+         {isActiveSidebar === "file" && <DetailSubSidebar />}
+         </div>
+       
       </div>
     </div>
   );
