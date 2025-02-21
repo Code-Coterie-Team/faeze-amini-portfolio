@@ -32,8 +32,7 @@ function HeaderMain() {
           <AddNewTab
             key={index}
             tabTitle={itemTab.tabTitle}
-            href={itemTab.href}
-          />
+            href={itemTab.href} iconTab={itemTab.iconTab}          />
         ))}
       </div>
 
