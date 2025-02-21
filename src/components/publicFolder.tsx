@@ -56,7 +56,7 @@ function PublicFolder() {
   } = addTabStore();
 
   useEffect(() => {
-    changeIsPublicSideBar(false);
+    changeIsPublicSideBar(true);
   }, []);
   return (
     <div className="public">
