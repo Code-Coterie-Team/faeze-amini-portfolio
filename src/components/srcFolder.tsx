@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode } from "react";
+import React, { ReactElement } from "react";
 import DirectionRight01Icon from "./icons/DirectionRight01Icon";
 import FileSrcIcon from "./icons/FileSrcIcon";
 import DirectionDown01Icon from "./icons/DirectionDown01Icon";
@@ -16,7 +16,7 @@ import StarIcon from "./icons/StarIcon";
 
 const listMenuLinkProjecs: Record<
   string,
-  { href: string; hrefPage: string; IconName: ReactNode; nameFile: string }[]
+  { href: string; hrefPage: string; IconName: ReactElement; nameFile: string }[]
 > = {
   adminDashboard: [
     {
@@ -97,6 +97,8 @@ const listMenuLinkProjecs: Record<
     },
   ],
 };
+
+
 function SrcFolder() {
   const {
     addTab,
@@ -163,8 +165,9 @@ function SrcFolder() {
                               .trim()
                               .slice(1);
 
-                          addTab(titleProject, "/apps/" + project, <StarIcon/>);
+                          addTab(titleProject, "/apps/" + project,<StarIcon/>);
                           changeActiveTab(`/apps/${project}`);
+                       
                         }}
                         href={`/apps/${project}`}
                       >
