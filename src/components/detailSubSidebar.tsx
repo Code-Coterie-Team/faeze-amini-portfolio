@@ -32,7 +32,7 @@ function DetailSubSidebar() {
     },
   ];
   return (
-    <div className="detailSubSidebar overflow-hidden flex-1 flex flex-col  w-80">
+    <div className="overflow-hidden flex-1 flex flex-col">
       <div className="flex justify-between py-3 pl-5 pr-3">
         <span className="text-xs">EXPLORER</span>
         <button>
