@@ -87,7 +87,7 @@ function ContactMe() {
     <>
       <div id="contactMe" className="contactMe">
         <SectionSeparator />
-        <div className="flex  items-center">
+        <div className="flex pt-12 items-center">
           <div className="text-gray-50">
             <MailIcon width="28" height="28" />
           </div>
