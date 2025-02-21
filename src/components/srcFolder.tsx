@@ -98,7 +98,7 @@ const listMenuLinkProjecs: Record<
   ],
 };
 
-
+const iconTab =[<ReactJsIcon width="18" height="18"/>,<ReactJsIcon width="18" height="18"/>,<FileWorkIcon width="18" height="18"/>]
 function SrcFolder() {
   const {
     addTab,
@@ -164,7 +164,7 @@ function SrcFolder() {
                               .replace(/([A-Z])/g, " $1")
                               .trim()
                               .slice(1);
-
+                            
                           addTab(titleProject, "/apps/" + project,<StarIcon/>);
                           changeActiveTab(`/apps/${project}`);
                        
