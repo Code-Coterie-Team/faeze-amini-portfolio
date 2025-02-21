@@ -11,7 +11,7 @@ import MenuLineHorizontalIcon from "./icons/MenuLineHorizontalIcon";
 import { useStore } from "@/store";
 
 function Header() {
-  const { toggleSideBarShow } = useStore();
+  const { toggleSideBarShow,sideBarShow } = useStore();
   const listMenu = [
     "File",
     "Edit",
@@ -54,7 +54,7 @@ function Header() {
         <div className="flex py-2">
           <button
             onClick={() => {
-              toggleSideBarShow();
+              toggleSideBarShow(!sideBarShow);
             }}
             className="hover:bg-gray-500 hover:bg-opacity-30 p-1 rounded-md"
           >

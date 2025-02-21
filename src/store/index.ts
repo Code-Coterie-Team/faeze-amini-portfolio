@@ -4,7 +4,7 @@ import { persist } from "zustand/middleware";
 
 interface StoreState {
   sideBarShow: boolean;
-  toggleSideBarShow: () => void;
+  toggleSideBarShow: (isShow: boolean) => void;
 
   projectName: string;
   changeProjectName: (newName: string) => void;
