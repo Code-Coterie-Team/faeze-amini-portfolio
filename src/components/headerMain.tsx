@@ -5,23 +5,33 @@ import MenuCircleVerticalIcon from "./icons/MenuCircleVerticalIcon";
 import OpenChangeIcon from "./icons/OpenChangeIcon";
 import AddNewTab from "./addNewTab";
 import { addTabStore } from "@/store";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import StarIcon from "./icons/StarIcon";
 
 function HeaderMain() {
-  // const router = useRouter();
+  const router = useRouter();
+
   const { tab, changeActiveTab, activeTab, addTab } = addTabStore();
 
   const path = usePathname();
 
   useEffect(() => {
+    console.log(" active Tab : ", activeTab);
     if (tab.length === 0 && path === "/") {
       changeActiveTab(path);
-      addTab("About Me", path, <StarIcon width="18" height="18" />);
+      addTab(
+        "About Me",
+        path,
+        <StarIcon
+          width="18"
+          height="18"
+        />
+      );
     }
 
     if (activeTab !== path) {
-      changeActiveTab(path);
+     // changeActiveTab(path);
+      router.push(activeTab)
     }
   }, [path, activeTab, tab]);
 
@@ -32,19 +42,30 @@ function HeaderMain() {
           <AddNewTab
             key={index}
             tabTitle={itemTab.tabTitle}
-            href={itemTab.href} iconTab={itemTab.iconTab}          />
+            href={itemTab.href}
+            iconTab={itemTab.iconTab}
+          />
         ))}
       </div>
 
       <div className="flex px-4">
         <button className="p-1 hover:bg-gray-500/30 rounded-md">
-          <OpenChangeIcon width="18" height="18" />
+          <OpenChangeIcon
+            width="18"
+            height="18"
+          />
         </button>
         <button className="p-1 hover:bg-gray-500/30 rounded-md">
-          <Layout10Icon width="18" height="18" />
+          <Layout10Icon
+            width="18"
+            height="18"
+          />
         </button>
         <button className="p-1 hover:bg-gray-500/30 rounded-md">
-          <MenuCircleVerticalIcon width="18" height="18" />
+          <MenuCircleVerticalIcon
+            width="18"
+            height="18"
+          />
         </button>
       </div>
     </div>
