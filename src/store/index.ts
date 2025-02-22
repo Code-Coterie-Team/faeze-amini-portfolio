@@ -56,7 +56,6 @@ export const addTabStore = create<TabStore>()(
         set((state) => {
           const exists = state.tab.some((tab) => tab.tabTitle === tabTitle);
           if (exists) {
-            // console.warn(`Tab with title "${tabTitle}" already exists!`);
             return state;
           }
 
@@ -66,11 +65,6 @@ export const addTabStore = create<TabStore>()(
         }),
       removeTab: (href) =>
         set((state) => {
-          console.log(
-            "tab href delete",
-            state.tab.filter((tab) => tab.href !== href)
-          );
-
           if (state.tab.length === 1) {
             return state;
           }
@@ -78,12 +72,22 @@ export const addTabStore = create<TabStore>()(
           const indexTabDelete = state.tab.findIndex(
             (tab) => tab.href === href
           );
-          const newActiveTab =
-            newTabs[indexTabDelete - 1]?.href || newTabs[0]?.href;
-          console.log("new Active Tav", newActiveTab);
+          const hrefTabDelete = state.tab.find((tab) => tab.href === href);
+          let { activeTab } = state;
+
+          if (indexTabDelete == 0 && activeTab === hrefTabDelete?.href) {
+            activeTab = newTabs[indexTabDelete]?.href;
+            console.log("indexTabDelete == 0 : ", indexTabDelete);
+            // console.log(indexTabDelete)
+          } else if (indexTabDelete > 0 && activeTab === hrefTabDelete?.href) {
+            activeTab = newTabs[indexTabDelete - 1]?.href;
+            console.log("indexTabDelete > 0 : ", indexTabDelete);
+          } else if (activeTab !== hrefTabDelete?.href) {
+            activeTab;
+          }
           return {
             tab: newTabs,
-            activeTab: newActiveTab,
+            activeTab: activeTab,
           };
         }),
 
