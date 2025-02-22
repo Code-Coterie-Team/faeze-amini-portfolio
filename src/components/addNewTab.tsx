@@ -40,7 +40,7 @@ function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
       }}
     >
     
-      <p className="text-base">{tabTitle}</p>
+      <p className="text-base whitespace-nowrap">{tabTitle}</p>
       <button
         onClick={(e) => {
           e.preventDefault();
