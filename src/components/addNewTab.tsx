@@ -44,6 +44,7 @@ function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
       <button
         onClick={(e) => {
           e.preventDefault();
+          e.stopPropagation();
           removeTab(href);
         }}
         className="p-1 hover:bg-gray-500/30 rounded-md"
