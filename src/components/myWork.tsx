@@ -109,11 +109,11 @@ function MyWork() {
         {workProjects.map((project, index) => (
           <div
             key={index}
-            className="item flex items-center border border-tGrayAll/30 rounded-2xl shadow"
+            className="item flex flex-col lg:flex-row items-center border border-tGrayAll/30 rounded-2xl shadow"
           >
-            <div className="w-1/2 p-12 pb-5 flex flex-col gap-10">
+            <div className="lg:w-1/2 p-12 pb-5 flex flex-col gap-10">
               <h3 className="font-semibold">
-                <p className="text-4xl text-textYelowLight whitespace-nowrap">
+                <p className="text-4xl text-textYelowLight lg:whitespace-nowrap whitespace-normal">
                   {" "}
                   {project.name}
                 </p>
@@ -148,7 +148,7 @@ function MyWork() {
                 )}
               </Link>
             </div>
-            <div className="h-[300px] w-1/2 flex justify-end flex-col rounded-2xl relative items-center">
+            <div className="h-[300px] lg:w-1/2 flex lg:justify-end  flex-col rounded-2xl relative items-center">
               <div className="demoProject absolute flex gap-4 top-1/2">
                 <Link
                   className="bg-gray-500/40 p-2 rounded-full text-gray-50 hover:scale-125"

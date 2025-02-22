@@ -64,7 +64,7 @@ function Skills() {
         </span>
         <span className="text-textPurpLeLight">Front-End</span>
       </div>
-      <div className="programmingSkills flex mt-20 gap-8">
+      <div className="programmingSkills flex flex-col lg:flex-row mt-20 gap-8 items-center">
         <div className="rounded-full w-[335px] h-[335px] border-4 border-black shadow-styleShadowCircle place-self-center relative">
           <div
             className="rounded-full w-[325px] h-[325px] "
@@ -120,7 +120,7 @@ function Skills() {
             ([category, skills], index) =>
               changeSkills === category && (
                 <div key={index} className="flex flex-col">
-                  <h2 className="text-3xl font-semibold text-gray-50">
+                  <h2 className="text-3xl text-center lg:text-left font-semibold text-gray-50">
                     {category}
                   </h2>
 

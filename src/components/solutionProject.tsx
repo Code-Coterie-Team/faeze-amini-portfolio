@@ -14,7 +14,7 @@ function SolutionProject({ text01, titleText, text02, href }: SolutionItems) {
   return (
     <div
       id="solution"
-      className="solution px-14 py-6"
+      className="solution md:px-14 px-2 py-6"
     >
       <SectionSeparator />
       <h1 className="mt-8 mb-5 font-medium text-4xl text-gray-50 tracking-tight ">
@@ -22,8 +22,8 @@ function SolutionProject({ text01, titleText, text02, href }: SolutionItems) {
       </h1>
       <p className="text-lg">{text01}</p>
       <div className="mt-5">
-        <span className="text-lg text-textActive">{titleText}</span>
-        <span className="text-base">{text02}</span>
+        <span className="lg:text-lg text-textActive">{titleText}</span>
+        <span className="text-base pl-2">{text02}</span>
       </div>
       <div className="inline-block mt-8">
         <div className="bg-gray-50 text-gray-950 px-3 py-1 rounded-full hover:opacity-80 flex gap-2">

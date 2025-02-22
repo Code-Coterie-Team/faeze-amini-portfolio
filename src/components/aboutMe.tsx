@@ -6,7 +6,7 @@ import PersonalInformation from "./personalInformation";
 
 function AboutMe() {
   return (
-    <div className="px-12 flex flex-col gap-80 h-full overflow-y-auto">
+    <div className="lg:px-12 px-4 flex flex-col gap-80 h-full overflow-y-auto">
       <PersonalInformation />
       <WorkExperience />
       <Skills />

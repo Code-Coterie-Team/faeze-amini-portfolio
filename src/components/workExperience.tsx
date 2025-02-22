@@ -9,7 +9,7 @@ function WorkExperience() {
       id="workExperience"
       className="workExperience"
     >
-        <SectionSeparator/>
+      <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50 w-[28px] h-[28px]">
           <BriefcaseIcon className="" />
@@ -25,14 +25,9 @@ function WorkExperience() {
         </span>
       </div>
       <div className="border-l mt-24 border-l-tGrayAll/30 pl-2">
-        <div className="flex ">
-          <div>
-            <div>
-              <span className="px-4 font-semibold text-gray-50">
-                JUN 2023-PRESENT
-              </span>
-            </div>
-            <div className="w-[96px] h-[96px] m-20">
+        <div className="lg:hidden flex flex-col lg:flex-row">
+          <div className="flex flex-row lg:flex-col gap-2">
+          <div className="w-[96px] h-[96px] lg:m-20 mx-4">
               <Image
                 src="/Image/codecoterie.jpeg"
                 alt=""
@@ -40,12 +35,16 @@ function WorkExperience() {
                 height={96}
               />
             </div>
+            <div className="flex flex-col lg:flex-row font-semibold">
+              <span className="text-gray-50">JUN 2023-PRESENT</span>
+              <p className="text-textLightRed text-lg mb-4">
+                CodeCoterie | Frontend Developer
+              </p>
+            </div>
+           
           </div>
           <div>
-            <p className="text-textLightRed text-lg font-semibold mb-4">
-              CodeCoterie | Frontend Developer
-            </p>
-            <ul className="list-disc pl-10 text-base pb-8">
+            <ul className="list-disc pl-10 text-base pb-8 pt-8">
               <li className="py-1">
                 Developed and maintained React components, screens.
               </li>
@@ -58,7 +57,39 @@ function WorkExperience() {
                 a way that is consistent with existing codebase conventions.
               </li>
             </ul>
-            <SectionSeparator/>
+          </div>
+        </div>
+        <div className=" lg:flex lg:flex-row gap-4 hidden">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-row font-semibold">
+              <span className="text-gray-50 px-4">JUN 2023-PRESENT</span>
+            </div>
+            <div className="w-[96px] h-[96px] mx-8 my-8 ">
+              <Image
+                src="/Image/codecoterie.jpeg"
+                alt=""
+                width={96}
+                height={96}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="text-textLightRed text-lg mb-4 font-semibold px-4">
+              CodeCoterie | Frontend Developer
+            </p>
+            <ul className="list-disc pl-14 text-base pb-8">
+              <li className="py-1">
+                Developed and maintained React components, screens.
+              </li>
+              <li className="py-1">
+                Developed front-end user interface using React,Tailwind and
+                JavaScript for Web Apps.
+              </li>
+              <li className="py-1">
+                Collaborated with other developers to implement new features in
+                a way that is consistent with existing codebase conventions.
+              </li>
+            </ul>
           </div>
         </div>
       </div>

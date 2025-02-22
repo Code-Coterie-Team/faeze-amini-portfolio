@@ -26,13 +26,13 @@ function Footer() {
           </div>
           <span>main&#42;</span>
         </div>
-        <div className="p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
+        <div className="hidden lg:block p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
           <IcloadIcon
             width="20"
             height="20"
           />
         </div>
-        <div className="flex flex-row gap-1 items-center p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
+        <div className="hidden lg:flex flex-row gap-1 items-center p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
           <div>
             <MultiplyCircleIcon
               width="16"
@@ -49,16 +49,16 @@ function Footer() {
         </div>
       </div>
       <div className="flex items-center cursor-pointer pr-2 gap-1">
-        <span className="p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
+        <span className="hidden lg:block p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
           Spaces: 2
         </span>
-        <span className="p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
+        <span className="hidden lg:block p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
           UTF-8
         </span>
-        <span className="p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
+        <span className="hidden lg:block p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
           CRLF
         </span>
-        <span className="p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
+        <span className="hidden lg:block p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">
           &#123; &#125; TypeScript JSX
         </span>
         <div className="flex flex-row gap-1 p-1 px-2 hover:bg-gray-500 hover:bg-opacity-30">

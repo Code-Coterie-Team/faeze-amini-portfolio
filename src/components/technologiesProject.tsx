@@ -15,7 +15,7 @@ function TechnologiesProject({listTechnologies,}: TechnologiesItems) {
   return (
     <div
       id="technologies"
-      className="technologies px-14 py-6 mb-48"
+      className="technologies md:px-14 px-2 py-6 mb-48"
     >
       <div>
         <SectionSeparator />

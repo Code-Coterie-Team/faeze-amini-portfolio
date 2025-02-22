@@ -17,7 +17,7 @@ function ChallengeProject({
   return (
     <div
       id="challenge"
-      className="challenge px-14 py-6"
+      className="challenge md:px-14 px-2 py-6"
     >
       <SectionSeparator />
       <h1 className="mt-8 mb-5 font-medium text-4xl text-gray-50 tracking-tight ">

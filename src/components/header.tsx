@@ -31,7 +31,9 @@ function Header() {
             <VsCodeIcon width="30" height="30" />
           </div>
 
-          <div className="block md:hidden">
+          <div onClick={() => {
+              toggleSideBarShow(!sideBarShow);
+            }} className="block md:hidden">
             <MenuLineHorizontalIcon />
           </div>
         </div>
@@ -48,7 +50,7 @@ function Header() {
         </div>
       </div>
 
-      <h1 className="pt-3 pb-3">Faeze Amini - Portfolio</h1>
+      <h1 className="pt-3 pb-3 md:block hidden">Faeze Amini - Portfolio</h1>
 
       <div className="flex flex-row">
         <div className="flex py-2">
