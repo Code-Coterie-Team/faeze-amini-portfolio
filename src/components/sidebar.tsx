@@ -120,7 +120,7 @@ function Sidebar() {
           !sideBarShow && "hidden"
         } border-r border-r-borderDarck overflow-hidden`}
       >
-        <div className="w-[18rem]">
+        <div className="w-[18rem] overflow-hidden">
           {isActiveSidebar === "file" && <DetailSubSidebar />}
         </div>
       </div>
