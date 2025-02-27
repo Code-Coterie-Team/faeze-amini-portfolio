@@ -13,7 +13,7 @@ function PersonalInformation() {
   const { changeActiveHash } = useStore();
 
   return (
-    <div className="flex flex-col gap-80">
+    <div className="flex flex-col gap-80 relative">
       <motion.div
         id="aboutme"
         className=" myIntroduction pt-[10rem]"
@@ -249,6 +249,28 @@ function PersonalInformation() {
           </motion.div>
         </div>
       </div>
+
+      <div className=" flex flex-col justify-center items-center absolute top-[35%] left-1/2">
+        {[...Array(3)].map((_, index) => (
+          <motion.span
+            key={index}
+            className="size-4 border-white border-r-2 border-b-2"
+            animate={{
+              rotate: [45, 45, 45],
+              y: [-15, 0, 15],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 1.2,
+              delay:index*0.2,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "linear",
+            }}
+          />
+        ))}
+      </div>
+
     </div>
   );
 }
