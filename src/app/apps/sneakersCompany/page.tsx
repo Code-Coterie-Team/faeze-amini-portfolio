@@ -44,7 +44,7 @@ function page() {
     <div className="h-full overflow-y-auto">
       <div className="flex flex-col gap-9">
         <AboutProject
-          title={" Sneakers Company"}
+          title={"Sneakers Company"}
           description={
             "This platform is designed to make your shopping experience easier and more enjoyable."
           }
@@ -53,6 +53,7 @@ function page() {
           service={"Web application"}
           imageSrc={"/Image/sneakers-company-project01.png"}
           imageAlt={"imageSneakersCompany"}
+          activeHashProject={"sneakersCompany"}
         />
 
         <ChallengeProject
@@ -65,15 +66,20 @@ function page() {
               along with options to increase or decrease the quantity of each
               item."
           item03="Showcasing images for each product."
+          activeHashProject={"sneakersCompany"}
         />
         <SolutionProject
           text01={"example"}
           titleText={"Delete Application (system triggered)"}
           text02={"example"}
           href={"/"}
+          activeHashProject={"sneakersCompany"}
         />
 
-        <TechnologiesProject listTechnologies={technologies} />
+        <TechnologiesProject
+          listTechnologies={technologies}
+          activeHashProject={"sneakersCompany"}
+        />
       </div>
     </div>
   );

@@ -71,6 +71,7 @@ function page() {
           service="Web application"
           imageSrc="/Image/react-admin-project01.png"
           imageAlt="imageAdminDashboard"
+          activeHashProject={"adminDashboard"}
         />
         <ChallengeProject
           descrption="This platform is designed for managing the sales department and user
@@ -82,15 +83,17 @@ function page() {
               functionalities."
           item03=" State Management with Zustand: Leverages Zustand for efficient
               state management within the application."
+              activeHashProject={"adminDashboard"}
         />
 
         <SolutionProject
           text01={"example...."}
           titleText={"Delete Application (system triggered): "}
           text02={"example02........"}
+          activeHashProject={"adminDashboard"}
           href={"/"}
         />
-        <TechnologiesProject listTechnologies={technologies} />
+        <TechnologiesProject listTechnologies={technologies}   activeHashProject={"adminDashboard"}/>
       </div>
     </div>
   );
