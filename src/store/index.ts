@@ -8,6 +8,13 @@ interface StoreState {
 
   projectName: string;
   changeProjectName: (newName: string) => void;
+
+  hoverPortfolio:boolean;
+  setHoverPortfolio: (newState: boolean) => void;
+
+  activeHash:string,
+  changeActiveHash: (newHash: string) => void;
+  
 }
 
 interface ListTabs {
@@ -46,6 +53,13 @@ export const useStore = create<StoreState>((set) => ({
 
   projectName: "adminDashboard",
   changeProjectName: (newName) => set(() => ({ projectName: newName })),
+
+  hoverPortfolio:false,
+  setHoverPortfolio: (newState) => set(() => ({ hoverPortfolio: newState })),
+
+  activeHash:"/#aboutme",
+  changeActiveHash: (newHash) => set(() => ({ activeHash: newHash })),
+
 }));
 
 export const addTabStore = create<TabStore>()(
