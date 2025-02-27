@@ -3,10 +3,13 @@ import React, { useEffect, useState } from "react";
 import OpenBookIcon from "./icons/OpenBookIcon";
 import Image from "next/image";
 import SectionSeparator from "./sectionSeparator";
+import { useStore } from "@/store";
+import { motion } from "framer-motion";
 
 function Skills() {
   const [colorChange, setColorChange] = useState("rgb(255,255,255)");
   const [changeSkills, setChangeSkills] = useState("Languages");
+  const { changeActiveHash } = useStore();
 
   const randomColor = () => {
     const r = Math.floor(Math.random() * 256);
@@ -49,21 +52,40 @@ function Skills() {
     ],
   };
   return (
-    <div id="skills" className="skills">
+    <motion.div
+      id="skills"
+      className="skills"
+      onViewportEnter={() => changeActiveHash("/#skills")}
+    >
       <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
-          <OpenBookIcon width="28" height="28" />
+          <OpenBookIcon
+            width="28"
+            height="28"
+          />
         </div>
-        <p className="text-gray-50 text-2xl pl-7">Skills</p>
+        <motion.p
+          className="text-gray-50 text-2xl pl-7"
+          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ x: -30, opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Skills
+        </motion.p>
       </div>
-      <div className="max-w-3xl text-5xl pt-9">
+      <motion.div
+        className="max-w-3xl text-5xl pt-9"
+        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: -30, opacity: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <span className="text-textPurpLeLight">Full Stack </span>
         <span className="text-gray-50">
           software developer with experience in{" "}
         </span>
         <span className="text-textPurpLeLight">Front-End</span>
-      </div>
+      </motion.div>
       <div className="programmingSkills flex flex-col lg:flex-row mt-20 gap-8 items-center">
         <div className="rounded-full w-[335px] h-[335px] border-4 border-black shadow-styleShadowCircle place-self-center relative">
           <div
@@ -119,16 +141,22 @@ function Skills() {
           {Object.entries(skillsCollection).map(
             ([category, skills], index) =>
               changeSkills === category && (
-                <div key={index} className="flex flex-col">
+                <div
+                  key={index}
+                  className="flex flex-col"
+                >
                   <h2 className="text-3xl text-center lg:text-left font-semibold text-gray-50">
                     {category}
                   </h2>
 
                   <div className="flex gap-8 pt-8 flex-wrap">
                     {skills.map((skill, index) => (
-                      <div
+                      <motion.div
                         key={index}
                         className="h-[115px] flex flex-col items-center"
+                        whileInView={{ y: 0, opacity: 1 }}
+                        initial={{ y: 30, opacity: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
                       >
                         <Image
                           className="w-[64px] h-[64px] "
@@ -140,7 +168,7 @@ function Skills() {
                         <h3 className="bg-gray-50 text-blue-500 mt-2 rounded-full px-2">
                           {skill.name}
                         </h3>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -148,7 +176,7 @@ function Skills() {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
