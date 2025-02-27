@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import RemoveIcon from "./icons/RemoveIcon";
 import Link from "next/link";
 import { addTabStore, useStore } from "@/store";
@@ -6,10 +6,9 @@ import { addTabStore, useStore } from "@/store";
 interface ItemTabs {
   tabTitle: string;
   href: string;
-  iconTab: ReactElement;
 }
 
-function AddNewTab({ tabTitle, href, iconTab }: ItemTabs) {
+function AddNewTab({ tabTitle, href }: ItemTabs) {
   const {
     removeTab,
     activeTab,

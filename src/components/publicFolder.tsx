@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import MailIcon from "./icons/MailIcon";
 import IdeaIcon from "./icons/IdeaIcon";
 import SkillsIcon from "./icons/SkillsIcon";
@@ -81,9 +81,6 @@ function PublicFolder() {
     changeIsPublicSideBar,
   } = addTabStore();
 
-  useEffect(() => {
-    changeIsPublicSideBar(true);
-  }, []);
   const { changeActiveHash } = useStore();
   return (
     <div className="public">

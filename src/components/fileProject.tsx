@@ -116,12 +116,10 @@ function FileProject(props: FileProjects) {
       {projectName === props.nameProject && (
         <>
           {Object.entries(listMenuLinkProjecs).map(
-            ([project, listMenus]) =>
+            ([project, listMenus],index) =>
               project === props.nameProject &&
-              listMenus.map((list, index) => (
-                <CreateFileMenu listFileMenu={listMenus}                  
+                <CreateFileMenu key={index} listFileMenu={listMenus}                  
                 />
-              ))
           )}
         </>
       )}

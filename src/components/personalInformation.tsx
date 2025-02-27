@@ -6,7 +6,7 @@ import UserCircleIcon from "./icons/UserCircleIcon";
 import Link from "next/link";
 import Image from "next/image";
 import SectionSeparator from "./sectionSeparator";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useStore } from "@/store";
 
 function PersonalInformation() {

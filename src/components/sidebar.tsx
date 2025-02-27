@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import FileIcon from "./icons/FileIcon";
 import SearchIcon from "./icons/SearchIcon";
 import BranchIcon from "./icons/BranchIcon";

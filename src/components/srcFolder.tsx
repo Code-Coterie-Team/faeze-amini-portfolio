@@ -158,20 +158,6 @@ const listMenuLinkProjecs: Record<
   ],
 };
 
-const iconTab = [
-  <ReactJsIcon
-    width="18"
-    height="18"
-  />,
-  <ReactJsIcon
-    width="18"
-    height="18"
-  />,
-  <FileWorkIcon
-    width="18"
-    height="18"
-  />,
-];
 function SrcFolder() {
   const {
     addTab,

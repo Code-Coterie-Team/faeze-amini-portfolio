@@ -64,10 +64,6 @@ function ContactMe() {
     }, 1000);
   }, [isShowModalSuccessful, isShowModalFail]);
 
-  useEffect(() => {
-    setIsShowModalSuccessful(false);
-    setIsShowModalFail(false);
-  }, []);
   interface FormDatas {
     name: string;
     email: string;

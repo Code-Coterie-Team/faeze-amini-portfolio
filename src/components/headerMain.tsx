@@ -41,7 +41,6 @@ function HeaderMain() {
             key={index}
             tabTitle={itemTab.tabTitle}
             href={itemTab.href}
-            iconTab={itemTab.iconTab}
           />
         ))}
       </div>
