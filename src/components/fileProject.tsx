@@ -119,12 +119,7 @@ function FileProject(props: FileProjects) {
             ([project, listMenus]) =>
               project === props.nameProject &&
               listMenus.map((list, index) => (
-                <CreateFileMenu
-                  key={index}
-                  href={list.href}
-                  IconName={list.IconName}
-                  nameFile={list.nameFile}
-                  hrefPage={""}
+                <CreateFileMenu listFileMenu={listMenus}                  
                 />
               ))
           )}
