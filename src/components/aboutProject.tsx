@@ -1,5 +1,8 @@
+"use client"
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useStore } from "@/store";
 
 interface ItemAboutPaje {
   title: string;
@@ -9,6 +12,7 @@ interface ItemAboutPaje {
   service: string;
   imageSrc: string;
   imageAlt: string;
+  activeHashProject:string,
 }
 function AboutProject({
   title,
@@ -18,10 +22,20 @@ function AboutProject({
   service,
   imageSrc,
   imageAlt,
+  activeHashProject,
 }: ItemAboutPaje) {
+  const { changeActiveHash } = useStore();
   return (
-    <div id="about" className="about">
-      <div className=" px-4 py-6">
+    <motion.div id="about" className="about"
+    onViewportEnter={() => changeActiveHash(`/apps/${activeHashProject}/#about`)}
+    animate={{ y: 0, opacity: 1 }}
+    initial={{ y: 20, opacity: 0 }}
+    transition={{ duration: 0.5, delay: 0.4 }}
+    >
+    
+      <motion.div className=" px-4 py-6"
+     
+      >
         <div className="flex flex-col justify-center items-center mt-24 gap-4">
           <p className=" text-base font-semibold text-textActive">Case Study</p>
           <h1 className="text-6xl text-gray-50 font-semibold pt-3 tracking-tight text-center">
@@ -29,7 +43,7 @@ function AboutProject({
           </h1>
           <p className="text-xl max-w-3xl text-center pt-2">{description}</p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="grid md:grid-cols-3 grid-cols-1 border border-tGrayAll/30 ">
         <div className="flex flex-col  px-6 py-4 border-r border-r-tGrayAll/30">
@@ -54,7 +68,7 @@ function AboutProject({
           height={955}
         ></Image>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
