@@ -8,6 +8,8 @@ import Link from "next/link";
 import SectionSeparator from "./sectionSeparator";
 import MaximizeIcon from "./icons/MaximizeIcon";
 import CodeIcon from "./icons/CodeIcon";
+import { useStore } from "@/store";
+import { motion } from "framer-motion";
 
 interface workProject {
   name: string;
@@ -88,23 +90,42 @@ const workProjects: workProject[] = [
 
 function MyWork() {
   const [isHoverShowProject, setIsHoverShowProject] = useState("");
-
+  const { changeActiveHash } = useStore();
   return (
-    <div id="myWork" className="myWork">
+    <motion.div
+      id="myWork"
+      className="myWork"
+      onViewportEnter={() => changeActiveHash("/#myWork")}
+    >
       <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50">
-          <PackageBoxIcon width="28" height="28" />
+          <PackageBoxIcon
+            width="28"
+            height="28"
+          />
         </div>
-        <p className="text-gray-50 text-2xl pl-7">My Work</p>
+        <motion.p
+          className="text-gray-50 text-2xl pl-7"
+          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ x: -30, opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          My Work
+        </motion.p>
       </div>
-      <div className="max-w-3xl text-5xl pt-9 mb-24">
+      <motion.div
+        className="max-w-3xl text-5xl pt-9 mb-24"
+        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: -30, opacity: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <span className="text-gray-50">Some of </span>
         <span className="text-textYelowLight">my work </span>
         <span className="text-gray-50">as a </span>
         <span className="text-textYelowLight"> Fron-tend </span>
         <span className="text-gray-50">developer</span>
-      </div>
+      </motion.div>
       <div className="workChildren flex flex-col gap-6">
         {workProjects.map((project, index) => (
           <div
@@ -155,7 +176,10 @@ function MyWork() {
                   href={"https://github.com/faeze-amn?tab=repositories"}
                   target="_blank"
                 >
-                  <MaximizeIcon width="24" height="24" />
+                  <MaximizeIcon
+                    width="24"
+                    height="24"
+                  />
                 </Link>
                 <Link
                   className="bg-gray-500/40 p-2 rounded-full text-gray-50 hover:scale-125"
@@ -164,7 +188,10 @@ function MyWork() {
                   }
                   target="_blank"
                 >
-                  <CodeIcon width="24" height="24" />
+                  <CodeIcon
+                    width="24"
+                    height="24"
+                  />
                 </Link>
               </div>
 
@@ -179,7 +206,7 @@ function MyWork() {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
