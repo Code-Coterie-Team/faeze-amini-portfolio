@@ -2,10 +2,10 @@
 import Link from "next/link";
 import React, { ReactNode, useEffect } from "react";
 import { addTabStore, useStore } from "@/store";
-import ArrowTopLeft from "./icons/ArrowTopLeft";
-import ArrowTopRight from "./icons/ArrowTopRight";
-import ArrowBottomLeft from "./icons/ArrowBottomLeft";
-import ArrowBottomRight from "./icons/ArrowBottomRight";
+import ArrowTopLeft from "./icons/ArrowTopLeftIcon";
+import ArrowTopRight from "./icons/ArrowTopRightIcon";
+import ArrowBottomLeft from "./icons/ArrowBottomLeftIcon";
+import ArrowBottomRight from "./icons/ArrowBottomRightIcon";
 import { motion } from "framer-motion";
 
 interface CreateFileMenus {
