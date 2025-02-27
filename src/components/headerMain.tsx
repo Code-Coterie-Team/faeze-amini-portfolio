@@ -16,7 +16,6 @@ function HeaderMain() {
   const path = usePathname();
 
   useEffect(() => {
-    console.log(" active Tab : ", activeTab);
     if (tab.length === 0 && path === "/") {
       changeActiveTab(path);
       addTab(
@@ -30,8 +29,7 @@ function HeaderMain() {
     }
 
     if (activeTab !== path) {
-     // changeActiveTab(path);
-      router.push(activeTab)
+      router.push(activeTab);
     }
   }, [path, activeTab, tab]);
 
