@@ -2,9 +2,10 @@
 import React, { useEffect, useState } from "react";
 import MailIcon from "./icons/MailIcon";
 import SectionSeparator from "./sectionSeparator";
-import { addTabStore } from "@/store";
+import { addTabStore, useStore } from "@/store";
 import ModalShow from "./modal/modalShow";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 function ContactMe() {
   const {
@@ -31,6 +32,7 @@ function ContactMe() {
   const [company, setCompany] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
+  const { changeActiveHash } = useStore();
   //api call
   const sendFormData = async (formData: FormDatas) => {
     if (
@@ -85,20 +87,43 @@ function ContactMe() {
   };
   return (
     <>
-      <div id="contactMe" className="contactMe">
+      <motion.div
+        id="contactMe"
+        className="contactMe"
+        onViewportEnter={() => changeActiveHash("/#contactMe")}
+      >
         <SectionSeparator />
         <div className="flex pt-12 items-center">
           <div className="text-gray-50">
-            <MailIcon width="28" height="28" />
+            <MailIcon
+              width="28"
+              height="28"
+            />
           </div>
-          <p className="text-gray-50 text-2xl pl-7">Contact Me</p>
+          <motion.p
+            className="text-gray-50 text-2xl pl-7"
+            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ x: -30, opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Contact Me
+          </motion.p>
         </div>
-        <div className="max-w-3xl text-5xl pt-9 mb-16">
+        <motion.div
+          className="max-w-3xl text-5xl pt-9 mb-16"
+          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ x: -30, opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <span className="text-gray-50">
             Get in contact and let&apos;s work together{" "}
           </span>
-        </div>
-        <form className="py-10 mb-16" method="post" onSubmit={handleSubmit}>
+        </motion.div>
+        <form
+          className="py-10 mb-16"
+          method="post"
+          onSubmit={handleSubmit}
+        >
           <div className="listContact  rounded-3xl">
             <div className="flex flex-col relative">
               <label
@@ -230,12 +255,18 @@ function ContactMe() {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
       {isShowModalSuccessful ? (
-        <ModalShow title={"Email successful"} status={"successful"} />
+        <ModalShow
+          title={"Email successful"}
+          status={"successful"}
+        />
       ) : undefined}
       {isShowModalFail ? (
-        <ModalShow title={"Please fill out the form"} status={"Fail"} />
+        <ModalShow
+          title={"Please fill out the form"}
+          status={"Fail"}
+        />
       ) : undefined}
     </>
   );
