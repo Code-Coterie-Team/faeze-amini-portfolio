@@ -1,33 +1,55 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import BriefcaseIcon from "./icons/BriefcaseIcon";
 import Image from "next/image";
 import SectionSeparator from "./sectionSeparator";
+import { useStore } from "@/store";
+import { motion } from "framer-motion";
 
 function WorkExperience() {
+  const { changeActiveHash } = useStore();
   return (
-    <div
+    <motion.div
       id="workExperience"
       className="workExperience"
+      onViewportEnter={() => changeActiveHash("/#workExperience")}
     >
       <SectionSeparator />
       <div className="flex pt-12 items-center">
         <div className="text-gray-50 w-[28px] h-[28px]">
           <BriefcaseIcon className="" />
         </div>
-        <p className="text-gray-50 text-2xl pl-7 ">Work Experience</p>
+        <motion.p
+          className="text-gray-50 text-2xl pl-7 "
+          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ x: -30, opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Work Experience
+        </motion.p>
       </div>
-      <div className="max-w-3xl text-5xl pt-9">
+      <motion.div
+        className="max-w-3xl text-5xl pt-9"
+        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: -30, opacity: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <span className="text-textLightRed">Front-end </span>
         <span className="text-gray-50">with </span>
         <span className="text-textLightRed">1 years </span>
         <span className="text-gray-50">
           of experience in the software industry
         </span>
-      </div>
-      <div className="border-l mt-24 border-l-tGrayAll/30 pl-2">
+      </motion.div>
+      <motion.div
+        className="border-l mt-24 border-l-tGrayAll/30 pl-2"
+        whileInView={{ y: 0, opacity: 1 }}
+        initial={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
         <div className="lg:hidden flex flex-col lg:flex-row">
           <div className="flex flex-row lg:flex-col gap-2">
-          <div className="w-[96px] h-[96px] lg:m-20 mx-4">
+            <div className="w-[96px] h-[96px] lg:m-20 mx-4">
               <Image
                 src="/Image/codecoterie.jpeg"
                 alt=""
@@ -41,7 +63,6 @@ function WorkExperience() {
                 CodeCoterie | Frontend Developer
               </p>
             </div>
-           
           </div>
           <div>
             <ul className="list-disc pl-10 text-base pb-8 pt-8">
@@ -92,8 +113,8 @@ function WorkExperience() {
             </ul>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
