@@ -1,21 +1,31 @@
+"use client";
 import React from "react";
 import SectionSeparator from "./sectionSeparator";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useStore } from "@/store";
 
 interface Technology {
-    name: string;
-    image: string;
-  }
+  name: string;
+  image: string;
+}
 interface TechnologiesItems {
-    listTechnologies:Technology[];
-
+  listTechnologies: Technology[];
+  activeHashProject: string;
 }
 
-function TechnologiesProject({listTechnologies,}: TechnologiesItems) {
+function TechnologiesProject({
+  listTechnologies,
+  activeHashProject,
+}: TechnologiesItems) {
+  const { changeActiveHash } = useStore();
   return (
-    <div
+    <motion.div
       id="technologies"
       className="technologies md:px-14 px-2 py-6 mb-48"
+      onViewportEnter={() =>
+        changeActiveHash(`/apps/${activeHashProject}/#technologies`)
+      }
     >
       <div>
         <SectionSeparator />
@@ -25,7 +35,13 @@ function TechnologiesProject({listTechnologies,}: TechnologiesItems) {
       </div>
       <div className="flex gap-4 mt-6 flex-wrap">
         {listTechnologies.map((item, index) => (
-          <div key={index} className="h-[115px] flex flex-col items-center">
+          <motion.div
+            key={index}
+            className="h-[115px] flex flex-col items-center"
+            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: 30, opacity: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+          >
             <Image
               className="w-[64px] h-[64px] "
               src={item.image}
@@ -36,10 +52,10 @@ function TechnologiesProject({listTechnologies,}: TechnologiesItems) {
             <h4 className="mt-2 px-2 font-medium tracking-tight text-lg text-gray-50 ">
               {item.name}
             </h4>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
