@@ -24,5 +24,21 @@ body {
   overflow: hidden;
 }
 * {
-  scrollbar-color: rgb(41, 45, 69) rgb(30,35,54) ;
+  scrollbar-color: rgb(41, 45, 69) rgb(30, 35, 54);
+}
+.lineBordSrc {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.75rem;
+  height: 100%;
+  border-left-width: 1px;
+  border-color: #31374e;
+}
+.lineBordMyFolde {
+  position: absolute;
+  left: 2.5rem;
+  top: 1.75rem;
+  height: 100%;
+  border-left-width: 1px;
+  border-color: #31374e;
 }
