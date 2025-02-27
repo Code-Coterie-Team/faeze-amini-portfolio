@@ -9,13 +9,14 @@ import NewFolderIcon from "./icons/NewFolderIcon";
 import RefreshIcon from "./icons/RefreshIcon";
 import CollapseFolderIcon from "./icons/CollapseFolderIcon";
 import SidebarMenu from "./sidebarMenu";
+import { useStore } from "@/store";
 
 function DetailSubSidebar() {
+  const {hoverPortfolio, setHoverPortfolio} = useStore();
   const [isOpenEditors, setIsOpenEditors] = useState(false);
   const [hoverOpenEditors, setHoverOpenEditors] = useState(false);
 
   const [isPortfolio, setIsPortfolio] = useState(true);
-  const [hoverPortfolio, setHoverPortfolio] = useState(false);
 
   const listSidebarMenu = [
     {
