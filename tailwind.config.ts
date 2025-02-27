@@ -39,6 +39,7 @@ export default {
         textYelowLight: "rgb(255,220,139)",
         colorInputB: "rgb(96,165,250)",
         colotBgProject: "rgb(54,73,170)",
+        lineBorder: "#31374e",
       },
       backgroundImage: {
         backgroundImgProject:
