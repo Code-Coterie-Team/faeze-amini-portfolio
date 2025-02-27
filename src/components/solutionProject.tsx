@@ -1,20 +1,34 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import ArrowRightIcon from "./icons/ArrowRightIcon";
 import SectionSeparator from "./sectionSeparator";
+import { useStore } from "@/store";
+import { motion } from "framer-motion";
 
 interface SolutionItems {
   text01: string;
   titleText: string;
   text02: string;
   href: string;
+  activeHashProject: string;
 }
 
-function SolutionProject({ text01, titleText, text02, href }: SolutionItems) {
+function SolutionProject({
+  text01,
+  titleText,
+  text02,
+  href,
+  activeHashProject,
+}: SolutionItems) {
+  const { changeActiveHash } = useStore();
   return (
-    <div
+    <motion.div
       id="solution"
       className="solution md:px-14 px-2 py-6"
+      onViewportEnter={() =>
+        changeActiveHash(`/apps/${activeHashProject}/#solution`)
+      }
     >
       <SectionSeparator />
       <h1 className="mt-8 mb-5 font-medium text-4xl text-gray-50 tracking-tight ">
@@ -34,7 +48,7 @@ function SolutionProject({ text01, titleText, text02, href }: SolutionItems) {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
