@@ -1,16 +1,15 @@
 import React, { ReactElement } from "react";
 import RemoveIcon from "./icons/RemoveIcon";
 import Link from "next/link";
-import { addTabStore } from "@/store";
+import { addTabStore, useStore } from "@/store";
 
 interface ItemTabs {
   tabTitle: string;
   href: string;
-  iconTab:ReactElement;
+  iconTab: ReactElement;
 }
 
-function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
-  // const path = usePathname();
+function AddNewTab({ tabTitle, href, iconTab }: ItemTabs) {
   const {
     removeTab,
     activeTab,
@@ -19,6 +18,7 @@ function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
     changeMyFolderSideBar,
     changeSrcFolderSideBar,
   } = addTabStore();
+  const { changeActiveHash } = useStore();
   return (
     <Link
       href={href}
@@ -32,14 +32,15 @@ function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
 
         if (href === "/") {
           changeIsPublicSideBar(true);
+          changeActiveHash(`${href}#aboutme`);
         }
         if (href.includes("/apps/")) {
           changeMyFolderSideBar(true);
           changeSrcFolderSideBar(true);
+          changeActiveHash(`${href}/#about`);
         }
       }}
     >
-    
       <p className="text-base whitespace-nowrap">{tabTitle}</p>
       <button
         onClick={(e) => {
@@ -49,7 +50,10 @@ function AddNewTab({ tabTitle, href,iconTab }: ItemTabs) {
         }}
         className="p-1 hover:bg-gray-500/30 rounded-md"
       >
-        <RemoveIcon width="16" height="16" />
+        <RemoveIcon
+          width="16"
+          height="16"
+        />
       </button>
     </Link>
   );
