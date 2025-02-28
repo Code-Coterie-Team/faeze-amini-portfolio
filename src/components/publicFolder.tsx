@@ -114,16 +114,9 @@ function PublicFolder() {
         <div className="menuPublic relative">
           <Link
             onClick={() => {
-              addTab(
-                "About Me",
-                "/",
-                <StarIcon
-                  width="18"
-                  height="18"
-                />
-              );
+              addTab("About Me", "/");
               changeActiveTab("/");
-             changeActiveHash("/#aboutme")
+              changeActiveHash("/#aboutme");
             }}
             href="/"
           >

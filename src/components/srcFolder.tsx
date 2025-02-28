@@ -12,7 +12,6 @@ import TechnologiesIcon from "./icons/TechnologiesIcon";
 import ReactJsIcon from "./icons/ReactJsIcon";
 import { addTabStore, useStore } from "@/store";
 import CreateFileMenu from "./createFileMenu";
-import StarIcon from "./icons/StarIcon";
 
 const listMenuLinkProjecs: Record<
   string,
@@ -251,11 +250,7 @@ function SrcFolder() {
                               .trim()
                               .slice(1);
 
-                          addTab(
-                            titleProject,
-                            "/apps/" + project,
-                            <StarIcon />
-                          );
+                          addTab(titleProject, "/apps/" + project);
                           changeActiveTab(`/apps/${project}`);
                           changeActiveHash(`/apps/${project}/#about`);
                         }}

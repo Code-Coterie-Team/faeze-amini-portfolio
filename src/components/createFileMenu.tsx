@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode } from "react";
 import { addTabStore, useStore } from "@/store";
 import ArrowTopLeft from "./icons/ArrowTopLeftIcon";
 import ArrowTopRight from "./icons/ArrowTopRightIcon";
@@ -22,14 +22,8 @@ function CreateFileMenu({ listFileMenu }: IChartFrameworksArray) {
   const { changeActiveTab } = addTabStore();
   const {
     activeHash,
-
     changeActiveHash,
   } = useStore();
-
-  useEffect(() => {
-    changeActiveHash(activeHash);
-    console.log("active Hash Public : ", activeHash);
-  }, [activeHash]);
 
   return (
     <>
@@ -41,7 +35,6 @@ function CreateFileMenu({ listFileMenu }: IChartFrameworksArray) {
           <Link
             onClick={() => {
               changeActiveTab(item.hrefPage);
-              changeActiveHash(item.href);
               changeActiveHash(item.href);
             }}
             href={item.href}

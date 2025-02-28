@@ -6,7 +6,6 @@ import OpenChangeIcon from "./icons/OpenChangeIcon";
 import AddNewTab from "./addNewTab";
 import { addTabStore } from "@/store";
 import { usePathname, useRouter } from "next/navigation";
-import StarIcon from "./icons/StarIcon";
 
 function HeaderMain() {
   const router = useRouter();
@@ -20,18 +19,14 @@ function HeaderMain() {
       changeActiveTab(path);
       addTab(
         "About Me",
-        path,
-        <StarIcon
-          width="18"
-          height="18"
-        />
+        path
       );
     }
 
     if (activeTab !== path) {
       router.push(activeTab);
     }
-  }, [path, activeTab, tab]);
+  }, [path, activeTab, tab,addTab,router]);
 
   return (
     <div className="headerMain flex items-center justify-between w-full border-borderDarck border-b-2 bg-darckBg">

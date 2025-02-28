@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -9,23 +8,21 @@ interface StoreState {
   projectName: string;
   changeProjectName: (newName: string) => void;
 
-  hoverPortfolio:boolean;
+  hoverPortfolio: boolean;
   setHoverPortfolio: (newState: boolean) => void;
 
-  activeHash:string,
+  activeHash: string;
   changeActiveHash: (newHash: string) => void;
-  
 }
 
 interface ListTabs {
   tabTitle: string;
   href: string;
-  iconTab: ReactElement;
 }
 
 interface TabStore {
   tab: ListTabs[];
-  addTab: (tabTitle: string, href: string, iconTab: ReactElement) => void;
+  addTab: (tabTitle: string, href: string) => void;
   removeTab: (href: string) => void;
 
   activeTab: string;
@@ -54,19 +51,18 @@ export const useStore = create<StoreState>((set) => ({
   projectName: "adminDashboard",
   changeProjectName: (newName) => set(() => ({ projectName: newName })),
 
-  hoverPortfolio:false,
+  hoverPortfolio: false,
   setHoverPortfolio: (newState) => set(() => ({ hoverPortfolio: newState })),
 
-  activeHash:"/#aboutme",
+  activeHash: "/#aboutme",
   changeActiveHash: (newHash) => set(() => ({ activeHash: newHash })),
-
 }));
 
 export const addTabStore = create<TabStore>()(
   persist(
     (set) => ({
       tab: [],
-      addTab: (tabTitle, href, iconTab) =>
+      addTab: (tabTitle, href) =>
         set((state) => {
           const exists = state.tab.some((tab) => tab.tabTitle === tabTitle);
           if (exists) {
@@ -74,7 +70,7 @@ export const addTabStore = create<TabStore>()(
           }
 
           return {
-            tab: [...state.tab, { tabTitle, href, iconTab }],
+            tab: [...state.tab, { tabTitle, href }],
           };
         }),
       removeTab: (href) =>
@@ -91,13 +87,10 @@ export const addTabStore = create<TabStore>()(
 
           if (indexTabDelete == 0 && activeTab === hrefTabDelete?.href) {
             activeTab = newTabs[indexTabDelete]?.href;
-            console.log("indexTabDelete == 0 : ", indexTabDelete);
-            // console.log(indexTabDelete)
           } else if (indexTabDelete > 0 && activeTab === hrefTabDelete?.href) {
             activeTab = newTabs[indexTabDelete - 1]?.href;
-            console.log("indexTabDelete > 0 : ", indexTabDelete);
           } else if (activeTab !== hrefTabDelete?.href) {
-            activeTab;
+            activeTab = state.activeTab;
           }
           return {
             tab: newTabs,

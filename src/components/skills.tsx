@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 function Skills() {
   const [colorChange, setColorChange] = useState("rgb(255,255,255)");
-  const [changeSkills, setChangeSkills] = useState("Languages");
+  const [changeSkills, setChangeSkills] = useState("Front");
   const { changeActiveHash } = useStore();
 
   const randomColor = () => {
