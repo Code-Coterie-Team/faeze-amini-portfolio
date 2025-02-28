@@ -65,7 +65,7 @@ function page() {
       <div className="flex flex-col gap-9">
         <AboutProject
           title="Admin Dashboard"
-          description="The management panel enables y"
+          description="The management panel enables you to efficiently manage the products section with ease."
           industry="Web Store "
           year="2024"
           service="Web application"
@@ -91,7 +91,7 @@ function page() {
           titleText={"Delete Application (system triggered): "}
           text02={"example02........"}
           activeHashProject={"adminDashboard"}
-          href={"/"}
+          href={"https://adminpanelprojectweb.netlify.app/"}
         />
         <TechnologiesProject listTechnologies={technologies}   activeHashProject={"adminDashboard"}/>
       </div>
