@@ -51,7 +51,7 @@ function ContactMe() {
       );
       console.log("Data sent successfully:", response.data);
       setIsShowModalSuccessful(true);
-      // await sendEmail(formData);
+   
     } catch (error) {
       console.error("Error sending data:", error);
     }
@@ -61,8 +61,8 @@ function ContactMe() {
     setTimeout(() => {
       setIsShowModalSuccessful(false);
       setIsShowModalFail(false);
-    }, 1000);
-  }, [isShowModalSuccessful, isShowModalFail]);
+    }, 3000);
+  });
 
   interface FormDatas {
     name: string;

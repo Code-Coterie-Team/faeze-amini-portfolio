@@ -13,9 +13,7 @@ export const sendFormData = async (formData: {
       formData
     );
     console.log("Data sent successfully:", response.data);
-    // setIsShowModalSuccessful(true);
-
-    // await sendEmail(formData);
+  
   } catch (error) {
     console.error("Error sending data:", error);
   }
