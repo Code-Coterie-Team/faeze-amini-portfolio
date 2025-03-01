@@ -39,7 +39,7 @@ function CreateFileMenu({ listFileMenu }: IChartFrameworksArray) {
             }}
             href={item.href}
           >
-            <div className="flex items-center gap-2 pl-14 py-[2px]">
+            <div className={`flex items-center gap-2  py-[2px] ${item.href.includes("/apps/") ? "pl-[4.75rem]" : "pl-14"}`}>
               {item.IconName}
               <p className="text-base">{item.nameFile}</p>
             </div>
@@ -47,7 +47,7 @@ function CreateFileMenu({ listFileMenu }: IChartFrameworksArray) {
           {activeHash === item.href && (
             <>
               <motion.span
-                className="absolute top-0 left-12"
+                className={`absolute top-0  ${item.href.includes("/apps/") ? "left-[4.25rem]" : "left-12"}`}
                 initial={{ opacity: 0, x: -10, y: -10 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
@@ -63,7 +63,7 @@ function CreateFileMenu({ listFileMenu }: IChartFrameworksArray) {
                 <ArrowTopRight />
               </motion.span>
               <motion.span
-                className="absolute top-5 left-12"
+                className={`absolute top-5 ${item.href.includes("/apps/") ? "left-[4.25rem]" : "left-12"}`}
                 initial={{ opacity: 0, x: -10, y: 10 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
