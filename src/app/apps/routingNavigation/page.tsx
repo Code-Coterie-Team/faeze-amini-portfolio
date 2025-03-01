@@ -34,33 +34,33 @@ function page() {
     <div className="h-full overflow-y-auto">
       <div className="flex flex-col gap-9">
         <AboutProject
-          title="Rock Paper Scissors Game"
-          description="Implementation of Rock-Paper-Scissors Game"
+          title="Routing Navigation"
+          description=""
           industry="Web Store "
           year="2024"
           service="Web application"
-          imageSrc="/Image/challenges-rock-paper-scissors-game01.png"
-          imageAlt="rock-paper-scissors"
-          activeHashProject={"rockPaperScissorsGame"}
+          imageSrc="/Image/Routing-Navigation01.png"
+          imageAlt="imgRoutingNavigation"
+          activeHashProject={"routingNavigation"}
         />
         <ChallengeProject
           descrption=""
           item01=" "
           item02=""
           item03=" "
-          activeHashProject={"rockPaperScissorsGame"}
+          activeHashProject={"routingNavigation"}
         />
 
         <SolutionProject
           text01={"example...."}
           titleText={"Delete Application (system triggered): "}
           text02={"example02........"}
-          activeHashProject={"rockPaperScissorsGame"}
-          href={"https://gamerockpaperscissors-js.netlify.app/"}
+          activeHashProject={"routingNavigation"}
+          href={"https://routingnavigation.netlify.app/"}
         />
         <TechnologiesProject
           listTechnologies={technologies}
-          activeHashProject={"rockPaperScissorsGame"}
+          activeHashProject={"routingNavigation"}
         />
       </div>
     </div>

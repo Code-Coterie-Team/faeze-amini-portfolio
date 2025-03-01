@@ -72,7 +72,7 @@ function page() {
           text01={"example"}
           titleText={"Delete Application (system triggered)"}
           text02={"example"}
-          href={"/"}
+          href={"https://pageproductsneakerweb.netlify.app/"}
           activeHashProject={"sneakersCompany"}
         />
 
