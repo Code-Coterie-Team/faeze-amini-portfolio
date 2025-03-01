@@ -249,7 +249,7 @@ function PersonalInformation() {
         </div>
       </div>
 
-      <div className=" flex flex-col justify-center items-center absolute top-[35%] left-1/2">
+      <div className=" flex flex-col justify-center items-center absolute lg:top-[35%] top-[29%] left-1/2">
         {[...Array(3)].map((_, index) => (
           <motion.span
             key={index}
