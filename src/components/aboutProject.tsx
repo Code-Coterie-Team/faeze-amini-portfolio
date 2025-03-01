@@ -30,7 +30,7 @@ function AboutProject({
     onViewportEnter={() => changeActiveHash(`/apps/${activeHashProject}/#about`)}
     animate={{ y: 0, opacity: 1 }}
     initial={{ y: 20, opacity: 0 }}
-    transition={{ duration: 0.5, delay: 0.4 }}
+    transition={{ duration: 0.5, delay: 0.1 }}
     >
     
       <motion.div className=" px-4 py-6"
