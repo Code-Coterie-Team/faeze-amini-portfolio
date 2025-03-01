@@ -20,7 +20,6 @@ function PersonalInformation() {
         onViewportEnter={() => changeActiveHash("/#aboutme")}
       >
         <motion.div
-         
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: -30, opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -262,7 +261,7 @@ function PersonalInformation() {
             }}
             transition={{
               duration: 1.2,
-              delay:index*0.2,
+              delay: index * 0.2,
               repeat: Infinity,
               repeatType: "loop",
               ease: "linear",
@@ -270,7 +269,6 @@ function PersonalInformation() {
           />
         ))}
       </div>
-
     </div>
   );
 }
