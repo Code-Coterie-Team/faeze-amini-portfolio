@@ -8,7 +8,7 @@ import Link from "next/link";
 import SectionSeparator from "./sectionSeparator";
 import MaximizeIcon from "./icons/MaximizeIcon";
 import CodeIcon from "./icons/CodeIcon";
-import { useStore } from "@/store";
+import { useStore, addTabStore } from "@/store";
 import { motion } from "framer-motion";
 
 interface workProject {
@@ -25,8 +25,8 @@ const workProjects: workProject[] = [
     description:
       "The management panel enables you to efficiently manage the products section with ease.",
     image: "/Image/react-admin-project01.png",
-    linkGit: "",
-    linkDemo: "",
+    linkGit: "https://github.com/Code-Coterie-Team/react-admin-project",
+    linkDemo: "https://adminpanelprojectweb.netlify.app/",
     href: "/apps/adminDashboard",
   },
   {
@@ -34,63 +34,49 @@ const workProjects: workProject[] = [
     description:
       "This platform is designed to make your shopping experience easier and more enjoyable.",
     image: "/Image/sneakers-company-project01.png",
-    linkGit: "",
-    linkDemo: "",
+    linkGit: "https://github.com/Code-Coterie-Team/sneakers-company",
+    linkDemo: "https://pageproductsneakerweb.netlify.app/",
     href: "/apps/sneakersCompany",
   },
   {
-    name: "Challenges Rock Paper Scissors Game",
+    name: "Rock Paper Scissors Game",
     description: "",
     image: "/Image/challenges-rock-paper-scissors-game01.png",
-    linkGit: "",
-    linkDemo: "",
-    href: "/apps/ChallengesRockPaperScissorsGame",
+    linkGit:
+      "https://github.com/Code-Coterie-Team/challenges-rock-paper-scissors-game",
+    linkDemo: "https://gamerockpaperscissors-js.netlify.app/",
+    href: "/apps/rockPaperScissorsGame",
   },
   {
     name: "Drink Water",
     description: "",
     image: "/Image/Drink-Water02.png",
-    linkGit: "",
-    linkDemo: "",
-    href: "/apps/DrinkWater",
+    linkGit: "https://github.com/Code-Coterie-Team/Drink-Water",
+    linkDemo: "https://drinkwater-js.netlify.app/",
+    href: "/apps/drinkWater",
   },
   {
     name: "Routing Navigation",
     description: "",
     image: "/Image/Routing-Navigation01.png",
-    linkGit: "",
-    linkDemo: "",
-    href: "/apps/RoutingNavigation",
+    linkGit: "https://github.com/Code-Coterie-Team/Routing-Navigation",
+    linkDemo: "https://routingnavigation.netlify.app/",
+    href: "/apps/routingNavigation",
   },
   {
     name: "Form Input Wave",
     description: "",
     image: "/Image/Form-Input-Wave01.png",
-    linkGit: "",
-    linkDemo: "",
-    href: "/apps/FormInputWave",
-  },
-  {
-    name: "Dad Jokes App",
-    description: "",
-    image: "/Image/dad-jokes-app.png",
-    linkGit: "",
-    linkDemo: "",
-    href: "/apps/DadJokesApp",
-  },
-  {
-    name: "Auto Text Effect",
-    description: "",
-    image: "/Image/Auto-Text-Effect.png",
-    linkGit: "",
-    linkDemo: "",
-    href: "/apps/AutoTextEffect",
+    linkGit: "https://github.com/Code-Coterie-Team/Form-Input-Wave",
+    linkDemo: "https://form-inputwave.netlify.app/?",
+    href: "/apps/formInputWave",
   },
 ];
 
 function MyWork() {
   const [isHoverShowProject, setIsHoverShowProject] = useState("");
   const { changeActiveHash } = useStore();
+  const { changeActiveTab, addTab } = addTabStore();
   return (
     <motion.div
       id="myWork"
@@ -146,6 +132,10 @@ function MyWork() {
                 className="flex items-center"
                 onMouseEnter={() => setIsHoverShowProject(project.href)}
                 onMouseLeave={() => setIsHoverShowProject("")}
+                onClick={() => {
+                  changeActiveTab(project.href);
+                  addTab(project.name, project.href);
+                }}
               >
                 <span
                   className="text-2xl text-gray-50 font-semibold border-b-2 border-b-darckBg 
@@ -173,7 +163,7 @@ function MyWork() {
               <div className="demoProject absolute flex gap-4 top-1/2">
                 <Link
                   className="bg-gray-500/40 p-2 rounded-full text-gray-50 hover:scale-125"
-                  href={"https://github.com/faeze-amn?tab=repositories"}
+                  href={project.linkDemo}
                   target="_blank"
                 >
                   <MaximizeIcon
@@ -183,9 +173,7 @@ function MyWork() {
                 </Link>
                 <Link
                   className="bg-gray-500/40 p-2 rounded-full text-gray-50 hover:scale-125"
-                  href={
-                    "https://github.com/Code-Coterie-Team/react-admin-project"
-                  }
+                  href={project.linkGit}
                   target="_blank"
                 >
                   <CodeIcon
