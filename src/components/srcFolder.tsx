@@ -49,7 +49,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameFile: "SolutionIcon",
+      nameFile: "Solution",
     },
     {
       href: "/apps/adminDashboard/#technologies",
@@ -95,7 +95,7 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameFile: "SolutionIcon",
+      nameFile: "Solution",
     },
     {
       href: "/apps/sneakersCompany/#technologies",
@@ -141,11 +141,149 @@ const listMenuLinkProjecs: Record<
           height="18"
         />
       ),
-      nameFile: "SolutionIcon",
+      nameFile: "Solution",
     },
     {
       href: "/apps/rockPaperScissorsGame/#technologies",
       hrefPage: "/apps/rockPaperScissorsGame",
+      IconName: (
+        <TechnologiesIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Technologies",
+    },
+  ],
+  drinkWater: [
+    {
+      href: "/apps/drinkWater/#about",
+      hrefPage: "/apps/drinkWater",
+      IconName: (
+        <AboutIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "About",
+    },
+    {
+      href: "/apps/drinkWater/#challenge",
+      hrefPage: "/apps/drinkWater",
+      IconName: (
+        <ChallengeIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Challenge",
+    },
+    {
+      href: "/apps/drinkWater/#solution",
+      hrefPage: "/apps/drinkWater",
+      IconName: (
+        <SolutionIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Solution",
+    },
+    {
+      href: "/apps/drinkWater/#technologies",
+      hrefPage: "/apps/drinkWater",
+      IconName: (
+        <TechnologiesIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Technologies",
+    },
+  ],
+  routingNavigation: [
+    {
+      href: "/apps/routingNavigation/#about",
+      hrefPage: "/apps/routingNavigation",
+      IconName: (
+        <AboutIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "About",
+    },
+    {
+      href: "/apps/routingNavigation/#challenge",
+      hrefPage: "/apps/routingNavigation",
+      IconName: (
+        <ChallengeIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Challenge",
+    },
+    {
+      href: "/apps/routingNavigation/#solution",
+      hrefPage: "/apps/routingNavigation",
+      IconName: (
+        <SolutionIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Solution",
+    },
+    {
+      href: "/apps/routingNavigation/#technologies",
+      hrefPage: "/apps/routingNavigation",
+      IconName: (
+        <TechnologiesIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Technologies",
+    },
+  ],
+  formInputWave: [
+    {
+      href: "/apps/formInputWave/#about",
+      hrefPage: "/apps/formInputWave",
+      IconName: (
+        <AboutIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "About",
+    },
+    {
+      href: "/apps/formInputWave/#challenge",
+      hrefPage: "/apps/formInputWave",
+      IconName: (
+        <ChallengeIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Challenge",
+    },
+    {
+      href: "/apps/formInputWave/#solution",
+      hrefPage: "/apps/formInputWave",
+      IconName: (
+        <SolutionIcon
+          width="18"
+          height="18"
+        />
+      ),
+      nameFile: "Solution",
+    },
+    {
+      href: "/apps/formInputWave/#technologies",
+      hrefPage: "/apps/formInputWave",
       IconName: (
         <TechnologiesIcon
           width="18"

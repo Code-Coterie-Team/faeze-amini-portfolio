@@ -41,7 +41,7 @@ function SolutionProject({
       </div>
       <div className="inline-block mt-8">
         <div className="bg-gray-50 text-gray-950 px-3 py-1 rounded-full hover:opacity-80 flex gap-2">
-          <Link href={href}>Visit website</Link>
+          <Link target="_blank" href={href}>Visit website</Link>
           <ArrowRightIcon
             width="24"
             height="24"
