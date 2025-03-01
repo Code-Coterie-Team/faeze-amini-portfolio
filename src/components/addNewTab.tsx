@@ -18,6 +18,14 @@ function AddNewTab({ tabTitle, href }: ItemTabs) {
     changeSrcFolderSideBar,
   } = addTabStore();
   const { changeActiveHash } = useStore();
+
+  const handleOnMouseDown = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    console.log("click event");
+    if (event.button === 1) {
+      event.preventDefault();
+      removeTab(href);
+    }
+  };
   return (
     <Link
       href={href}
@@ -39,6 +47,7 @@ function AddNewTab({ tabTitle, href }: ItemTabs) {
           changeActiveHash(`${href}/#about`);
         }
       }}
+      onMouseDown={handleOnMouseDown}
     >
       <p className="text-base whitespace-nowrap">{tabTitle}</p>
       <button
