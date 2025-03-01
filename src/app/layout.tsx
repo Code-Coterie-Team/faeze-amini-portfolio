@@ -32,7 +32,7 @@ export default function RootLayout({
           <div className="sticky">
             <Header />
           </div>
-          <div className="grid grid-cols-min-one h-full overflow-hidden">
+          <div className="grid grid-cols-min-one relative h-full overflow-hidden">
             <Sidebar />
             <div className=" h-full overflow-hidden pb-5">
               <div className="h-full flex flex-col">

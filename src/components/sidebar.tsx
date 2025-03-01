@@ -118,7 +118,7 @@ function Sidebar() {
       <div
         className={`flex flex-col ${
           !sideBarShow && "hidden"
-        } border-r border-r-borderDarck overflow-hidden`}
+        } border-r border-r-borderDarck overflow-hidden lg:static absolute top-0 left-14 bg-darckBg z-10 h-full`}
       >
         <div className="w-[18rem] overflow-hidden">
           {isActiveSidebar === "file" && <DetailSubSidebar />}
