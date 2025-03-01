@@ -37,14 +37,14 @@ function ChallengeProject({
       <ul className="pl-10 list-disc text-lg">
         <li
           className={`mt-5 ${
-            item03 === "" || item03 === undefined ? "hidden" : ""
+            item01 === "" ||  item01 === " " ? "hidden" : ""
           }`}
         >
           {item01}
         </li>
         <li
           className={`mt-5 ${
-            item03 === "" || item03 === undefined ? "hidden" : ""
+            item02 === "" ||  item02 === " " ? "hidden" : ""
           }`}
         >
           {item02}
@@ -52,7 +52,7 @@ function ChallengeProject({
 
         <li
           className={`mt-5 ${
-            item03 === "" || item03 === undefined ? "hidden" : ""
+            item03 === "" || item03 === " " ? "hidden" : ""
           }`}
         >
           {item03}
