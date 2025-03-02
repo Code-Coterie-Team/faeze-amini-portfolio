@@ -12,6 +12,7 @@ import TechnologiesIcon from "./icons/TechnologiesIcon";
 import ReactJsIcon from "./icons/ReactJsIcon";
 import { addTabStore, useStore } from "@/store";
 import CreateFileMenu from "./createFileMenu";
+import JavascriptIcon from "./icons/JavascriptIcon";
 
 const listMenuLinkProjecs: Record<
   string,
@@ -294,7 +295,32 @@ const listMenuLinkProjecs: Record<
     },
   ],
 };
-
+const iconProject = [
+  <ReactJsIcon
+    width="18"
+    height="18"
+  />,
+  <ReactJsIcon
+    width="18"
+    height="18"
+  />,
+  <JavascriptIcon
+    width="16"
+    height="16"
+  />,
+  <JavascriptIcon
+    width="16"
+    height="16"
+  />,
+  <JavascriptIcon
+    width="16"
+    height="16"
+  />,
+  <JavascriptIcon
+    width="16"
+    height="16"
+  />,
+];
 function SrcFolder() {
   const {
     addTab,
@@ -398,10 +424,7 @@ function SrcFolder() {
                           key={index}
                           className="hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]"
                         >
-                          <ReactJsIcon
-                            width="18"
-                            height="18"
-                          />
+                          {iconProject[index]}
                           <p className="text-base">
                             {project
                               .replace(/([A-Z])/g, " $1")
