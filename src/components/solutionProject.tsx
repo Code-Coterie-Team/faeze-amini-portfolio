@@ -7,17 +7,23 @@ import { useStore } from "@/store";
 import { motion } from "framer-motion";
 
 interface SolutionItems {
-  text01: string;
-  titleText: string;
-  text02: string;
+  text01?: string;
+  text02?: string;
+  text03?: string;
+  text04?: string;
+  text05?: string;
+  text06?: string;
   href: string;
   activeHashProject: string;
 }
 
 function SolutionProject({
   text01,
-  titleText,
   text02,
+  text03,
+  text04,
+  text05,
+  text06,
   href,
   activeHashProject,
 }: SolutionItems) {
@@ -34,14 +40,21 @@ function SolutionProject({
       <h1 className="mt-8 mb-5 font-medium text-4xl text-gray-50 tracking-tight ">
         Solution
       </h1>
-      <p className="text-lg">{text01}</p>
-      <div className="mt-5">
-        <span className="lg:text-lg text-textActive">{titleText}</span>
-        <span className="text-base pl-2">{text02}</span>
-      </div>
+      <p className="text-lg py-1"> {text01}</p>
+      <p className="text-lg py-1"> {text02}</p>
+      <p className="text-lg py-1"> {text03}</p>
+      <p className="text-lg py-1"> {text04}</p>
+      <p className="text-lg py-1"> {text05}</p>
+      <p className="text-lg py-1"> {text06}</p>
+
       <div className="inline-block mt-8">
         <div className="bg-gray-50 text-gray-950 px-3 py-1 rounded-full hover:opacity-80 flex gap-2">
-          <Link target="_blank" href={href}>Visit website</Link>
+          <Link
+            target="_blank"
+            href={href}
+          >
+            Visit website
+          </Link>
           <ArrowRightIcon
             width="24"
             height="24"
