@@ -44,17 +44,21 @@ function page() {
           activeHashProject={"rockPaperScissorsGame"}
         />
         <ChallengeProject
-          descrption=""
-          item01=" "
-          item02=""
-          item03=" "
+          descrption="This project implements the classic game of Rock, Paper, Scissors using JavaScript."
+          item01="Random Selection by the System: Implement a feature that allows the system to randomly select a choice in the game."
+          item02="Styling for the Winner: Create an appealing style to highlight the winning choice visually."
+          item03="Dedicated Section for Game Results: Establish a separate area to clearly display the outcome of each game round."
+          item04="Modal Implementation with Animation: Design a modal that appears to show results, complete with engaging animations."
           activeHashProject={"rockPaperScissorsGame"}
         />
 
         <SolutionProject
-          text01={"example...."}
-          titleText={"Delete Application (system triggered): "}
-          text02={"example02........"}
+          text01={
+            "- Utilization of JavaScript Methods: Make use of various JavaScript methods to manage game logic and interactions."
+          }
+          text02={
+            "- Dynamic CSS Styling with JavaScript: Change CSS styles dynamically using JavaScript to enhance user experience and visual feedback."
+          }
           activeHashProject={"rockPaperScissorsGame"}
           href={"https://gamerockpaperscissors-js.netlify.app/"}
         />

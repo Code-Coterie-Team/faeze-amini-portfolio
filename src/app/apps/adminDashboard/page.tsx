@@ -76,24 +76,37 @@ function page() {
         <ChallengeProject
           descrption="This platform is designed for managing the sales department and user
             management, built using React."
-          item01=" Utilization of Recharts: Implements various chart types for quick
-              visualization of management metrics and results across different
-              sections."
-          item02="API Development: Creates APIs for product and user search
-              functionalities."
-          item03=" State Management with Zustand: Leverages Zustand for efficient
-              state management within the application."
-              activeHashProject={"adminDashboard"}
+          item01="Create various charts using different datasets."
+          item02="Implement product creation and search functionality based on product names."
+          item03="Display users based on their active or inactive status and user search based on names."
+          item04="Generate user profile images using the first letter of the user's name."
+          item05="Add a toggle button in the settings section."
+          item06="Implement functionality for opening and closing the sidebar."
+          activeHashProject={"adminDashboard"}
         />
 
         <SolutionProject
-          text01={"example...."}
-          titleText={"Delete Application (system triggered): "}
-          text02={"example02........"}
+          text01={"- Utilize Recharts for creating dynamic charts."}
+          text02={
+            "- Develop a shared component for common charts and pass arrays as props to the chart components."
+          }
+          text03={"- Use MockAPI to create diverse users and products."}
+          text04={
+            "- Implement API calls for filtering and searching products and users by name."
+          }
+          text05={
+            "- Leverage Zustand for managing the opening and closing of the sidebar."
+          }
+          text06={
+            "- Create a toggle button that adjusts based on the useState value and changes the background accordingly."
+          }
           activeHashProject={"adminDashboard"}
           href={"https://adminpanelprojectweb.netlify.app/"}
         />
-        <TechnologiesProject listTechnologies={technologies}   activeHashProject={"adminDashboard"}/>
+        <TechnologiesProject
+          listTechnologies={technologies}
+          activeHashProject={"adminDashboard"}
+        />
       </div>
     </div>
   );

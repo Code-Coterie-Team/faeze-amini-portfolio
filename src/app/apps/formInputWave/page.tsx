@@ -35,7 +35,7 @@ function page() {
           <div className="flex flex-col gap-9">
             <AboutProject
               title="Form Input Wave"
-              description=""
+              description="Logging Page"
               industry="Web Store "
               year="2024"
               service="Web application"
@@ -44,17 +44,17 @@ function page() {
               activeHashProject={"formInputWave"}
             />
             <ChallengeProject
-              descrption=""
-              item01=" "
-              item02=""
-              item03=" "
+              descrption="The platform is implemented using JavaScript. The objective is to create an animated label for input fields that behaves as follows:"
+              item01="When the input field is focused, the label should animate."
+              item02="If the input field is empty and the user clicks anywhere else on the page, the label should return to its initial position."
+              item03="If the input field is filled, the label should remain in its animated position.
+"
+
               activeHashProject={"formInputWave"}
             />
     
             <SolutionProject
-              text01={"example...."}
-              titleText={"Delete Application (system triggered): "}
-              text02={"example02........"}
+              text01={"- Define a CSS class for the label and apply it to the input field based on its state (filled or empty). This will ensure that the label animates correctly according to user interactions."}
               activeHashProject={"formInputWave"}
               href={"https://form-inputwave.netlify.app/?"}
             />

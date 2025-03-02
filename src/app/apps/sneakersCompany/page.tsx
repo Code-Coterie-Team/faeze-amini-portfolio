@@ -58,20 +58,25 @@ function page() {
 
         <ChallengeProject
           descrption={
-            " This platform displays all the information related to the product. You can select the quantity of orders and add them to your shopping cart."
+            "This platform displays all the information related to the product. You can select the quantity of orders and add them to your shopping cart, built using React."
           }
-          item01=" Implementing Redux for displaying the website in both dark mode
-              and light mode."
-          item02="Displaying the number of products available in the shopping cart,
-              along with options to increase or decrease the quantity of each
-              item."
-          item03="Showcasing images for each product."
+          item01="Image Selection and Rotation: Allow users to select any product image and rotate through them during the display."
+          item02="Modal for Cart Display: Create a modal to show the shopping cart."
+          item03="Order Quantity Selection: Enable users to select the quantity of items to order and add them to the cart."
+          item04="Remove Selected Product from Cart: Provide functionality to remove a selected product from the cart and reset the order quantity to zero."
+          item05="Dark and Light Mode: Implement a toggle for dark and light modes within the platform."
           activeHashProject={"sneakersCompany"}
         />
         <SolutionProject
-          text01={"example"}
-          titleText={"Delete Application (system triggered)"}
-          text02={"example"}
+          text01={
+            "- Image Activation with useRef: Utilize the useRef hook to activate the display of each selected product image."
+          }
+          text02={
+            "- Redux for Cart Modal State: Create a variable using Redux to manage the visibility of the cart modal."
+          }
+          text03={"- Redux for Order Quantity: Establish a variable in Redux to track and display the quantity of items added to the cart."}
+          text04={"- Method for Removing Products: Implement a method in Redux to remove products from the cart, effectively resetting the quantity to zero."}
+          text05={"- Dark/Light Mode with Redux and Tailwind CSS: Implement dark and light mode functionality using Redux for state management and Tailwind CSS for styling."}
           href={"https://pageproductsneakerweb.netlify.app/"}
           activeHashProject={"sneakersCompany"}
         />
