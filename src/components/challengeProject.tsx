@@ -9,6 +9,9 @@ interface ChallengeItems {
   item01?: string;
   item02?: string;
   item03?: string;
+  item04?: string;
+  item05?: string;
+  item06?: string;
   activeHashProject: string;
 }
 
@@ -17,6 +20,9 @@ function ChallengeProject({
   item01,
   item02,
   item03,
+  item04,
+  item05,
+  item06,
   activeHashProject,
 }: ChallengeItems) {
   const { changeActiveHash } = useStore();
@@ -36,26 +42,35 @@ function ChallengeProject({
 
       <ul className="pl-10 list-disc text-lg">
         <li
-          className={`mt-5 ${
-            item01 === "" ||  item01 === " " ? "hidden" : ""
-          }`}
+          className={`mt-5 ${item01 === "" || item01 === " " || item01 === undefined ? "hidden" : ""}`}
         >
           {item01}
         </li>
         <li
-          className={`mt-5 ${
-            item02 === "" ||  item02 === " " ? "hidden" : ""
-          }`}
+          className={`mt-5 ${item02 === "" || item02 === " " || item02 === undefined ? "hidden" : ""}`}
         >
           {item02}
         </li>
 
         <li
-          className={`mt-5 ${
-            item03 === "" || item03 === " " ? "hidden" : ""
-          }`}
+          className={`mt-5 ${item03 === "" || item03 === " " || item03 === undefined ? "hidden" : ""}`}
         >
           {item03}
+        </li>
+        <li
+          className={`mt-5 ${item04 === "" || item04 === " " || item04 === undefined ? "hidden" : ""}`}
+        >
+          {item04}
+        </li>
+        <li
+          className={`mt-5 ${item05 === "" || item05 === " " || item05 === undefined ? "hidden" : ""}`}
+        >
+          {item05}
+        </li>
+        <li
+          className={`mt-5 ${item06 === "" || item06 === " " || item06 === undefined ? "hidden" : ""}`}
+        >
+          {item06}
         </li>
       </ul>
     </motion.div>
