@@ -420,10 +420,7 @@ function SrcFolder() {
                         }}
                         href={`/apps/${project}`}
                       >
-                        <div
-                          key={index}
-                          className="hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]"
-                        >
+                        <div className="hover:bg-borderDarck flex items-center gap-2 pl-14 py-[2px]">
                           {iconProject[index]}
                           <p className="text-base">
                             {project
@@ -440,7 +437,10 @@ function SrcFolder() {
                       </Link>
                       {activeTab === `/apps/${project}` && (
                         <>
-                          <CreateFileMenu listFileMenu={listProject} />
+                          <CreateFileMenu
+                            key={project}
+                            listFileMenu={listProject}
+                          />
 
                           <div className="lineBordMyFolde"></div>
                         </>

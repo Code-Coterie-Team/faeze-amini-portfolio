@@ -26,7 +26,7 @@ function HeaderMain() {
     if (activeTab !== path) {
       router.push(activeTab);
     }
-  }, [path, activeTab, tab,addTab,router]);
+  }, [path, activeTab, tab,addTab,router,changeActiveTab]);
 
   return (
     <div className="headerMain flex items-center justify-between w-full border-borderDarck border-b-2 bg-darckBg">
