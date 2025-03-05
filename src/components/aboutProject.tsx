@@ -1,19 +1,9 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useStore } from "@/store";
 
-interface ItemAboutPaje {
-  title: string;
-  description: string;
-  industry: string;
-  year: string;
-  service: string;
-  imageSrc: string;
-  imageAlt: string;
-  activeHashProject:string,
-}
 function AboutProject({
   title,
   description,
@@ -26,16 +16,17 @@ function AboutProject({
 }: ItemAboutPaje) {
   const { changeActiveHash } = useStore();
   return (
-    <motion.div id="about" className="about"
-    onViewportEnter={() => changeActiveHash(`/apps/${activeHashProject}/#about`)}
-    animate={{ y: 0, opacity: 1 }}
-    initial={{ y: 20, opacity: 0 }}
-    transition={{ duration: 0.5, delay: 0.1 }}
+    <motion.div
+      id="about"
+      className="about"
+      onViewportEnter={() =>
+        changeActiveHash(`/apps/${activeHashProject}/#about`)
+      }
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: 20, opacity: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
     >
-    
-      <motion.div className=" px-4 py-6"
-     
-      >
+      <motion.div className=" px-4 py-6">
         <div className="flex flex-col justify-center items-center mt-24 gap-4">
           <p className=" text-base font-semibold text-textActive">Case Study</p>
           <h1 className="text-6xl text-gray-50 font-semibold pt-3 tracking-tight text-center">

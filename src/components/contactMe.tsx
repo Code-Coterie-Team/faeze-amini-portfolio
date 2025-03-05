@@ -64,12 +64,6 @@ function ContactMe() {
     }, 3000);
   });
 
-  interface FormDatas {
-    name: string;
-    email: string;
-    company: string;
-    message: string;
-  }
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 

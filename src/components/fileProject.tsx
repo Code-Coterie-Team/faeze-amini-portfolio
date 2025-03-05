@@ -7,11 +7,7 @@ import SolutionIcon from "./icons/SolutionIcon";
 import TechnologiesIcon from "./icons/TechnologiesIcon";
 import CreateFileMenu from "./createFileMenu";
 
-interface FileProjects {
-  nameProject: string;
-  href: string;
-  IconProject: ReactNode;
-}
+
 
 function FileProject(props: FileProjects) {
   const { projectName, changeProjectName } = useStore();

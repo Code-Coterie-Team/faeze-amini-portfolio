@@ -3,10 +3,6 @@ import ChallengeProject from "@/components/challengeProject";
 import SolutionProject from "@/components/solutionProject";
 import TechnologiesProject from "@/components/technologiesProject";
 import React from "react";
-interface Technology {
-  name: string;
-  image: string;
-}
 const technologies: Technology[] = [
   {
     name: "HTML",

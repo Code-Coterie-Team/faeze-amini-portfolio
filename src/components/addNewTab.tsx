@@ -3,11 +3,6 @@ import RemoveIcon from "./icons/RemoveIcon";
 import Link from "next/link";
 import { addTabStore, useStore } from "@/store";
 
-interface ItemTabs {
-  tabTitle: string;
-  href: string;
-}
-
 function AddNewTab({ tabTitle, href }: ItemTabs) {
   const {
     removeTab,

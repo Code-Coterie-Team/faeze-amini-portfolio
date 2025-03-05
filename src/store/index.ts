@@ -1,48 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-interface StoreState {
-  sideBarShow: boolean;
-  toggleSideBarShow: (isShow: boolean) => void;
-
-  projectName: string;
-  changeProjectName: (newName: string) => void;
-
-  hoverPortfolio: boolean;
-  setHoverPortfolio: (newState: boolean) => void;
-
-  activeHash: string;
-  changeActiveHash: (newHash: string) => void;
-}
-
-interface ListTabs {
-  tabTitle: string;
-  href: string;
-}
-
-interface TabStore {
-  tab: ListTabs[];
-  addTab: (tabTitle: string, href: string) => void;
-  removeTab: (href: string) => void;
-
-  activeTab: string;
-  changeActiveTab: (newLink: string) => void;
-
-  isPublicSideBar: boolean;
-  changeIsPublicSideBar: (isStatus: boolean) => void;
-
-  isSrcFolderSideBar: boolean;
-  changeSrcFolderSideBar: (isStatus: boolean) => void;
-
-  isMyFolderSideBar: boolean;
-  changeMyFolderSideBar: (isStatus: boolean) => void;
-
-  isShowModalSuccessful: boolean;
-  setIsShowModalSuccessful: (isStatus: boolean) => void;
-
-  isShowModalFail: boolean;
-  setIsShowModalFail: (isStatus: boolean) => void;
-}
 export const useStore = create<StoreState>((set) => ({
   sideBarShow: false,
   toggleSideBarShow: () =>

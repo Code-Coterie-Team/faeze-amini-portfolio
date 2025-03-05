@@ -11,14 +11,6 @@ import CodeIcon from "./icons/CodeIcon";
 import { useStore, addTabStore } from "@/store";
 import { motion } from "framer-motion";
 
-interface workProject {
-  name: string;
-  description: string;
-  image: string;
-  linkGit: string;
-  linkDemo: string;
-  href: string;
-}
 const workProjects: workProject[] = [
   {
     name: "Admin Dashboard",

@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import FileIcon from "./icons/FileIcon";
 import SearchIcon from "./icons/SearchIcon";
 import BranchIcon from "./icons/BranchIcon";
@@ -10,14 +10,10 @@ import SettingIcon from "./icons/SettingIcon";
 import DetailSubSidebar from "./detailSubSidebar";
 import { useStore } from "@/store";
 
-interface IActiveIconSidebars {
-  activeIcon: string;
-  iconSidebarName: ReactNode;
-}
-const activeIconSidebar: IActiveIconSidebars[] = [
+const activeIconSidebar: ICreateSection[] = [
   {
-    activeIcon: "file",
-    iconSidebarName: (
+    sectionName: "file",
+    sectionIcon: (
       <FileIcon
         width="32"
         height="32"
@@ -25,8 +21,8 @@ const activeIconSidebar: IActiveIconSidebars[] = [
     ),
   },
   {
-    activeIcon: "search",
-    iconSidebarName: (
+    sectionName: "search",
+    sectionIcon: (
       <SearchIcon
         width="32"
         height="32"
@@ -34,8 +30,8 @@ const activeIconSidebar: IActiveIconSidebars[] = [
     ),
   },
   {
-    activeIcon: "branch",
-    iconSidebarName: (
+    sectionName: "branch",
+    sectionIcon: (
       <BranchIcon
         width="32"
         height="32"
@@ -43,8 +39,8 @@ const activeIconSidebar: IActiveIconSidebars[] = [
     ),
   },
   {
-    activeIcon: "runTime",
-    iconSidebarName: (
+    sectionName: "runTime",
+    sectionIcon: (
       <RunitemIcon
         width="32"
         height="32"
@@ -52,8 +48,8 @@ const activeIconSidebar: IActiveIconSidebars[] = [
     ),
   },
   {
-    activeIcon: "extentionitem",
-    iconSidebarName: (
+    sectionName: "extentionitem",
+    sectionIcon: (
       <ExtentionitemIcon
         width="32"
         height="32"
@@ -74,27 +70,27 @@ function Sidebar() {
               key={index}
               onClick={() => {
                 if (sideBarShow == false) {
-                  setIsActiveSidebar(item.activeIcon);
+                  setIsActiveSidebar(item.sectionName);
                   toggleSideBarShow(true);
                 } else if (
                   sideBarShow == true &&
-                  isActiveSidebar === item.activeIcon
+                  isActiveSidebar === item.sectionName
                 ) {
                   toggleSideBarShow(false);
                 } else if (
                   sideBarShow == true &&
-                  isActiveSidebar !== item.activeIcon
+                  isActiveSidebar !== item.sectionName
                 ) {
-                  setIsActiveSidebar(item.activeIcon);
+                  setIsActiveSidebar(item.sectionName);
                 }
               }}
               className={`p-3 text-gray-500 hover:text-tGrayAll  ${
-                isActiveSidebar === item.activeIcon && sideBarShow == true
+                isActiveSidebar === item.sectionName && sideBarShow == true
                   ? "border-l-2 border-tGrayAll text-tGrayAll"
                   : ""
               }`}
             >
-              {item.iconSidebarName}
+              {item.sectionIcon}
             </button>
           ))}
         </div>

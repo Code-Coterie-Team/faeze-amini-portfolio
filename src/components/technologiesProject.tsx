@@ -5,15 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useStore } from "@/store";
 
-interface Technology {
-  name: string;
-  image: string;
-}
-interface TechnologiesItems {
-  listTechnologies: Technology[];
-  activeHashProject: string;
-}
-
 function TechnologiesProject({
   listTechnologies,
   activeHashProject,

@@ -123,8 +123,8 @@ function DetailSubSidebar() {
         {listSidebarMenu.map((itemMenu, index) => (
           <SidebarMenu
             key={index}
-            iconMenu={itemMenu.iconMenu}
-            menuName={itemMenu.menuName}
+            sectionIcon={itemMenu.iconMenu}
+            sectionName={itemMenu.menuName}
           />
         ))}
       </div>

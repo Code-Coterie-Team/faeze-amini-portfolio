@@ -4,17 +4,6 @@ import SectionSeparator from "./sectionSeparator";
 import { motion } from "framer-motion";
 import { useStore } from "@/store";
 
-interface ChallengeItems {
-  descrption: string;
-  item01?: string;
-  item02?: string;
-  item03?: string;
-  item04?: string;
-  item05?: string;
-  item06?: string;
-  activeHashProject: string;
-}
-
 function ChallengeProject({
   descrption,
   item01,
@@ -42,33 +31,57 @@ function ChallengeProject({
 
       <ul className="pl-10 list-disc text-lg">
         <li
-          className={`mt-5 ${item01 === "" || item01 === " " || item01 === undefined ? "hidden" : ""}`}
+          className={`mt-5 ${
+            item01 === "" || item01 === " " || item01 === undefined
+              ? "hidden"
+              : ""
+          }`}
         >
           {item01}
         </li>
         <li
-          className={`mt-5 ${item02 === "" || item02 === " " || item02 === undefined ? "hidden" : ""}`}
+          className={`mt-5 ${
+            item02 === "" || item02 === " " || item02 === undefined
+              ? "hidden"
+              : ""
+          }`}
         >
           {item02}
         </li>
 
         <li
-          className={`mt-5 ${item03 === "" || item03 === " " || item03 === undefined ? "hidden" : ""}`}
+          className={`mt-5 ${
+            item03 === "" || item03 === " " || item03 === undefined
+              ? "hidden"
+              : ""
+          }`}
         >
           {item03}
         </li>
         <li
-          className={`mt-5 ${item04 === "" || item04 === " " || item04 === undefined ? "hidden" : ""}`}
+          className={`mt-5 ${
+            item04 === "" || item04 === " " || item04 === undefined
+              ? "hidden"
+              : ""
+          }`}
         >
           {item04}
         </li>
         <li
-          className={`mt-5 ${item05 === "" || item05 === " " || item05 === undefined ? "hidden" : ""}`}
+          className={`mt-5 ${
+            item05 === "" || item05 === " " || item05 === undefined
+              ? "hidden"
+              : ""
+          }`}
         >
           {item05}
         </li>
         <li
-          className={`mt-5 ${item06 === "" || item06 === " " || item06 === undefined ? "hidden" : ""}`}
+          className={`mt-5 ${
+            item06 === "" || item06 === " " || item06 === undefined
+              ? "hidden"
+              : ""
+          }`}
         >
           {item06}
         </li>

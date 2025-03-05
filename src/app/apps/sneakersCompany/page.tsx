@@ -5,10 +5,6 @@ import TechnologiesProject from "@/components/technologiesProject";
 import React from "react";
 
 function page() {
-  interface Technology {
-    name: string;
-    image: string;
-  }
   const technologies: Technology[] = [
     {
       name: "HTML",

@@ -1,9 +1,5 @@
 import React from "react";
 
-interface IShowModalStatus {
-  title: string;
-  status: string;
-}
 function ModalShow({ title, status }: IShowModalStatus) {
   return (
     <div className="absolute left-1/2">

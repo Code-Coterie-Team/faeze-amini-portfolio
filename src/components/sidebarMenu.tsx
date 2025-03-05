@@ -1,16 +1,11 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
-interface SidebarMenus {
-  iconMenu: ReactNode;
-  menuName: string;
-}
-
-function SidebarMenu(props: SidebarMenus) {
+function SidebarMenu(props: ICreateSection) {
   return (
     <div className="sidebarMenuItem border-b-2 py-1 border-b-borderDarck ">
       <button className="flex">
-        {props.iconMenu}
-        <span className="font-extrabold text-xs pl-1">{props.menuName}</span>
+        {props.sectionIcon}
+        <span className="font-extrabold text-xs pl-1">{props.sectionName}</span>
       </button>
     </div>
   );

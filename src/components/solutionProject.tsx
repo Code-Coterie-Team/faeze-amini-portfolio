@@ -6,17 +6,6 @@ import SectionSeparator from "./sectionSeparator";
 import { useStore } from "@/store";
 import { motion } from "framer-motion";
 
-interface SolutionItems {
-  text01?: string;
-  text02?: string;
-  text03?: string;
-  text04?: string;
-  text05?: string;
-  text06?: string;
-  href: string;
-  activeHashProject: string;
-}
-
 function SolutionProject({
   text01,
   text02,
