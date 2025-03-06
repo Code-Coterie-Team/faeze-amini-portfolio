@@ -437,10 +437,7 @@ function SrcFolder() {
                       </Link>
                       {activeTab === `/apps/${project}` && (
                         <>
-                          <CreateFileMenu
-                            key={project}
-                            listFileMenu={listProject}
-                          />
+                          <CreateFileMenu listFileMenu={listProject} />
 
                           <div className="lineBordMyFolde"></div>
                         </>
