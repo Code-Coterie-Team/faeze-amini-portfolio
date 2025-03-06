@@ -2,8 +2,78 @@ import React from "react";
 import RemoveIcon from "./icons/RemoveIcon";
 import Link from "next/link";
 import { addTabStore, useStore } from "@/store";
+import { ListTabs } from "@/types/types";
+import ReactJsIcon from "./icons/ReactJsIcon";
+import JavascriptIcon from "./icons/JavascriptIcon";
+import StarIcon from "./icons/StarIcon";
 
-function AddNewTab({ tabTitle, href }: ItemTabs) {
+const iconProject = [
+  {
+    href: "/",
+    iconT: (
+      <StarIcon
+        width="18"
+        height="18"
+      />
+    ),
+  },
+  {
+    href: "/apps/adminDashboard",
+    iconT: (
+      <ReactJsIcon
+        width="18"
+        height="18"
+      />
+    ),
+  },
+  {
+    href: "/apps/sneakersCompany",
+    iconT: (
+      <ReactJsIcon
+        width="18"
+        height="18"
+      />
+    ),
+  },
+  {
+    href: "/apps/rockPaperScissorsGame",
+    iconT: (
+      <JavascriptIcon
+        width="18"
+        height="18"
+      />
+    ),
+  },
+  {
+    href: "/apps/drinkWater",
+    iconT: (
+      <JavascriptIcon
+        width="18"
+        height="18"
+      />
+    ),
+  },
+  {
+    href: "/apps/routingNavigation",
+    iconT: (
+      <JavascriptIcon
+        width="18"
+        height="18"
+      />
+    ),
+  },
+  {
+    href: "/apps/formInputWave",
+    iconT: (
+      <JavascriptIcon
+        width="18"
+        height="18"
+      />
+    ),
+  },
+];
+
+function AddNewTab({ tabTitle, href }: ListTabs) {
   const {
     removeTab,
     activeTab,
@@ -44,6 +114,10 @@ function AddNewTab({ tabTitle, href }: ItemTabs) {
       }}
       onMouseDown={handleOnMouseDown}
     >
+      <div>
+        {iconProject.map((item) => (href === item.href ? item.iconT : ""))}
+      </div>
+
       <p className="text-base whitespace-nowrap">{tabTitle}</p>
       <button
         onClick={(e) => {
