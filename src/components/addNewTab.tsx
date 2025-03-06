@@ -86,6 +86,8 @@ function AddNewTab({ tabTitle, href }: ListTabs) {
 
   const handleOnMouseDown = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.button === 1) {
+      event.stopPropagation();
+      event.preventDefault();
       removeTab(href);
     }
   };
@@ -111,9 +113,9 @@ function AddNewTab({ tabTitle, href }: ListTabs) {
         }
       }}
       onMouseDown={(e) => {
-        e.preventDefault();
         e.stopPropagation();
-        handleOnMouseDown;
+        e.preventDefault();
+        handleOnMouseDown(e);
       }}
     >
       <div>
