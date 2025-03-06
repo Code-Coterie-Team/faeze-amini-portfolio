@@ -6,6 +6,7 @@ import { addTabStore, useStore } from "@/store";
 import ModalShow from "./modal/modalShow";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { IFormDatas } from "@/types/types";
 
 function ContactMe() {
   const {
@@ -34,7 +35,7 @@ function ContactMe() {
 
   const { changeActiveHash } = useStore();
   //api call
-  const sendFormData = async (formData: FormDatas) => {
+  const sendFormData = async (formData: IFormDatas) => {
     if (
       !formData.name ||
       !formData.email ||
@@ -67,7 +68,7 @@ function ContactMe() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    const formData: FormDatas = { name, email, company, message };
+    const formData: IFormDatas = { name, email, company, message };
     sendFormData(formData);
 
     setName("");

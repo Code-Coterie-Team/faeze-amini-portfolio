@@ -6,10 +6,11 @@ import ChallengeIcon from "./icons/ChallengeIcon";
 import SolutionIcon from "./icons/SolutionIcon";
 import TechnologiesIcon from "./icons/TechnologiesIcon";
 import CreateFileMenu from "./createFileMenu";
+import { IFileProjects } from "@/types/types";
 
 
 
-function FileProject(props: FileProjects) {
+function FileProject(props: IFileProjects) {
   const { projectName, changeProjectName } = useStore();
 
   const listMenuLinkProjecs: Record<

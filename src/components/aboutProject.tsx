@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useStore } from "@/store";
+import { IItemAboutPaje } from "@/types/types";
 
 function AboutProject({
   title,
@@ -13,7 +14,7 @@ function AboutProject({
   imageSrc,
   imageAlt,
   activeHashProject,
-}: ItemAboutPaje) {
+}: IItemAboutPaje) {
   const { changeActiveHash } = useStore();
   return (
     <motion.div

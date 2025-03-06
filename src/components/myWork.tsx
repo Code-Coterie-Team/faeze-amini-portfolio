@@ -10,8 +10,9 @@ import MaximizeIcon from "./icons/MaximizeIcon";
 import CodeIcon from "./icons/CodeIcon";
 import { useStore, addTabStore } from "@/store";
 import { motion } from "framer-motion";
+import { IworkProject } from "@/types/types";
 
-const workProjects: workProject[] = [
+const workProjects: IworkProject[] = [
   {
     name: "Admin Dashboard",
     description:

@@ -9,6 +9,7 @@ import UserCircleIcon from "./icons/UserCircleIcon";
 import SettingIcon from "./icons/SettingIcon";
 import DetailSubSidebar from "./detailSubSidebar";
 import { useStore } from "@/store";
+import { ICreateSection } from "@/types/types";
 
 const activeIconSidebar: ICreateSection[] = [
   {

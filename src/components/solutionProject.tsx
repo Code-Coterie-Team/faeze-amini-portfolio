@@ -5,6 +5,7 @@ import ArrowRightIcon from "./icons/ArrowRightIcon";
 import SectionSeparator from "./sectionSeparator";
 import { useStore } from "@/store";
 import { motion } from "framer-motion";
+import { ISolutionItems } from "@/types/types";
 
 function SolutionProject({
   text01,
@@ -15,7 +16,7 @@ function SolutionProject({
   text06,
   href,
   activeHashProject,
-}: SolutionItems) {
+}: ISolutionItems) {
   const { changeActiveHash } = useStore();
   return (
     <motion.div

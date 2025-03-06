@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-interface ItemAboutPaje {
+interface IItemAboutPaje {
   title: string;
   description: string;
   industry: string;
@@ -10,7 +10,7 @@ interface ItemAboutPaje {
   activeHashProject: string;
 }
 
-interface ChallengeItems {
+interface IChallengeItems {
   descrption: string;
   item01?: string;
   item02?: string;
@@ -21,30 +21,30 @@ interface ChallengeItems {
   activeHashProject: string;
 }
 
-interface FormDatas {
+interface IFormDatas {
   name: string;
   email: string;
   company: string;
   message: string;
 }
 
-interface CreateFileMenus {
+interface ICreateFileMenus {
   href: string;
   hrefPage: string;
   IconName: ReactNode;
   nameFile: string;
 }
 interface IChartFrameworksArray {
-  listFileMenu: CreateFileMenus[];
+  listFileMenu: ICreateFileMenus[];
 }
 
-interface FileProjects {
+interface IFileProjects {
   nameProject: string;
   href: string;
   IconProject: ReactNode;
 }
 
-interface workProject {
+interface IworkProject {
   name: string;
   description: string;
   image: string;
@@ -57,7 +57,7 @@ interface ICreateSection {
   sectionIcon: ReactNode;
   sectionName: string;
 }
-interface SolutionItems {
+interface ISolutionItems {
   text01?: string;
   text02?: string;
   text03?: string;
@@ -68,12 +68,12 @@ interface SolutionItems {
   activeHashProject: string;
 }
 
-interface TechnologiesItems {
+interface ITechnologiesItems {
   listTechnologies: Technology[];
   activeHashProject: string;
 }
 
-interface StoreState {
+interface IStoreState {
   sideBarShow: boolean;
   toggleSideBarShow: (isShow: boolean) => void;
 
@@ -87,7 +87,7 @@ interface StoreState {
   changeActiveHash: (newHash: string) => void;
 }
 
-interface Technology {
+interface ITechnology {
   name: string;
   image: string;
 }
@@ -101,8 +101,8 @@ interface ListTabs {
   href: string;
 }
 
-interface TabStore {
-  tab: ListTabs[];
+interface ITabStore {
+  tab: IListTabs[];
   addTab: (tabTitle: string, href: string) => void;
   removeTab: (href: string) => void;
 

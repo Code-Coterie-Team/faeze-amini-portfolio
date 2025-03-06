@@ -11,6 +11,7 @@ import PakageFile from "./pakageFile";
 import PakageFolder from "./pakageFolder";
 import PublicFolder from "./publicFolder";
 import SrcFolder from "./srcFolder";
+import { ICreateSection } from "@/types/types";
 
 function ItemPortfolio() {
   const listPakageFile: ICreateSection[] = [

@@ -2,8 +2,9 @@ import AboutProject from "@/components/aboutProject";
 import ChallengeProject from "@/components/challengeProject";
 import SolutionProject from "@/components/solutionProject";
 import TechnologiesProject from "@/components/technologiesProject";
+import { ITechnology } from "@/types/types";
 import React from "react";
-const technologies: Technology[] = [
+const technologies: ITechnology[] = [
   {
     name: "HTML",
     image: "/Image/html5-logo.webp",

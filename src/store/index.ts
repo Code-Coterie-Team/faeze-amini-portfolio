@@ -1,8 +1,8 @@
-import { StoreState, TabStore } from "@/types/types";
+import { IStoreState, ITabStore } from "@/types/types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export const useStore = create<StoreState>((set) => ({
+export const useStore = create<IStoreState>((set) => ({
   sideBarShow: false,
   toggleSideBarShow: () =>
     set((state) => ({ sideBarShow: !state.sideBarShow })),
@@ -17,7 +17,7 @@ export const useStore = create<StoreState>((set) => ({
   changeActiveHash: (newHash) => set(() => ({ activeHash: newHash })),
 }));
 
-export const addTabStore = create<TabStore>()(
+export const addTabStore = create<ITabStore>()(
   persist(
     (set) => ({
       tab: [],

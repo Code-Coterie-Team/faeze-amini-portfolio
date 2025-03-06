@@ -7,6 +7,7 @@ import ArrowTopRight from "./icons/ArrowTopRightIcon";
 import ArrowBottomLeft from "./icons/ArrowBottomLeftIcon";
 import ArrowBottomRight from "./icons/ArrowBottomRightIcon";
 import { motion } from "framer-motion";
+import { IChartFrameworksArray } from "@/types/types";
 
 function CreateFileMenu({ listFileMenu }: IChartFrameworksArray) {
   const { changeActiveTab } = addTabStore();

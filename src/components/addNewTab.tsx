@@ -85,9 +85,7 @@ function AddNewTab({ tabTitle, href }: ListTabs) {
   const { changeActiveHash } = useStore();
 
   const handleOnMouseDown = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    console.log("click event");
     if (event.button === 1) {
-      event.preventDefault();
       removeTab(href);
     }
   };
@@ -112,7 +110,11 @@ function AddNewTab({ tabTitle, href }: ListTabs) {
           changeActiveHash(`${href}/#about`);
         }
       }}
-      onMouseDown={handleOnMouseDown}
+      onMouseDown={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        handleOnMouseDown;
+      }}
     >
       <div>
         {iconProject.map((item) => (href === item.href ? item.iconT : ""))}
