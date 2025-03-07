@@ -6,7 +6,6 @@ import ChallengeIcon from "./icons/ChallengeIcon";
 import SolutionIcon from "./icons/SolutionIcon";
 import TechnologiesIcon from "./icons/TechnologiesIcon";
 import CreateFileMenu from "./createFileMenu";
-import { IFileProjects } from "@/types/types";
 
 
 

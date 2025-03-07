@@ -4,7 +4,6 @@ import SectionSeparator from "./sectionSeparator";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useStore } from "@/store";
-import { ITechnologiesItems } from "@/types/types";
 
 function TechnologiesProject({
   listTechnologies,

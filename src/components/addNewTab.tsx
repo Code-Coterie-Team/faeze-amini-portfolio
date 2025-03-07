@@ -2,7 +2,6 @@ import React from "react";
 import RemoveIcon from "./icons/RemoveIcon";
 import Link from "next/link";
 import { addTabStore, useStore } from "@/store";
-import { ListTabs } from "@/types/types";
 import ReactJsIcon from "./icons/ReactJsIcon";
 import JavascriptIcon from "./icons/JavascriptIcon";
 import StarIcon from "./icons/StarIcon";
@@ -73,7 +72,7 @@ const iconProject = [
   },
 ];
 
-function AddNewTab({ tabTitle, href }: ListTabs) {
+function AddNewTab({ tabTitle, href }: IListTabs) {
   const {
     removeTab,
     activeTab,

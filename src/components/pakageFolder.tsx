@@ -1,6 +1,5 @@
 import React from "react";
 import DirectionRight01Icon from "./icons/DirectionRight01Icon";
-import { ICreateSection } from "@/types/types";
 
 function PakageFolder(props: ICreateSection) {
   return (

@@ -1,4 +1,3 @@
-import { ICreateSection } from "@/types/types";
 import React from "react";
 
 function SidebarMenu(props: ICreateSection) {

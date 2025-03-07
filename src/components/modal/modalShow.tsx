@@ -1,4 +1,3 @@
-import { IShowModalStatus } from "@/types/types";
 import React from "react";
 
 function ModalShow({ title, status }: IShowModalStatus) {

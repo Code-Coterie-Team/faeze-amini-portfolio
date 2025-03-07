@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 interface IItemAboutPaje {
   title: string;
   description: string;
@@ -96,7 +95,7 @@ interface IShowModalStatus {
   title: string;
   status: string;
 }
-interface ListTabs {
+interface IListTabs {
   tabTitle: string;
   href: string;
 }

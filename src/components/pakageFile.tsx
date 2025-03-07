@@ -1,4 +1,3 @@
-import { ICreateSection } from "@/types/types";
 import React from "react";
 
 function PakageFile(props: ICreateSection) {

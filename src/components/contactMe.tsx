@@ -6,7 +6,6 @@ import { addTabStore, useStore } from "@/store";
 import ModalShow from "./modal/modalShow";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { IFormDatas } from "@/types/types";
 
 function ContactMe() {
   const {

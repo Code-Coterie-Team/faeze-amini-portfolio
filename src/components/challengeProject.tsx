@@ -3,7 +3,6 @@ import React from "react";
 import SectionSeparator from "./sectionSeparator";
 import { motion } from "framer-motion";
 import { useStore } from "@/store";
-import { IChallengeItems } from "@/types/types";
 
 function ChallengeProject({
   descrption,
