@@ -49,6 +49,7 @@ function Skills() {
     Back: [
       { image: "/Image/csharp-logo.webp", name: "c#" },
       { image: "/Image/sql-logo.png", name: "SQL" },
+      { image: "/Image/aspnet01.jpg", name: " Asp.net" },
     ],
   };
   return (
